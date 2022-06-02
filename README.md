@@ -1,6 +1,6 @@
 # rafaelneto-dev-blog-vuepress
 
-> My personal blog source code based in VuePress. See te result [here](https://rafaelneto.dev).
+> My personal blog source code based in VuePress. See te result in [here](https://rafaelneto.dev).
 
 Are you interested in knowing how I have done it?
 

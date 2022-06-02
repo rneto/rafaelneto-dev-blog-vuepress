@@ -83,7 +83,7 @@ module.exports = {
       service: "vssue",
       prefix: "[Post]",
       owner: "rneto",
-      repo: "rneto.es",
+      repo: "rafaelneto.dev",
       clientId: "d08327ef8b1457b3432a",
       clientSecret: "b698b4ae39532b21aee0521a9c28af4a83362892"
     },
@@ -127,7 +127,7 @@ module.exports = {
     [
       'sitemap',
       {
-        hostname: 'https://rneto.es',
+        hostname: 'https://rafaelneto.dev',
         dateFormatter: val => {
           return new Date().toISOString()
         }
@@ -145,7 +145,7 @@ module.exports = {
     [
       'feed',
       {
-        canonical_base: 'https://rneto.es',
+        canonical_base: 'https://rafaelneto.dev',
         feeds: {
           rss2: {
             enable: true,
@@ -167,7 +167,7 @@ module.exports = {
       {
         platform: 'github-v4',
         owner: 'rneto',
-        repo: 'rneto.es',
+        repo: 'rafaelneto.dev',
         clientId: 'd08327ef8b1457b3432a',
         clientSecret: 'b698b4ae39532b21aee0521a9c28af4a83362892',
       },

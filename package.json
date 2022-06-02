@@ -1,12 +1,12 @@
 {
-  "name": "rneto-es-blog-vuepress",
+  "name": "rafaelneto-dev-blog-vuepress",
   "version": "0.0.1",
   "description": "Rafael Neto. Apuntes de un programador Full Stack, JavaScript, HTML, CSS, .NET",
   "main": "index.js",
   "authors": {
     "name": "Rafael Neto"
   },
-  "repository": "https://github.com/rneto/rneto-es-blog-vuepress",
+  "repository": "https://github.com/rneto/rafaelneto-dev-blog-vuepress",
   "scripts": {
     "dev": "vuepress dev blog",
     "build": "vuepress build blog"

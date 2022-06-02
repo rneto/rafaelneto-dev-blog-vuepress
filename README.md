@@ -1,11 +1,11 @@
-# rneto-es-blog-vuepress
+# rafaelneto-dev-blog-vuepress
 
-> My personal blog source code based in VuePress. See te result [here](https://rneto.es).
+> My personal blog source code based in VuePress. See te result [here](https://rafaelneto.dev).
 
 Are you interested in knowing how I have done it?
 
-- (Spanish) [Create a static blog with VuePress](https://rneto.es/blog/crear-blog-estatico-vuepress/)
-- (Spanish) [Use GitHub Actions to automate the generation and deployment of a static blog created with VuePress on GitHub Pages](https://rneto.es/blog/usar-github-actions-automatizar-generacion-despliegue-blog-estatico-vuepress-github-pages/)
+- (Spanish) [Create a static blog with VuePress](https://rafaelneto.dev/blog/crear-blog-estatico-vuepress/)
+- (Spanish) [Use GitHub Actions to automate the generation and deployment of a static blog created with VuePress on GitHub Pages](https://rafaelneto.dev/blog/usar-github-actions-automatizar-generacion-despliegue-blog-estatico-vuepress-github-pages/)
 
 ## Install the dependencies and start the local server
 

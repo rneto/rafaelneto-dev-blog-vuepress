@@ -42,7 +42,7 @@ jobs:
         BUILD_DIR: blog/.vuepress/dist/
 ```
 
-Si quieres ver cómo he configurado mi dominio personalizado _rneto.es_ de GitHub para el correcto despliegue y posterior funcionamiento de la web, échale un vistazo a mi fichero [vuepress-deploy.yml](https://github.com/rneto/rneto-es-blog-vuepress/blob/master/.github/workflows/vuepress-deploy.yml), donde encontrarás la configuración CNAME necesaria.
+Si quieres ver cómo he configurado mi dominio personalizado _rafaelneto.dev_ de GitHub para el correcto despliegue y posterior funcionamiento de la web, échale un vistazo a mi fichero [vuepress-deploy.yml](https://github.com/rneto/rafaelneto-dev-blog-vuepress/blob/master/.github/workflows/vuepress-deploy.yml), donde encontrarás la configuración CNAME necesaria.
 
 En mi caso, he creado dichos directorios y fichero desde Visual Studio Code y cuando he intentado sincronizarlo con mi rama _master_ de origen la primera vez, me he encontrado con el siguiente error:
 

@@ -26,7 +26,7 @@ Este sería un claro ejemplo de qué podemos llegar a hacer con Tailwind CSS:
       <div class="relative px-4 py-10 bg-white shadow-lg sm:rounded-3xl sm:p-20">
         <div class="max-w-md mx-auto">
           <div>
-            <img src="https://rneto.es/images/logo.png" class="h-7 sm:h-8" />
+            <img src="https://rafaelneto.dev/images/logo.png" class="h-7 sm:h-8" />
           </div>
           <div class="divide-y divide-gray-200">
             <div class="py-8 text-base leading-6 space-y-4 text-gray-700 sm:text-lg sm:leading-7">
@@ -66,7 +66,7 @@ Este sería un claro ejemplo de qué podemos llegar a hacer con Tailwind CSS:
             </div>
             <div class="pt-6 text-base leading-6 font-bold sm:text-lg sm:leading-7">
               <p>
-                <a href="https://rneto.es" class="text-green-600 hover:text-green-700"> Rafael Neto </a>
+                <a href="https://rafaelneto.dev" class="text-green-600 hover:text-green-700"> Rafael Neto </a>
               </p>
             </div>
           </div>

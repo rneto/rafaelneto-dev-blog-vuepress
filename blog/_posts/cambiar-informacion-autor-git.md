@@ -11,7 +11,7 @@ permalink: /blog/:slug
 
 Cuando por algún motivo queramos cambiar el nombre o el email que están registrados en los commits de un repositorio [Git](https://git-scm.com/), será necesario reescribir todo el histórico del repositorio.
 
-Una de las formas hacerlo es con el comando [filter-branch](https://git-scm.com/docs/git-filter-branch) creado para la reescritura de ramas. Con él podemos definir un script que se encargará de reemplazas los nombres e emails antiguos por nuevos valores.
+Una de las formas de hacerlo es con el comando [filter-branch](https://git-scm.com/docs/git-filter-branch) creado para la reescritura de ramas. Con él podemos definir un script que se encargará de reemplazas los nombres e emails antiguos por nuevos valores.
 
 Es muy importante recalcar que **estamos reescribiendo el histórico de nuestro repositorio** por lo que este comando debe ser usado con extremo cuidado.
 
@@ -24,7 +24,7 @@ git clone --bare <repository-url>
 cd <repository-folder>
 ```
 
-A continuación ejecutamos el siguiente script reemplazando previamente los valores de las variables _ANTIGUO_EMAIL_, _NUEVO_USUARIO_ y _NUEVO_EMAIL_ por nuestros datos:
+A continuación ejecutamos el siguiente script, reemplazando previamente los valores de las variables _ANTIGUO_EMAIL_, _NUEVO_USUARIO_ y _NUEVO_EMAIL_ por nuestros datos:
 ``` bash
 git filter-branch --env-filter '
 

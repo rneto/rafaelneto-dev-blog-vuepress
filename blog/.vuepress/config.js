@@ -2,11 +2,11 @@ module.exports = {
   head: [
     ['link', { rel: 'icon', href: '/images/logo.png' }],
     ['link', { rel: 'manifest', href: '/manifest.json' }],
-    ['meta', { name: 'theme-color', content: '#8a278c' }],
+    ['meta', { name: 'theme-color', content: '#d66056' }],
     ['meta', { name: 'apple-mobile-web-app-capable', content: 'yes' }],
     ['meta', { name: 'apple-mobile-web-app-status-bar-style', content: 'black' }],
     ['link', { rel: 'apple-touch-icon', href: '/images/icons/icon-152x152.png' }],
-    ['link', { rel: 'mask-icon', href: '/icons/safari-pinned-tab.svg', color: '#8a278c' }],
+    ['link', { rel: 'mask-icon', href: '/icons/safari-pinned-tab.svg', color: '#d66056' }],
     ['meta', { name: 'msapplication-TileImage', content: '/images/icons/icon-144x144' }],
     ['meta', { name: 'msapplication-TileColor', content: '#000000' }]
   ],

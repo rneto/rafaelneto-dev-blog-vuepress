@@ -6,7 +6,10 @@
 
 @import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,600;1,300&display=swap');
 
-body, 
+body
+  font-size 18px
+
+body,
 .header-wrapper .title a,
 .header-wrapper .header-right-wrap .nav .nav-item a,
 .header-wrapper .header-right-wrap .search-box,
@@ -15,11 +18,33 @@ body,
 .vuepress-blog-theme-content,
 .ui-post-title,
 .ui-post-title a,
-.vuepress-blog-theme-content
+h1, h2, h3, h4, h5, h6
   font-family: 'Open Sans', sans-serif !important
+
+blockquote
+  background-color: #e9e9e9
+
+p, ul, ol
+  line-height 2
+
+.post-tag
+  font-size: 16px
+  line-height 1.7
+
+.vuepress-blog-theme-content
+  padding: 0 !important
+  box-shadow: none !important
+  font-size: 18px !important
 
 .home .hero img
   max-width: 450px !important
+
+#header
+  position: relative !important
+  box-shadow: none !important
+
+.content-wrapper
+  padding-top: 60px !important
 
 .social-share--header
   position: absolute !important
@@ -34,3 +59,10 @@ body,
 
 .social-share--footer
   text-align: center
+
+.search-box input
+  border: 0 !important
+  background-color: #e9e9e9 !important
+
+.header-wrapper .header-right-wrap .nav .nav-item a
+  font-size: 16px

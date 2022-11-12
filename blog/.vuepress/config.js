@@ -31,12 +31,23 @@ module.exports = {
         title: "Blog",
         path: "/blog/",
         itemPermalink: "/blog/:slug"
+      },
+      {
+        id: "en_blog",
+        dirname: "_en/_posts",
+        title: "Blog",
+        path: "/en/blog/",
+        itemPermalink: "/en/blog/:slug"
       }
     ],
     /**
      * Ref: https://vuepress-theme-blog.billyyyyy3320.com/config/#nav
      */
     nav: [
+      {
+        text: 'English',
+        link: '/en/blog/',
+      },
       {
         text: 'Blog',
         link: '/blog/',
@@ -78,7 +89,7 @@ module.exports = {
     /**
      * Ref: https://vuepress-theme-blog.billyyyyy3320.com/config/#dateformat
      */
-    dateFormat: 'DD/MM/YYYY',
+    dateFormat: 'YYYY-MM-DD',
     NOcomment: {
       service: "vssue",
       prefix: "[Post]",
@@ -90,9 +101,14 @@ module.exports = {
   },
   locales: {
     '/': {
-      lang: 'es',
+      lang: 'es-ES',
       title: 'Rafael Neto',
       description: 'Apuntes de un programador Full Stack, JavaScript, HTML, CSS, .NET',
+    },
+    '/en/': {
+      lang: 'en-US',
+      title: 'Rafael Neto',
+      description: 'Notes from a Full Stack developer, JavaScript, HTML, CSS, .NET'
     }
   },
   plugins: [

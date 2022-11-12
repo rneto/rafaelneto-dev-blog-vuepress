@@ -4,12 +4,15 @@ tags:
   - VuePress
   - Vuejs
   - blog
+summary: VuePress es un potente generador de sitios web estáticos basado en Vue.js. Combina el uso de markdown, Vue y webpack ...
 permalink: /blog/:slug
 ---
 
 # Crear un blog estático con VuePress
 
 <social-share class="social-share--header" />
+
+Español | [English](/en/blog/create-static-blog-vuepress/)
 
 [VuePress](https://vuepress.vuejs.org) es un potente generador de sitios web estáticos basado en [Vue.js](https://vuejs.org/). Combina el uso de **markdown**, **Vue** y **webpack** para generar HTML estático pre-renderizado para cada página, que se ejecuta como una SPA una vez Vue toma el control tras la carga de una página.
 

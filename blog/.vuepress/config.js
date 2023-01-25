@@ -69,7 +69,7 @@ module.exports = {
       ],
       copyright: [
         {
-          text: "Rafael Neto © 2022",
+          text: "Rafael Neto © 2023",
           link: "/index.html"
         }
       ]

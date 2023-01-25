@@ -1,8 +1,7 @@
 ---
 date: 2020-11-26
 tags:
-  - ASPNET
-  - NETCore
+  - ASPNETCore
   - IIS
   - WebDeploy
   - VisualStudio

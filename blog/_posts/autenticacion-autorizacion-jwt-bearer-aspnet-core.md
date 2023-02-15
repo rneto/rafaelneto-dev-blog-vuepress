@@ -17,7 +17,7 @@ Español | [English](/en/blog/aspnet-core-jwt-bearer-authentication-authorizatio
 La autenticación basada en token es un esquema de autenticación HTTP en el cual la seguridad se apoya en el uso de cadenas de texto encriptadas, normalmente generadas por el servidor y que identifican al portador (bearer) del mensaje mediante la inclusión de dichas cadenas (token) en todas las peticiones de recursos realizas al servidor.
 
 
-## Json Web Tokens (JWT)
+## JSON Web Tokens (JWT)
 
 Es un estándar que define la forma de transmitir de manera compacta y segura información entre las partes mediante un objecto JSON y que se usa normalmente en los escenarios de autorización de acceso a recursos por parte de los usuarios y también como medio para transmitir la información de forma segura entre las partes.
 

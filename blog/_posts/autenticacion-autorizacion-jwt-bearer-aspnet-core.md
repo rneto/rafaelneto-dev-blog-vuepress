@@ -360,3 +360,6 @@ Y finalmente el registro del requisito y el controlador en _Program.cs_:
 ```
 
 [Documentación oficial en learn.microsoft.com.](https://learn.microsoft.com/es-es/aspnet/core/security/authorization/resourcebased)
+
+---
+<social-share class="social-share--footer" />

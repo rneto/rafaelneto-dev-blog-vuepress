@@ -353,3 +353,6 @@ And finally the registration of the requirement and the handler in _Program.cs_:
 ```
 
 [Official documentation at learn.microsoft.com.](https://learn.microsoft.com/en-us/aspnet/core/security/authorization/resourcebased)
+
+---
+<social-share class="social-share--footer" />

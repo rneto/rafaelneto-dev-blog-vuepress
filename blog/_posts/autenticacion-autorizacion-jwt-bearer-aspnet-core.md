@@ -37,9 +37,9 @@ Al conjunto de controladores de autenticación y sus configuraciones es a lo que
 Para cada esquema que queramos utilizar, deberemos registra los correspondientes servicios de autenticación desde _Program.cs_ tras la llamada a _AddAuthentication_:
 
 ```csharp
-  builder.Services.AddAuthentication()
-    .AddJwtBearer()
-    .AddJwtBearer("OtherAuthServer");
+builder.Services.AddAuthentication()
+  .AddJwtBearer()
+  .AddJwtBearer("OtherAuthServer");
 ```
 
 Ejemplo de configuración basado en la siguiente configuración:
@@ -82,18 +82,17 @@ Además de ello, existen escenarios donde es necesario un paso de autenticación
 Cabe destacar la importancia de la clase _ClaimsPrincipal_ en ASP.NET Core ya que se usa para representar una entidad de seguridad sobre la que tomaremos las decisiones relativas a los permisos. En una solicitud HTTP por ejemplo, es la clase de la que deriva el usuario que podemos encontrar en la clase _HttpContext_:
 
 ```csharp
-  ClaimsPrincipal principal = HttpContext.Current.User as ClaimsPrincipal;
-  if (null != principal)
+ClaimsPrincipal principal = HttpContext.Current.User as ClaimsPrincipal;
+if (null != principal)
+{
+  foreach (Claim claim in principal.Claims)
   {
-    foreach (Claim claim in principal.Claims)
-    {
-        Response.Write("CLAIM TYPE: " + claim.Type + "; CLAIM VALUE: " + claim.Value + "</br>");
-    }
+      Response.Write("CLAIM TYPE: " + claim.Type + "; CLAIM VALUE: " + claim.Value + "</br>");
   }
+}
 ```
 
 [Información general sobre la autenticación de ASP.NET Core en learn.microsoft.com.](https://learn.microsoft.com/es-es/aspnet/core/security/authentication)
-
 
 ## Tipos de autorización
 
@@ -104,7 +103,6 @@ Una vez identificado el usuario, .NET nos ofrece múltiples formas de validar su
 - [Autorización basada en directivas](/blog/autenticacion-autorizacion-jwt-bearer-aspnet-core/#autorizacion-basada-en-directivas)
 - [Autorización basada en recursos](/blog/autenticacion-autorizacion-jwt-bearer-aspnet-core/#autorizacion-basada-en-recursos)
 
-
 ### Autorización basada en roles
 
 Al crearse una entidad, ésta puede pertenecer a uno o varios roles, los cuales se usan para validar el acceso del usuario a los servicios. Es el clásico ejemplo de pertenecer a los roles de _Administrator_ y _User_.
@@ -112,45 +110,44 @@ Al crearse una entidad, ésta puede pertenecer a uno o varios roles, los cuales 
 Registro de servicios de autorización basados en roles desde _Program.cs_ y que se encargará de usar los esquemas antes registrados:
 
 ```csharp
-  builder.Services.AddDefaultIdentity<IdentityUser>( ... )
-      .AddRoles<IdentityRole>()
+builder.Services.AddDefaultIdentity<IdentityUser>( ... )
+    .AddRoles<IdentityRole>()
 ```
 
 Comprobaciones de acceso basadas en roles:
 
 ```csharp
-  [Authorize(Roles = "Administrator, User")]
-  public class FileManagerController : Controller
-  {
-      public IActionResult Read() =>
-          Content("Administrator or User");
+[Authorize(Roles = "Administrator, User")]
+public class FileManagerController : Controller
+{
+    public IActionResult Read() =>
+        Content("Administrator or User");
 
-      [Authorize(Roles = "Administrator")]
-      public IActionResult Delete() =>
-          Content("Administrator only");
-  }
+    [Authorize(Roles = "Administrator")]
+    public IActionResult Delete() =>
+        Content("Administrator only");
+}
 ```
 
 Registro de servicios de autorización basados en roles mediante la sintaxis de directiva desde _Program.cs_ y que se encargará de usar los esquemas antes registrados:
 
 ```csharp
-  builder.Services.AddAuthorization(options =>
-  {
-      options.AddPolicy("IsAdministratorRole",
-          policy => policy.RequireRole("Administrator"));
-  });
+builder.Services.AddAuthorization(options =>
+{
+    options.AddPolicy("IsAdministratorRole",
+        policy => policy.RequireRole("Administrator"));
+});
 ```
 
 Comprobaciones de acceso basadas en roles:
 
 ```csharp
-  [Authorize(Policy = "IsAdministratorRole")]
-  public IActionResult Delete() =>
-          Content("Administrator only");
+[Authorize(Policy = "IsAdministratorRole")]
+public IActionResult Delete() =>
+        Content("Administrator only");
 ```
 
 [Documentación oficial en learn.microsoft.com.](https://learn.microsoft.com/es-es/aspnet/core/security/authorization/roles)
-
 
 ### Autorización basada en notificaciones
 
@@ -159,47 +156,46 @@ Al crearse una entidad, se la añaden nuevas notificaciones (_claims_, clave-val
 Registro de servicios de autorización basados en notificaciones desde _Program.cs_ y que se encargará de usar los esquemas antes registrados:
 
 ```csharp
-  builder.Services.AddAuthorization(options =>
+builder.Services.AddAuthorization(options =>
+{
+  options.AddPolicy("IdentifiedUser", policy =>
   {
-    options.AddPolicy("IdentifiedUser", policy =>
-    {
-      policy.RequireClaim("UserId");
-    });
-
-    options.AddPolicy("HasAPIScope", policy =>
-    {
-        policy.RequireAuthenticatedUser();
-        policy.RequireClaim("scope", "api");
-    });
+    policy.RequireClaim("UserId");
   });
-  ...
-  app.UseAuthorization();
+
+  options.AddPolicy("HasAPIScope", policy =>
+  {
+      policy.RequireAuthenticatedUser();
+      policy.RequireClaim("scope", "api");
+  });
+});
+//...
+app.UseAuthorization();
 ```
 
 Comprobaciones de acceso basadas en notificaciones:
 
 ```csharp
-  [Authorize(Policy = "IdentifiedUser")]
-  public class UserDataController : Controller
-  {
-      public IActionResult Profile() =>
-          Content("IdentifiedUser only");
+[Authorize(Policy = "IdentifiedUser")]
+public class UserDataController : Controller
+{
+    public IActionResult Profile() =>
+        Content("IdentifiedUser only");
 
-      [AllowAnonymous]
-      public IActionResult Index() =>
-          Content("Any");
-  }
+    [AllowAnonymous]
+    public IActionResult Index() =>
+        Content("Any");
+}
 
-  [Authorize(Policy = "HasAPIScope")]
-  public class SomeAPIController : Controller
-  {
-      public IActionResult DoSomething() =>
-          Content("HasAPIScope only");
-  }
+[Authorize(Policy = "HasAPIScope")]
+public class SomeAPIController : Controller
+{
+    public IActionResult DoSomething() =>
+        Content("HasAPIScope only");
+}
 ```
 
 [Documentación oficial en learn.microsoft.com.](https://learn.microsoft.com/es-es/aspnet/core/security/authorization/claims)
-
 
 ### Autorización basada en directivas
 
@@ -208,23 +204,23 @@ En este caso, la validación se lleva a cabo mediante la comprobación de los re
 Registro de servicios de autorización basados en directivas desde _Program.cs_ y que se encargará de usar los esquemas antes registrados:
 
 ```csharp
-  builder.Services.AddAuthorization(options =>
-  {
-      options.AddPolicy("IsRestrictedIP", policy =>
-          policy.Requirements.Add(new IPAddressRequirement(new List<string>(){"224.0.0.0", "224.0.0.1"})));
-  });
+builder.Services.AddAuthorization(options =>
+{
+    options.AddPolicy("IsRestrictedIP", policy =>
+        policy.Requirements.Add(new IPAddressRequirement(new List<string>(){"224.0.0.0", "224.0.0.1"})));
+});
 ```
 _IPRequirement_ es un clase definida por nosotros que implementa la interfaz _IAuthorizationRequirement_ y se utiliza como parámetro en la creación de los requerimientos de la directiva.
 
 ```csharp
-  using Microsoft.AspNetCore.Authorization;
-  public class IPAddressRequirement : IAuthorizationRequirement
-  {
-      public IPAddressRequirement(List<string> ips) =>
-          Ips = ips;
+using Microsoft.AspNetCore.Authorization;
+public class IPAddressRequirement : IAuthorizationRequirement
+{
+    public IPAddressRequirement(List<string> ips) =>
+        Ips = ips;
 
-      public List<string> Ips { get; }
-  }
+    public List<string> Ips { get; }
+}
 ```
 
 Además del requisito, también es necesario definir el controlador responsable de evaluar sus propiedades. Para ello crearemos el controlador implementando la interfaz _AuthorizationHandler\<TRequirement\>_, donde _TRequirement_ es el requisito a controlar.
@@ -255,20 +251,19 @@ builder.Services.AddSingleton<IAuthorizationHandler, IPAddressHandler>();
 Comprobaciones de acceso basadas en directivas:
 
 ```csharp
-  [AllowAnonymous]
-  public class UserDataController : Controller
-  {
-      [Authorize(Policy = "IsRestrictedIP")]
-      public IActionResult Detail() =>
-          Content("IsRestrictedIP only");
+[AllowAnonymous]
+public class UserDataController : Controller
+{
+    [Authorize(Policy = "IsRestrictedIP")]
+    public IActionResult Detail() =>
+        Content("IsRestrictedIP only");
 
-      public IActionResult Index() =>
-          Content("Any");
-  }
+    public IActionResult Index() =>
+        Content("Any");
+}
 ```
 
 [Documentación oficial en learn.microsoft.com.](https://learn.microsoft.com/es-es/aspnet/core/security/authorization/policies)
-
 
 ### Autorización basada en recursos
 
@@ -288,41 +283,42 @@ public class MediaServerController : Controller
         this.authorizationService = authorizationService;
         this.mediaServerRepository = mediaServerRepository;
     }
-    ...
+    //...
 }
 ```
 
 Usaremos el servicio de autorización para realizar una validación de autorización personalizada durante la recuperación del recurso.
 
 ```csharp
-  public class MediaServerController : Controller
-    ...
-    public async Task<IActionResult> OnGetConfigurationAsync(Guid mediaServerId)
-    {
-        MediaServer mediaServer = mediaServerRepository.Find(mediaServerId);
+public class MediaServerController : Controller
+{
+  //...
+  public async Task<IActionResult> OnGetConfigurationAsync(Guid mediaServerId)
+  {
+      MediaServer mediaServer = mediaServerRepository.Find(mediaServerId);
 
-        if (mediaServer == null)
-        {
-            return new NotFoundResult();
-        }
+      if (mediaServer == null)
+      {
+          return new NotFoundResult();
+      }
 
-        var authorizationResult = await authorizationService
-                .AuthorizeAsync(User, mediaServer, "GetConfigurationPolicy");
+      var authorizationResult = await authorizationService
+              .AuthorizeAsync(User, mediaServer, "GetConfigurationPolicy");
 
-        if (authorizationResult.Succeeded)
-        {
-            return Page();
-        }
-        else if (User.Identity.IsAuthenticated)
-        {
-            return new ForbidResult();
-        }
-        else
-        {
-            return new ChallengeResult();
-        }
-    }
+      if (authorizationResult.Succeeded)
+      {
+          return Page();
+      }
+      else if (User.Identity.IsAuthenticated)
+      {
+          return new ForbidResult();
+      }
+      else
+      {
+          return new ChallengeResult();
+      }
   }
+}
 ```
 
 Definición del requisito y controlador responsable de evaluar sus propiedades.
@@ -350,13 +346,13 @@ public class MediaServerAuthorizationHandler :
 Y finalmente el registro del requisito y el controlador en _Program.cs_:
 
 ```csharp
-  builder.Services.AddAuthorization(options =>
-  {
-      options.AddPolicy("GetConfigurationPolicy", policy =>
-          policy.Requirements.Add(new SameCountryRequirement()));
-  });
+builder.Services.AddAuthorization(options =>
+{
+    options.AddPolicy("GetConfigurationPolicy", policy =>
+        policy.Requirements.Add(new SameCountryRequirement()));
+});
 
-  builder.Services.AddSingleton<IAuthorizationHandler, MediaServerAuthorizationHandler>();
+builder.Services.AddSingleton<IAuthorizationHandler, MediaServerAuthorizationHandler>();
 ```
 
 [Documentación oficial en learn.microsoft.com.](https://learn.microsoft.com/es-es/aspnet/core/security/authorization/resourcebased)

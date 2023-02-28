@@ -35,9 +35,9 @@ The set of authentication handlers and their configurations is what we call auth
 For each scheme we want to use, we must register the corresponding authentication services from _Program.cs_ after calling _AddAuthentication_:
 
 ```csharp
-  builder.Services.AddAuthentication()
-    .AddJwtBearer()
-    .AddJwtBearer("OtherAuthServer");
+builder.Services.AddAuthentication()
+  .AddJwtBearer()
+  .AddJwtBearer("OtherAuthServer");
 ```
 
 Example configuration based on the following configuration:
@@ -80,14 +80,14 @@ In addition, there are scenarios where a remote authentication step is necessary
 It is worth noting the importance of the _ClaimsPrincipal_ class in ASP.NET Core as it is used to represent a security entity on which we will make decisions regarding permissions. In an HTTP request for example, it is the class from which derives the user that we can find in the _HttpContext_ class:
 
 ```csharp
-  ClaimsPrincipal principal = HttpContext.Current.User as ClaimsPrincipal;
-  if (null != principal)
+ClaimsPrincipal principal = HttpContext.Current.User as ClaimsPrincipal;
+if (null != principal)
+{
+  foreach (Claim claim in principal.Claims)
   {
-    foreach (Claim claim in principal.Claims)
-    {
-        Response.Write("CLAIM TYPE: " + claim.Type + "; CLAIM VALUE: " + claim.Value + "</br>");
-    }
+      Response.Write("CLAIM TYPE: " + claim.Type + "; CLAIM VALUE: " + claim.Value + "</br>");
   }
+}
 ```
 
 [Overview of ASP.NET Core authentication at learn.microsoft.com.](https://learn.microsoft.com/en-us/aspnet/core/security/authentication)
@@ -108,41 +108,41 @@ When an entity is created, it can belong to one or more roles, which are used to
 Registration of role-based authorization services from _Program.cs_ and that will take care of using the previously registered schemes:
 
 ```csharp
-  builder.Services.AddDefaultIdentity<IdentityUser>( ... )
-      .AddRoles<IdentityRole>()
+builder.Services.AddDefaultIdentity<IdentityUser>( ... )
+    .AddRoles<IdentityRole>()
 ```
 
 Role-based access checks:
 
 ```csharp
-  [Authorize(Roles = "Administrator, User")]
-  public class FileManagerController : Controller
-  {
-      public IActionResult Read() =>
-          Content("Administrator or User");
+[Authorize(Roles = "Administrator, User")]
+public class FileManagerController : Controller
+{
+    public IActionResult Read() =>
+        Content("Administrator or User");
 
-      [Authorize(Roles = "Administrator")]
-      public IActionResult Delete() =>
-          Content("Administrator only");
-  }
+    [Authorize(Roles = "Administrator")]
+    public IActionResult Delete() =>
+        Content("Administrator only");
+}
 ```
 
 Registration of role-based authorization services using the directive syntax from _Program.cs_ and that it will be removed from using the previously registered schemes:
 
 ```csharp
-  builder.Services.AddAuthorization(options =>
-  {
-      options.AddPolicy("IsAdministratorRole",
-          policy => policy.RequireRole("Administrator"));
-  });
+builder.Services.AddAuthorization(options =>
+{
+    options.AddPolicy("IsAdministratorRole",
+        policy => policy.RequireRole("Administrator"));
+});
 ```
 
 Role-based access checks:
 
 ```csharp
-  [Authorize(Policy = "IsAdministratorRole")]
-  public IActionResult Delete() =>
-          Content("Administrator only");
+[Authorize(Policy = "IsAdministratorRole")]
+public IActionResult Delete() =>
+        Content("Administrator only");
 ```
 
 [Official documentation at learn.microsoft.com.](https://learn.microsoft.com/es-es/aspnet/core/security/authorization/roles)
@@ -154,43 +154,43 @@ When an entity is created, new claims (key-value) issued by a trusted entity are
 Registration of authorization services based on claims from _Program.cs_ and that will take care of using the previously registered schemes:
 
 ```csharp
-  builder.Services.AddAuthorization(options =>
+builder.Services.AddAuthorization(options =>
+{
+  options.AddPolicy("IdentifiedUser", policy =>
   {
-    options.AddPolicy("IdentifiedUser", policy =>
-    {
-      policy.RequireClaim("UserId");
-    });
-
-    options.AddPolicy("HasAPIScope", policy =>
-    {
-        policy.RequireAuthenticatedUser();
-        policy.RequireClaim("scope", "api");
-    });
+    policy.RequireClaim("UserId");
   });
-  ...
-  app.UseAuthorization();
+
+  options.AddPolicy("HasAPIScope", policy =>
+  {
+      policy.RequireAuthenticatedUser();
+      policy.RequireClaim("scope", "api");
+  });
+});
+//...
+app.UseAuthorization();
 ```
 
 Claim-based access checks:
 
 ```csharp
-  [Authorize(Policy = "IdentifiedUser")]
-  public class UserDataController : Controller
-  {
-      public IActionResult Profile() =>
-          Content("IdentifiedUser only");
+[Authorize(Policy = "IdentifiedUser")]
+public class UserDataController : Controller
+{
+    public IActionResult Profile() =>
+        Content("IdentifiedUser only");
 
-      [AllowAnonymous]
-      public IActionResult Index() =>
-          Content("Any");
-  }
+    [AllowAnonymous]
+    public IActionResult Index() =>
+        Content("Any");
+}
 
-  [Authorize(Policy = "HasAPIScope")]
-  public class SomeAPIController : Controller
-  {
-      public IActionResult DoSomething() =>
-          Content("HasAPIScope only");
-  }
+[Authorize(Policy = "HasAPIScope")]
+public class SomeAPIController : Controller
+{
+    public IActionResult DoSomething() =>
+        Content("HasAPIScope only");
+}
 ```
 
 [Official documentation at learn.microsoft.com.](https://learn.microsoft.com/en-us/aspnet/core/security/authorization/claims)
@@ -202,23 +202,23 @@ In this case, validation is performed by checking the requirements registered du
 Registration of policy-based authorization services from _Program.cs_ and that will take care of using the previously registered schemes:
 
 ```csharp
-  builder.Services.AddAuthorization(options =>
-  {
-      options.AddPolicy("IsRestrictedIP", policy =>
-          policy.Requirements.Add(new IPAddressRequirement(new List<string>(){"224.0.0.0", "224.0.0.1"})));
-  });
+builder.Services.AddAuthorization(options =>
+{
+    options.AddPolicy("IsRestrictedIP", policy =>
+        policy.Requirements.Add(new IPAddressRequirement(new List<string>(){"224.0.0.0", "224.0.0.1"})));
+});
 ```
 _IPRequirement_ is a class we have created and implements the _IAuthorizationRequirement_ interface and is used as a parameter in the creation of the policy requirements.
 
 ```csharp
-  using Microsoft.AspNetCore.Authorization;
-  public class IPAddressRequirement : IAuthorizationRequirement
-  {
-      public IPAddressRequirement(List<string> ips) =>
-          Ips = ips;
+using Microsoft.AspNetCore.Authorization;
+public class IPAddressRequirement : IAuthorizationRequirement
+{
+    public IPAddressRequirement(List<string> ips) =>
+        Ips = ips;
 
-      public List<string> Ips { get; }
-  }
+    public List<string> Ips { get; }
+}
 ```
 
 In addition to the requirement, it is also necessary to define the handler responsible for evaluating its properties. To do this we will create the handler by implementing the _AuthorizationHandler\<TRequirement\>_ interface, where _TRequirement_ is the requirement to be handled.
@@ -249,16 +249,16 @@ builder.Services.AddSingleton<IAuthorizationHandler, IPAddressHandler>();
 Policy-based access checks:
 
 ```csharp
-  [AllowAnonymous]
-  public class UserDataController : Controller
-  {
-      [Authorize(Policy = "IsRestrictedIP")]
-      public IActionResult Detail() =>
-          Content("IsRestrictedIP only");
+[AllowAnonymous]
+public class UserDataController : Controller
+{
+    [Authorize(Policy = "IsRestrictedIP")]
+    public IActionResult Detail() =>
+        Content("IsRestrictedIP only");
 
-      public IActionResult Index() =>
-          Content("Any");
-  }
+    public IActionResult Index() =>
+        Content("Any");
+}
 ```
 
 [Official documentation at learn.microsoft.com.](https://learn.microsoft.com/en-us/aspnet/core/security/authorization/policies)
@@ -281,41 +281,42 @@ public class MediaServerController : Controller
         this.authorizationService = authorizationService;
         this.mediaServerRepository = mediaServerRepository;
     }
-    ...
+    //...
 }
 ```
 
 We will use the authorization service to perform a custom authorization validation during resource recovery.
 
 ```csharp
-  public class MediaServerController : Controller
-    ...
-    public async Task<IActionResult> OnGetConfigurationAsync(Guid mediaServerId)
-    {
-        MediaServer mediaServer = mediaServerRepository.Find(mediaServerId);
+public class MediaServerController : Controller
+{
+  //...
+  public async Task<IActionResult> OnGetConfigurationAsync(Guid mediaServerId)
+  {
+      MediaServer mediaServer = mediaServerRepository.Find(mediaServerId);
 
-        if (mediaServer == null)
-        {
-            return new NotFoundResult();
-        }
+      if (mediaServer == null)
+      {
+          return new NotFoundResult();
+      }
 
-        var authorizationResult = await authorizationService
-                .AuthorizeAsync(User, mediaServer, "GetConfigurationPolicy");
+      var authorizationResult = await authorizationService
+              .AuthorizeAsync(User, mediaServer, "GetConfigurationPolicy");
 
-        if (authorizationResult.Succeeded)
-        {
-            return Page();
-        }
-        else if (User.Identity.IsAuthenticated)
-        {
-            return new ForbidResult();
-        }
-        else
-        {
-            return new ChallengeResult();
-        }
-    }
+      if (authorizationResult.Succeeded)
+      {
+          return Page();
+      }
+      else if (User.Identity.IsAuthenticated)
+      {
+          return new ForbidResult();
+      }
+      else
+      {
+          return new ChallengeResult();
+      }
   }
+}
 ```
 
 Definition of the requirement and handler responsible for evaluating its properties.
@@ -343,13 +344,13 @@ public class MediaServerAuthorizationHandler :
 And finally the registration of the requirement and the handler in _Program.cs_:
 
 ```csharp
-  builder.Services.AddAuthorization(options =>
-  {
-      options.AddPolicy("GetConfigurationPolicy", policy =>
-          policy.Requirements.Add(new SameCountryRequirement()));
-  });
+builder.Services.AddAuthorization(options =>
+{
+    options.AddPolicy("GetConfigurationPolicy", policy =>
+        policy.Requirements.Add(new SameCountryRequirement()));
+});
 
-  builder.Services.AddSingleton<IAuthorizationHandler, MediaServerAuthorizationHandler>();
+builder.Services.AddSingleton<IAuthorizationHandler, MediaServerAuthorizationHandler>();
 ```
 
 [Official documentation at learn.microsoft.com.](https://learn.microsoft.com/en-us/aspnet/core/security/authorization/resourcebased)

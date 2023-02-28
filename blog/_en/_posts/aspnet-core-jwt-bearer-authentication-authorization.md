@@ -77,6 +77,8 @@ The user authentication action is performed by the **authentication handler**, w
 
 In addition, there are scenarios where a remote authentication step is necessary, such as [OAuth 2.0](https://oauth.net/2/) and [OIDC](https://openid.net/connect/), in which case the remote provider is responsible for authentication. This is the case for example of the use of Azure AD, Auth0, Identity Server, Okta, Facebook, Twitter, Google, Microsoft among others.
 
+> If you want to know more about Oauth 2.0 and OIDC, I recommend you to take a look at this other article I created about [Authorization flows with OAuth 2.0 and openID Connect](/en/blog/authorization-flows-oauth-2-0-openid-connect/).
+
 It is worth noting the importance of the _ClaimsPrincipal_ class in ASP.NET Core as it is used to represent a security entity on which we will make decisions regarding permissions. In an HTTP request for example, it is the class from which derives the user that we can find in the _HttpContext_ class:
 
 ```csharp

@@ -3,6 +3,7 @@ date: 2022-04-28
 tags:
   - Angular
   - PWA
+summary: Cuando generamos una aplicación Angular para su despliegue con la configuración de producción predeterminada, automáticamente nos encontramos con una serie de ficheros de fragmentos de código ...
 permalink: /blog/:slug
 ---
 

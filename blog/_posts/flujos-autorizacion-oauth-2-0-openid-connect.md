@@ -146,7 +146,7 @@ Este enfoque permite la posibilidad de utilizar varios servidores de autenticaci
 
 Otra forma es cuando no tenemos una tabla de usuarios. En ese caso necesitamos confiar en el sistema del servidor de autenticación y manejarlo usando el perfil de usuario, los _scopes_ y los _claims_ directamente.
 
-> **¿Cómo podemos utilizar el _refresh token_ para mantener viva una sesión web?** La mejor manera de manejar esto es redirigir al usuario al servidor de autenticación y dejar que el servidor de autorización mantenga la sesión para el usuario.
+> _¿Cómo podemos utilizar el _refresh token_ para mantener viva una sesión web?_ La mejor manera de manejar esto es redirigir al usuario al servidor de autenticación y dejar que el servidor de autorización mantenga la sesión para el usuario.
 
 ## Securizar una aplicación con OpenID Connect y Azure AD
 

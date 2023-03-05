@@ -146,7 +146,7 @@ This approach enables the possibility of using multiple authentication servers.
 
 Another way is when we don't have a user table. In that case we need to trust in the authentication server system and handle it using the user profile, scopes, and claims directly.
 
-> **How can we use the refresh token to keep a web session alive?** The best way to handle with that is redirect back the user to the authentication server and let the authorization server keep track the session for the user.
+> _How can we use the refresh token to keep a web session alive?_ The best way to handle with that is redirect back the user to the authentication server and let the authorization server keep track the session for the user.
 
 ## Secure application with OpenID Connect and Azure AD
 

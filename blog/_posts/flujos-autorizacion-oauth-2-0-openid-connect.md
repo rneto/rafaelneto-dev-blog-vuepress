@@ -10,7 +10,7 @@ summary: Un flujo de autorización es lo que permite que una aplicación cliente
 permalink: /blog/:slug
 ---
 
-# Flujos de autorización con OAuth 2.0 y openID Connect
+# Flujos de autorización con OAuth 2.0 y OpenID Connect
 
 <social-share class="social-share--header" />
 

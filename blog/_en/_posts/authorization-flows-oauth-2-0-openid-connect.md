@@ -10,7 +10,7 @@ summary: An authorization flow is what allows a client application such as web a
 permalink: /en/blog/:slug
 ---
 
-# Authorization flows with OAuth 2.0 and openID Connect
+# Authorization flows with OAuth 2.0 and OpenID Connect
 
 <social-share class="social-share--header" />
 

@@ -79,7 +79,7 @@ La acción de autenticación de los usuarios es llevada a cabo por el **controla
 
 Además de ello, existen escenarios donde es necesario un paso de autenticación remota como pueden ser [OAuth 2.0](https://oauth.net/2/) y [OIDC](https://openid.net/connect/), en cuyo caso el responsable de la autenticación es el proveedor remoto. Es el caso por ejemplo del uso de Azure AD, Auth0, Identity Server, Okta, Facebook, Twitter, Google, Microsoft entre otros.
 
-> Si quieres saber más sobre Oauth 2.0 y OIDC, te recomiendo que le eches un vistazo a este otro artículo que he creado sobre [Flujos de autorización con OAuth 2.0 y openID Connect](/blog/flujos-autorizacion-oauth-2-0-openid-connect/).
+> Si quieres saber más sobre Oauth 2.0 y OIDC, te recomiendo que le eches un vistazo a este otro artículo que he creado sobre [Flujos de autorización con OAuth 2.0 y OpenID Connect](/blog/flujos-autorizacion-oauth-2-0-openid-connect/).
 
 Cabe destacar la importancia de la clase _ClaimsPrincipal_ en ASP.NET Core ya que se usa para representar una entidad de seguridad sobre la que tomaremos las decisiones relativas a los permisos. En una solicitud HTTP por ejemplo, es la clase de la que deriva el usuario que podemos encontrar en la clase _HttpContext_:
 

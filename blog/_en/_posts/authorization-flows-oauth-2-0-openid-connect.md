@@ -22,7 +22,7 @@ An authorization flow is what allows a client application such as web applicatio
 
 OAuth 2.0 is a standard authorization framework that allows greater control over the scope of an application and authorization flows across multiple systems. OAuth 2.0 is all about access to resources with granular scopes that grant you permissions on behalf of a user.
 
-Before OpenID Connect, OAuth 2.0 was used for authentication and authorization, but the problem was that with OAuth we didn´t have the user information because OAuth don't cares who you are. OAuth was designed for permission and scopes, but there were a lot of companies (Facebook, Google, Twitter, etc) using OAuth 2.0 for their authentication process. All of them needed to create a custom implementation to supply the protocol lacks related to user identification (and that's why some documentation confuses us).
+Before OpenID Connect, OAuth 2.0 was used for authentication and authorization, but the problem was that with OAuth we didn´t have the user information because OAuth don't cares who you are. OAuth was designed for permission and scopes, but there were a lot of companies (Facebook, Google, Twitter, etc) using OAuth 2.0 for their authentication process. All of them needed to create a customized implementation to supply the protocol lacks related to user identification (and that's why some documentation confuses us).
 
 OAuth 2.0 was used for delegate authorization as well as overused for authentication with simple login, SSO and login on mobile apps.
 
@@ -50,15 +50,15 @@ Therefore, we should use OAuth 2.0 for authorization, that is, granting access t
 
 ### Key concepts
 
-- **Client ID**: Identifies the client (application) at the authorization server.
-- **Client secret**: The password/private key that only the client and de authorization server know.
-- **Authorization code**: Is a temporary code returned by the authentication server and used with the client secret by the application to exchange for the access token and the ID token.
-- **Access token**: It is the key the client will use to request data from the resource server.
-- **ID token**: It is the user profile information returned securely by the authentication server in JWT format. Could be extended calling the _user_info_ endpoint and must be checked by client to ensure that the _aud_ (audience, i.e. client) matches its _client_id_ and _iss_ (issuing authority) matches the domain (or sub-domain) of the issuer of the _client_id_.
-- **Access token**: It is an OAuth string used in a token-based authorization system to make requests to allow an application to access an API or resource server. They are the ones that are used as _**Bearer tokens**_.
-- **Refresh token**: It's a special token returned during the authentication code exchange and provides to the client the possibility to have continuous access to the resources while the user is not using the application. It allows an application to obtain a new access token without prompting the user via the refresh token flow. When used in the front channel to refresh the access token, it's protected by a HTTP Only cookies or using a new technique called _Refresh Token Rotation_ where a new refresh token is generated with each request. **A refresh token can compromise the app security allowing someone connect to the system.**
-- **Scopes**: Token access grants access to do specific things and scopes is the way of define with a granular way, how the client (application) requests that access (read email, write email, delete photo, etc). Is the mechanism used to limit the access to a user's data from a application.
-- **_opendid_ scope**: With this scope, the OAuth 2.0 request, turns into an OpenID Connect request. It means that the client is requesting an identifier (_id_) for the user. Others importants OpenID Connect scopes are:
+- _Client ID_: Identifies the client (application) at the authorization server.
+- _Client secret_: The password/private key that only the client and de authorization server know.
+- _Authorization code_: Is a temporary code returned by the authentication server and used with the client secret by the application to exchange for the access token and the ID token.
+- _Access token_: It is the key the client will use to request data from the resource server.
+- _ID token_: It is the user profile information returned securely by the authentication server in JWT format. Could be extended calling the _user_info_ endpoint and must be checked by client to ensure that the _aud_ (audience, i.e. client) matches its _client_id_ and _iss_ (issuing authority) matches the domain (or sub-domain) of the issuer of the _client_id_.
+- _Access token_: It is an OAuth string used in a token-based authorization system to make requests to allow an application to access an API or resource server. They are the ones that are used as _Bearer tokens_.
+- _Refresh token_: It's a special token returned during the authentication code exchange and provides to the client the possibility to have continuous access to the resources while the user is not using the application. It allows an application to obtain a new access token without prompting the user via the refresh token flow. When used in the front channel to refresh the access token, it's protected by a HTTP Only cookies or using a new technique called _Refresh Token Rotation_ where a new refresh token is generated with each request. _A refresh token can compromise the app security allowing someone connect to the system._
+- _Scopes_: Token access grants access to do specific things and scopes is the way of define with a granular way, how the client (application) requests that access (read email, write email, delete photo, etc). Is the mechanism used to limit the access to a user's data from a application.
+- _opendid_ scope: With this scope, the OAuth 2.0 request, turns into an OpenID Connect request. It means that the client is requesting an identifier (_id_) for the user. Others importants OpenID Connect scopes are:
   - _profile_: returns the profile information (defined by the server and the user) as first name, last name or picture.
   - _email_: returns the user email.
   - _address_: the user address.

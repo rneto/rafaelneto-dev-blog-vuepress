@@ -15,14 +15,14 @@ Español | [English](/en/blog/angular-internationalization-i18n/)
 
 Un paso básico en prácticamente todos los proyectos es configurar un sistema que nos permita idiomatizar nuestra aplicación. En ese sentido, el uso del sistema de internacionalización oficial de Angular nos permite estar más alineados con la evolución natural de Angular. Dicho sistema, basado en la generación de las traducciones en tiempo de compilación, crea tantas versiones de nuestra aplicación como diferentes idiomas hayamos definido, por lo que no necesitaremos un servicio de traducción o diccionario especial, simplemente tendremos los textos finales en la aplicación.
 
-Cuando hablamos de traducciones en tiempo de compilación, Angular reemplaza cada texto marcado con el texto de traducción correspondiente del archivo de traducción. Este proceso se ejecuta una vez para cada idioma, por lo que finalmente terminaremos con un paquete de aplicación para cada idioma.
+Cuando hablamos de traducciones en tiempo de compilación, Angular reemplaza cada texto marcado con el texto de traducción correspondiente del archivo de traducción. Este proceso se ejecuta una vez para cada idioma, por lo que finalmente terminaremos con un paquete de aplicación compuesto por varios paquetes, uno para cada idioma.
 
 Tengamos en cuenta las ventajas de este sistema:
 
 1. Más rendimiento porque no hay un diccionario de traducción cargado en memoria en tiempo de ejecución.
 1. Más rendimiento porque no es necesario traducir el texto de cada aplicación en cada evento de detección de cambio de aplicación.
 1. Mejor mantenibilidad por la mejor experiencia de desarrollo en la forma de usarlo.
-1. Mejor mantenibilidad por utilizando un formato de archivo bien extendido como es XLIFF.
+1. Mejor mantenibilidad por utilizar un formato de archivo bien extendido como es XLIFF.
 
 Y la principal desventaja:
 
@@ -36,7 +36,7 @@ Este sistema incluye varios pasos básicos:
 - Generación de archivos de traducción.
 - Construcción de un proyecto idiomatizado.
 
-## Initial configuration
+## Configuración inicial
 
 El primer paso es instalar las dependencias necesarias utilizando Angular CLI:
 
@@ -44,7 +44,7 @@ El primer paso es instalar las dependencias necesarias utilizando Angular CLI:
 
 Esto añadirá el paquete _@angular/localize_ y cargará la función `$localize` en el ámbito global.
 
-Angular utiliza _Unicode locale ID_ para localizar los datos, siendo su valor por defecto _en-US_. Si no, se puede especificar a través de la propiedad _sourceLocale_ en el archivo _angular.json_.
+Angular utiliza _Unicode locale ID_ para establecer la configuración regional (_localize_ en inglés, de ahí que a veces use la expresión _localizar_) de los datos, siendo su valor por defecto _en-US_. Si no, se puede especificar a través de la propiedad _sourceLocale_ en el archivo _angular.json_.
 
 ## Localización del contenido de la aplicación para formateo o extracción
 

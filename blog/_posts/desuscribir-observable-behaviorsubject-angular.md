@@ -180,7 +180,7 @@ export class MyComponent implements OnDestroy {
 }
 ```
 
-Al aplicar el decorador personalizado AutoUnsubscribe al componente, Angular llamará automáticamente al método _ngOnDestroy_ del componente cuando el componente se destruya, y el decorador se encargará de desuscribir todos los observables y subjects creados en el componente.
+Al aplicar el decorador personalizado _AutoUnsubscribe_ al componente, Angular llamará automáticamente al método _ngOnDestroy_ del componente cuando el componente se destruya, y el decorador se encargará de desuscribir todos los observables y subjects creados en el componente.
 
 > Es importante destacar que este patrón no es una solución mágica que funcionará en todos los casos. Por ejemplo, si se espera que un observable continúe emitiendo valores incluso después de que el componente se haya destruido, no es apropiado desuscribirlo en el método _ngOnDestroy_. En esos casos, deberías manejar la desuscripción en otra parte del código. Sin embargo, para la mayoría de los casos, este patrón puede ser una solución simple y efectiva para desuscribir observables en un componente en Angular.
 

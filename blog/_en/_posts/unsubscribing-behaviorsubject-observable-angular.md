@@ -176,7 +176,7 @@ export class MyComponent implements OnDestroy {
 }
 ```
 
-By applying the custom AutoUnsubscribe decorator to the component, Angular will automatically call the component's _ngOnDestroy_ method when the component is destroyed, and the decorator will take care of unsubscribing from all observables and subjects created in the component.
+By applying the custom _AutoUnsubscribe_ decorator to the component, Angular will automatically call the component's _ngOnDestroy_ method when the component is destroyed, and the decorator will take care of unsubscribing from all observables and subjects created in the component.
 
 > It is important to note that this pattern is not a magic solution that will work in all cases. For example, if an observable is expected to continue emitting values even after the component has been destroyed, it is not appropriate to unsubscribe from it in the ngOnDestroy method. In those cases, you should handle the unsubscription in another part of the code. However, for most cases, this pattern can be a simple and effective solution for unsubscribing from observables in an Angular component.
 

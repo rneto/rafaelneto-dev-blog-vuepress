@@ -3,6 +3,7 @@ date: 2021-8-5
 tags:
   - Angular
   - RxJs
+  - BehaviourSubject
 permalink: /blog/:slug
 ---
 
@@ -53,7 +54,9 @@ En el servicio hemos creado una propiedad privada `currentUserSubject` que prote
 
 Y finalmente nos encontramos con la variable pública de sólo lectura y _observable_ `currentUser`, que es la única vía desde la que los datos pueden ser consultados.
 
-A continuación ya podríamos suscribirnos al servicio para visualizar los datos (no nos olvidemos de desuscribirnos del observable cuando se destruya el componente _-ngOnDestroy-_):
+A continuación ya podríamos suscribirnos al servicio para visualizar los datos, sin olvidarnos de desuscribirnos del observable cuando se destruya el componente _ngOnDestroy()_.
+
+> Los observables son una herramienta poderosa para manejar datos asíncronos, sin embargo también pueden ser una fuente de problemas de memoria si no los gestionamos correctamente. Es por ello la importancia de [Desuscribir de un observable RxJs BehaviorSubject en Angular](/blog/desuscribir-observable-behaviorsubject-angular/).
 
 ``` js
 import { Component, OnDestroy, OnInit } from '@angular/core';

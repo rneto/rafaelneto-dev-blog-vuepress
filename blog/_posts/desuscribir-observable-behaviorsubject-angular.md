@@ -16,7 +16,11 @@ permalink: /blog/:slug
 
 Español | [English](/en/blog/unsubscribing-behaviorsubject-observable-angular/)
 
-Los observables son una herramienta poderosa en Angular para manejar flujos de datos asíncronos. Los BehaviourSubject son una variante especial de los observables que mantienen un estado actual y emiten ese estado a cualquier nuevo suscriptor. Esto lo hace muy útil por ejemplo para compartir información entre componentes en una aplicación Angular. Sin embargo, una vez que te suscribes a un BehaviourSubject, necesitas tener una forma de desuscribirte cuando ya no necesites recibir actualizaciones para evitar fugas de memoria. A continuación, te presento cinco formas de cómo desuscribirte de un observable BehaviourSubject en Angular.
+Los observables son una herramienta poderosa en Angular para manejar flujos de datos asíncronos. Los BehaviourSubject son una variante especial de los observables que mantienen un estado actual y emiten ese estado a cualquier nuevo suscriptor. Esto lo hace muy útil por ejemplo para compartir información entre componentes en una aplicación Angular. Sin embargo, una vez que te suscribes a un BehaviourSubject, necesitas tener una forma de desuscribirte cuando ya no necesites recibir actualizaciones para evitar fugas de memoria.
+
+> Si quieres saber más sobre las ventajas de usar RxJs BehaviorSubject, te recomiendo que le eches un vistazo a este otro artículo que he creado sobre [Gestionar el estado de una aplicación Angular usando RxJs BehaviorSubject para servicios de datos observables](/blog/gestionar-estado-angular-rxjs-behaviorsubject-servicios-datos-observables/).
+
+A continuación, te presento cinco formas de cómo desuscribirte de un observable en Angular.
 
 ## 1. Usando la variable Subscription
 La forma más común de desuscribirte de un BehaviourSubject es usar la variable Subscription que se devuelve cuando te suscribes. Puedes guardar esta variable en una propiedad de tu componente y luego llamar al método _unsubscribe()_ en el _ngOnDestroy()_ del componente para liberar la suscripción.

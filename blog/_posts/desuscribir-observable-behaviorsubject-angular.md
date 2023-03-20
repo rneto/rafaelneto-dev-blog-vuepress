@@ -129,7 +129,7 @@ En este ejemplo, el observable se suscribe al método _first()_, lo que signific
 
 La idea detrás de usar un patrón decorador para desuscribir observables en un componente de Angular es encapsular la lógica de suscripción y desuscripción de los observables en una única función que pueda ser llamada en el momento adecuado. Esto puede ayudar a reducir la complejidad del código y hacerlo más fácil de mantener.
 
-Un ejemplo de cómo se podría implementar este patrón, sería en en primer lugar crear un decorador personalizado para manejar la suscripción y desuscripción de los observables en un componente.
+Un ejemplo de cómo se podría implementar este patrón, sería en primer lugar crear un decorador personalizado para manejar la suscripción y desuscripción de los observables en un componente.
 
 ``` ts
 import { OnDestroy } from '@angular/core';

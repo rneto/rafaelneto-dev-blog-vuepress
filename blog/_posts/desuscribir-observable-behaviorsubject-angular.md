@@ -185,7 +185,7 @@ Al aplicar el decorador personalizado _AutoUnsubscribe_ al componente, Angular l
 
 > Es importante destacar que este patrón no es una solución mágica que funcionará en todos los casos. Por ejemplo, si se espera que un observable continúe emitiendo valores incluso después de que el componente se haya destruido, no es apropiado desuscribirlo en el método _ngOnDestroy_. En esos casos, deberías manejar la desuscripción en otra parte del código. Sin embargo, para la mayoría de los casos, este patrón puede ser una solución simple y efectiva para desuscribir observables en un componente en Angular.
 
-Puedes ver en acción y en StackBlitz un proyecto Angular que he creado con este [ejemplo de servicio de datos con RxJs BehaviorSubject y decorador para desuscribir](https://stackblitz.com/edit/angular-rxjs-behaviorsubject-unsuscribe-decorator).
+Puedes ver en acción y en StackBlitz un proyecto Angular que he creado con este [ejemplo de servicio de datos con RxJs BehaviorSubject y decorador para desuscribir](https://stackblitz.com/edit/angular-rxjs-behaviorsubject-unsubscribe-decorator).
 
 ---
 <social-share class="social-share--footer" />

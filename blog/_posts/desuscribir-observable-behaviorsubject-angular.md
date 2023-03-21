@@ -105,7 +105,10 @@ export class MyComponent implements OnInit {
     this.myService.myBehaviorSubject
       .pipe(take(1))
       .subscribe(value => {
-        this.value
+        this.value = value;
+      });
+  }
+}
 ```
 
 ## 4. Usando el método first()

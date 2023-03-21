@@ -22,14 +22,14 @@ Observables are a powerful tool in Angular to handle asynchronous data flows. Be
 The most common way to unsubscribe from a BehaviorSubject is to use the Subscription variable that is returned when you subscribe. You can save this variable to a property in your component and then call the _unsubscribe()_ method in the _ngOnDestroy()_ of the component to release the subscription.
 
 ``` ts
-import { Component, OnDestroy } from '@angular/core';
+import { Component, OnInit, OnDestroy } from '@angular/core';
 import { BehaviorSubject, Subscription } from 'rxjs';
 
 @Component({
   selector: 'app-my-component',
   template: `{{ value }}`,
 })
-export class MyComponent implements OnDestroy {
+export class MyComponent implements OnInit, OnDestroy {
   value: any;
   subscription: Subscription;
 
@@ -51,7 +51,7 @@ export class MyComponent implements OnDestroy {
 Another way to unsubscribe from a BehaviorSubject is to use the _takeUntil()_ operator. This operator takes an observable that emits a value and completes the original observable when a value is emitted in the secondary observable. You can create an observable that emits in the _ngOnDestroy()_ and pass that observable to the _takeUntil()_ operator.
 
 ``` ts
-import { Component, OnDestroy } from '@angular/core';
+import { Component, OnInit, OnDestroy } from '@angular/core';
 import { BehaviorSubject, Subject } from 'rxjs';
 import { takeUntil } from 'rxjs/operators';
 
@@ -59,7 +59,7 @@ import { takeUntil } from 'rxjs/operators';
   selector: 'app-my-component',
   template: `{{ value }}`,
 })
-export class MyComponent implements OnDestroy {
+export class MyComponent implements OnInit, OnDestroy {
   value: any;
   onDestroy$: Subject<void> = new Subject();
 
@@ -84,7 +84,7 @@ export class MyComponent implements OnDestroy {
 If you only need to receive a limited number of values from the BehaviorSubject, you can use the _take()_ operator instead of _unsubscribe()_. This operator takes a number n and completes the observable after receiving n values.
 
 ``` ts
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { BehaviorSubject } from 'rxjs';
 import { take } from 'rxjs/operators';
 
@@ -92,7 +92,7 @@ import { take } from 'rxjs/operators';
   selector: 'app-my-component',
   template: `{{ value }}`,
 })
-export class MyComponent {
+export class MyComponent implements OnInit {
   value: any;
 
   constructor(private myService: MyService) {}
@@ -128,9 +128,6 @@ The idea behind using a decorator pattern to unsubscribe from observables in an 
 An example of how this pattern could be implemented is to first create a custom decorator to handle subscription and unsubscription of observables in a component.
 
 ``` ts
-import { OnDestroy } from '@angular/core';
-import { Subject } from 'rxjs';
-
 // Create the custom decorator
 export function AutoUnsubscribe(constructor: any) {
   const original = constructor.prototype.ngOnDestroy;
@@ -152,26 +149,26 @@ This custom decorator implements the _OnDestroy_ interface of Angular, which is 
 Apply the decorator to the component.
 
 ``` ts
-import { Component } from '@angular/core';
-import { BehaviorSubject, Observable } from 'rxjs';
+import { Component, OnInit } from '@angular/core';
+import { BehaviorSubject, Subscription } from 'rxjs';
 import { AutoUnsubscribe } from './auto-unsubscribe.decorator';
+import { MyService } from './my.service';
 
 @AutoUnsubscribe
 @Component({
   selector: 'app-my-component',
   templateUrl: './my-component.component.html',
 })
-export class MyComponent implements OnDestroy {
+export class MyComponent implements OnInit {
+  subscription: Subscription;
   mySubject$ = new BehaviorSubject<string>('Initial Value');
-  myObservable$: Observable<number>;
 
-  constructor() {
-    this.myObservable$ = interval(1000);
-  }
-
-  // Implement the OnDestroy method of the OnDestroy interface
-  ngOnDestroy(): void {
-    // This method is automatically called when the component is destroyed.
+  constructor(private myService: MyService) {}
+  
+  ngOnInit() {
+    this.subscription = this.myService.myBehaviorSubject.subscribe(value => {
+      this.value = value;
+    });
   }
 }
 ```
@@ -179,6 +176,8 @@ export class MyComponent implements OnDestroy {
 By applying the custom _AutoUnsubscribe_ decorator to the component, Angular will automatically call the component's _ngOnDestroy_ method when the component is destroyed, and the decorator will take care of unsubscribing from all observables and subjects created in the component.
 
 > It is important to note that this pattern is not a magic solution that will work in all cases. For example, if an observable is expected to continue emitting values even after the component has been destroyed, it is not appropriate to unsubscribe from it in the ngOnDestroy method. In those cases, you should handle the unsubscription in another part of the code. However, for most cases, this pattern can be a simple and effective solution for unsubscribing from observables in an Angular component.
+
+You can see in action and on StackBlitz an Angular project I created with this [data service example with RxJs BehaviorSubject and unsubscribe decorator](https://stackblitz.com/edit/angular-rxjs-behaviorsubject-unsubscribe-decorator) .
 
 ---
 <social-share class="social-share--footer" />

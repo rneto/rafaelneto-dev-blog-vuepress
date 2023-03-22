@@ -113,7 +113,7 @@ module.exports = {
   },
   plugins: [
     [
-      '@vuepress/pwa',
+      '@NO-vuepress/pwa',
       {
         serviceWorker: true,
         updatePopup: {

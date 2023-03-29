@@ -5,6 +5,7 @@ tags:
   - RxJs
   - BehaviourSubject
 permalink: /blog/:slug
+canonicalUrl: https://rafaelneto.dev/blog/gestionar-estado-angular-rxjs-behaviorsubject-servicios-datos-observables/
 ---
 
 # Gestionar el estado de una aplicación Angular usando RxJs BehaviorSubject para servicios de datos observables

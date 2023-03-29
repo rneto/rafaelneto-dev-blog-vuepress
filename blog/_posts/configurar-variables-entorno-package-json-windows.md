@@ -11,7 +11,9 @@ canonicalUrl: https://rafaelneto.dev/blog/configurar-variables-entorno-package-j
 
 <social-share class="social-share--header" />
 
-Para los que somos usuarios de Windows y a la vez desarrolladores de aplicaciones con _Node.js_, es común que nos encontremos con problemas que los usuarios de Linux/MAC felizmente desconocen (otros tendrán seguro…).
+Español | [English](/en/blog/configuring-environment-variables-package-json-windows/)
+
+Para los que somos usuarios de Windows y a la vez desarrolladores de aplicaciones con _Node.js_, es común que nos encontremos con problemas que los usuarios de Linux/MAC felizmente desconocen (otros tienen seguro…).
 
 Uno de esos problemas está relacionado con el uso de variables de entorno definidas en los scripts configurados de nuestros ficheros _package.json_:
 

@@ -12,6 +12,8 @@ canonicalUrl: https://rafaelneto.dev/blog/usar-webpack-4-transformar-empaquetar-
 
 <social-share class="social-share--header" />
 
+Español | [English](/en/blog/using-webpack-4-transform-package-web-aplicacion-resources/)
+
 [Webpack](https://webpack.js.org/) es una de las tecnologías JavaScript más usadas desde hace años para transformar y empaquetar todo tipo de recursos de la web, tales como JavaScript, HTML, CSS o imágenes.
 
 Su sistema se basa en la ejecución encadenada de [loaders](https://webpack.js.org/concepts/loaders/) y [plugins](https://webpack.js.org/concepts/plugins/) que transforman y empaquetan nuestros archivos y sus dependencias, dando como resultado nuevos recursos estáticos (conocidos como _bundles_) que usaremos en nuestra aplicación.

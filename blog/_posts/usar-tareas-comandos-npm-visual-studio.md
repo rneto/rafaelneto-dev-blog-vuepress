@@ -7,11 +7,13 @@ permalink: /blog/:slug
 canonicalUrl: https://rafaelneto.dev/blog/usar-tareas-comandos-npm-visual-studio/
 ---
 
-# Usar tareas y comandos npm en Visual Studio (2019, 2017, 2015)
+# Usar tareas y comandos npm en Visual Studio (2022, 2019, 2017, 2015)
 
 <social-share class="social-share--header" />
 
-Como usuarios de Visual Studio solemos estar acostumbrados a que parte del trabajo pesado esté ya automatizado en el entorno de desarrollo, pero en ocasiones necesitamos ejecutar tareas o comandos de npm en nuestro proyecto como puede ser la conversión de TypeScript a JavaScript.
+Español | [English](/en/blog/using-npm-tasks-commands-visual-studio/)
+
+Como usuarios de Visual Studio solemos estar acostumbrados a que parte del trabajo esté automatizado en el entorno de desarrollo, pero en ocasiones necesitamos ejecutar tareas o comandos de npm en nuestro proyecto como puede ser la conversión de TypeScript a JavaScript.
 
 Para ello es posible automatizar el uso de nuestro fichero _package.json_ a través del Explorador del Ejecutador de tareas de Visual Studio (_Task Runner Explorer_).
 
@@ -31,11 +33,11 @@ También es posible programar la ejecución de los scripts asociándolos a difer
 
 ![Visual Studio Task Runner Explorer Bindings](/images/vs2019-task-runner-explorer-bindings.png)
 
-## Problemas con NPM Task Runner, Visual Studio 2019 y ASP.NET Core
+## Problemas con NPM Task Runner, Visual Studio y ASP.NET Core
 
 Cuando nuestro fichero _package.json_ esté ubicado en la carpeta _wwwroot_ (u otra carpeta que no sea la raíz del proyecto), el Explorador del Ejecutador de tareas (_Task Runner Explorer_) no lo reconocerá, por lo que deberemos crear un segundo _package.json_ en la ruta raíz del proyecto en el que redefiniremos nuestros scripts.
 
-En el nuevo fichero _package.json_ estableceremos la ruta de ejecución del script en base a nuestros recursos. Así pues, en el siguiente ejemplo añadiremos ```cd wwwroot && ``` al principio del script _build_ para el empaquetado con [Webpack](/blog/usar-webpack-4-transformar-empaquetar-recursos-aplicacion-web/) de nuestros recursos.
+En el nuevo fichero _package.json_ estableceremos la ruta de ejecución del script en base a nuestros recursos. Así pues, en el siguiente ejemplo añadiremos ```cd wwwroot && ``` al principio del script _build_ para el empaquetado con [Webpack](/blog/usar-webpack-4-transformar-empaquetar-recursos-aplicacion-web/) de nuestros recursos ubicados en la carpeta _wwwroot_.
 
 ``` bash
 {

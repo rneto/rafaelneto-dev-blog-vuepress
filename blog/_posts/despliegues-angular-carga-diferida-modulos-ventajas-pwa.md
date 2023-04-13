@@ -166,4 +166,4 @@ export class AppComponent implements OnInit {
 ```
 
 ---
-<social-share class="social-share--header" />
+<social-share class="social-share--footer" />

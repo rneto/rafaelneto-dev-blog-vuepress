@@ -58,7 +58,7 @@ Con esta técnica, tendríamos una solución sencilla sobre cómo evitar problem
 
 ## Ventajas de convertir una aplicación Angular en PWA (Progressive Web App, Aplicación Web Progresiva)
 
-> ¿Qué es una PWA? Básicamente es una aplicación web a la que hemos dotado de nuevas capacidades para hacerla más potente mediante las API de los navegadores modernos, incrementado su rendimiento y fiabilidad mediante una mejor experiencia de usuario independientemente de la calidad de la red y por último, transformado la interacción de los usuarios haciéndola instalable.
+> ¿Qué es una PWA? Básicamente es una aplicación web a la que hemos dotado de nuevas capacidades para hacerla más potente mediante las API de los navegadores modernos, incrementado su rendimiento y fiabilidad mediante una mejor experiencia de usuario independientemente de la calidad de la red y por último, transformando la interacción de los usuarios haciéndola instalable.
 
 Una de las ventajas de convertir una aplicación Angular en PWA consiste en que convertimos nuestra aplicación web en descargable e instalable, del mismo modo que se haría con una aplicación nativa, con el añadido de que la misma aplicación será compatible con cualquier sistema operativo que incluya alguno de los navegadores modernos.
 
@@ -76,6 +76,8 @@ Para convertir una aplicación existente en PWA basta con ejecutar el siguiente 
 ng add @angular/pwa --project *project-name*
 ```
 _*project-name* se refiere al nombre de nuestro proyecto, tal cual figura en el fichero angular.json._
+
+> Si al ejecutar el comando nos encontramos con el error _NOT SUPPORTED: keyword "id", use "$id" for schema ID_, es muy probable que exista algún tipo de conflicto entre la versión local de Angular CLI del proyecto respecto a la versión global de Angular CLI que tengamos instalada. Una posible solución podría ser instalar manualmente el paquete _@angular/pwa_ con la misma versión de nuestro paquete _@angular/cli_, por ejemplo `npm install --save @angular/pwa@14.1.3` y posteriormente volver a ejecutar el comando `ng add @angular/pwa --project *project-name*`.
 
 Con esta simple acción, se habrán llevado a cabo las siguientes operaciones:
 

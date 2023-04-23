@@ -172,12 +172,12 @@ export class MyComponent implements OnInit {
   mySubject$ = new BehaviorSubject<string>('Initial Value');
 
   constructor(private myService: MyService) {}
-  
+
   ngOnInit() {
     this.subscription = this.myService.myBehaviorSubject.subscribe(value => {
       this.value = value;
     });
-  }  
+  }
 }
 ```
 

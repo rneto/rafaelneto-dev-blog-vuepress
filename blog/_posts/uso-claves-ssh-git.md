@@ -52,7 +52,7 @@ En este punto nuestras claves SSH se habrán generado en dos ficheros, en la rut
 
 ### ssh-agent
 
-El programa _ssh-agent_ es el encargado de almacenar y gestionar las claves privadas durante las conexiones, por lo que si no queremos tener que escribir nuestra contraseña cada vez que usemos nuestra clave, debemos hacer uso de él.
+El programa _ssh-agent_ es el encargado de almacenar y gestionar las claves privadas durante las conexiones, por lo que si no queremos tener que escribir nuestra frase de seguridad cada vez que usemos nuestra clave SSH, debemos hacer uso de él.
 
 1. Comprobamos que el agente se está ejecutando (y lo arrancamos si no lo estuviera):
 
@@ -66,6 +66,8 @@ Tendremos como respuesta el identificador del proceso:
 Agent pid 445
 ```
 
+> Para asegurarnos de que el servicio _ssh-agent_ arranque de forma automática en Windows, debemos ejecutar el siguiente comando desde PowerShell `Get-Service ssh-agent | Set-Service -StartupType Automatic`.
+
 2. Añadimos nuestra clave al agente SSH:
 
 ``` bash
@@ -73,6 +75,8 @@ ssh-add /c/Users/rafaelneto/.ssh/id_rsa
 ```
 
 Si durante la creación de la clave privada hubiéramos establecido una frase de seguridad, en este paso se nos solicitará que la introduzcamos.
+
+> _¿Tenemos _ssh-agent_ arrancado pero VSCode en Windows siempre nos solicita la frase de seguridad?_ En algunos escenarios podemos encontrarnos con que aunque tengamos el _ssh-agent_ arrancado, siempre se nos solicite la frase de seguridad al trabajar por ejemplo con VSCode en Windows. En ese caso, muy probablemente el problema resida en que Git no sabe cómo comunicarse con el servicio _ssh-agent_ de Windows y para ello debemos informar a Git de la ruta OpenSSH del sistema mediante la variable de entorno _GIT_SSH_, ejecutando el siguiente comando desde PowerShell `[Environment]::SetEnvironmentVariable("GIT_SSH", "$((Get-Command ssh).Source)", [System.EnvironmentVariableTarget]::User)` y cerrando todas los terminales e instancias de VSCode abiertos en nuestro sistema. A partir de ese momento, la próxima vez que usemos VSCode, ya no se nos solicitará la frase de seguridad.
 
 ## Configuración de claves SSH en Bitbucket
 
@@ -161,7 +165,9 @@ Una vez que hayas agregado la clave SSH en Sourcetree ya podemos usarla para con
 
 ## Configuración de la clave privada SSH en VSCode
 
-Una vez hayamos configurado nuestras claves SSH para ser usadas con proveedor de repositorios Git remoto (Bitbucket, GitHub u otros) y usadas éstas para la configuración o clonado de un repositorio (como hemos visto anteriormente), la próxima vez que nos conectemos desde VSCode al repositorio Git remoto, se usará de manera predeterminada SSH en nuestras conexiones, por lo que no debemos realizar ninguna configuración adicional específica en VSCode. Lo único que podría ocurrir es que VSCode nos solicitara la frase de seguridad que hayamos establecido al generar nuestra clave privada.
+Una vez hayamos configurado nuestras claves SSH para ser usadas con proveedor de repositorios Git remoto (Bitbucket, GitHub u otros) y usadas éstas para la configuración o clonado de un repositorio (como hemos visto anteriormente), la próxima vez que nos conectemos desde VSCode al repositorio Git remoto, se usará de manera predeterminada SSH en nuestras conexiones, por lo que no debemos realizar ninguna configuración adicional específica en VSCode.
+
+Lo único que podría ocurrir es que VSCode nos solicitara la frase de seguridad que hayamos establecido al generar nuestra clave privada, pero en ese caso podríamos configurar y hacer uso del _ssh-agent_ como hemos visto anteriormente y así evitar tener que introducir nuestra frase de seguridad en cada sincronización con nuestro repositorio Git remoto.
 
 ---
 <social-share class="social-share--footer" />

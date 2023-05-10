@@ -42,14 +42,18 @@ Para crear una clase _Builder_ que encapsule la lógica de crear dinámicamente 
 public interface IDynamicLambdaBuilder<T>
 {
     DynamicLambdaBuilder<T> AddFilter(string propertyName, object value, ComparisonType comparisonType);
-    Expression<Func<T, bool>> Build(LogicalOperator logicalOperator)
+    DynamicLambdaBuilder<T> And(Expression<Func<T, bool>> expression);
+    DynamicLambdaBuilder<T> Or(Expression<Func<T, bool>> expression);
+    Expression<Func<T, bool>> Build(LogicalOperator logicalOperator);
 }
 ```
 
 La interfaz _IDynamicLambdaBuilder<T>_ utiliza el tipo genérico _T_ para representar el tipo de objeto en el que se está construyendo la expresión lambda. La interfaz define tres métodos:
 
 - _AddFilter()_: Este método permite que los usuarios añadan filtros que se utilizará en la expresión lambda.
-- _Build()_: Este método construye la expresión lambda y devuelve un objeto _Expression<Func<T, bool>>_.
+- _Add()_: Este método permite añadir explícitamente una expresión lambda a nuestros filtros usando el operador "&&".
+- _Or()_: Este método permite añadir explícitamente una expresión lambda a nuestros filtros usando el operador "||".
+- _Build()_: Este método construye la expresión lambda definitiva combinando las expresiones y filtros indicados y devuelve un objeto _Expression<Func<T, bool>>_.
 
 Complementaria a dicha interfaz necesitaremos el enumerador que define los tipos de comparadores disponibles para el filtrado de las propiedades:
 
@@ -103,6 +107,19 @@ public class DynamicLambdaBuilder<T>
         _expressions.Add(binary);
         return this;
     }
+  
+
+    public DynamicLambdaBuilder<T> And(Expression<Func<T, bool>> expression)
+    {
+        _expressions.Add(expression.Body);
+        return this;
+    }
+
+    public DynamicLambdaBuilder<T> Or(Expression<Func<T, bool>> expression)
+    {
+        _expressions.Add(Expression.Not(expression.Body));
+        return this;
+    }  
 
     public Expression<Func<T, bool>> Build(LogicalOperator logicalOperator = LogicalOperator.And)
     {
@@ -162,6 +179,14 @@ if (request.Property2 != null) {
     expresionBuilder.AddFilter("PropertyName2", request.Property2);
 }
 
+if (request.Property3 != null) {
+    expresionBuilder.And(m => m.PropertyName3 == request.Property3);
+}
+
+if (request.Property4 != null) {
+    expresionBuilder.Or(m => m.PropertyName4 == request.Property4);
+}
+  
 // _context is a an object that represents my db context
 var searchResult = _context.MyEntities
     .Where(expresionBuilder.build())

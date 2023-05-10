@@ -36,7 +36,7 @@ En el contexto de la creación de expresiones lambda, podemos utilizar el patró
 
 ## Creando una clase Builder para expresiones lambda
 
-Para crear una clase _Builder_ que encapsule la lógica de crear dinámicamente una expresión lambda basada en una lista de filtros parciales, primero debemos definir una interfaz que represente la funcionalidad que queremos permitir que los usuarios utilicen. En este caso, queremos permitir que los usuarios añadan propiedades de filtrado de un objeto y la generación de la expresión lambda con la combinación de todas las propiedades de filtrado. Así sería La interfaz:
+Para crear una clase _Builder_ que encapsule la lógica de crear dinámicamente una expresión lambda basada en una lista de filtros parciales, primero debemos definir una interfaz que represente la funcionalidad que queremos permitir que los usuarios utilicen. En este caso, queremos permitir que los usuarios añadan propiedades de filtrado de un objeto o múltiples subexpresiones y la consiguiente generación de la expresión lambda final con la combinación de todas las propiedades y subexpresiones de filtrado. Así sería La interfaz:
 
 ``` csharp
 public interface IDynamicLambdaBuilder<T>

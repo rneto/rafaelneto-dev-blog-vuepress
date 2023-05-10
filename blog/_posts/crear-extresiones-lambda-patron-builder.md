@@ -12,7 +12,7 @@ permalink: /blog/:slug
 
 Las expresiones lambda son una herramienta poderosa en el mundo de la programación que nos permite escribir funciones anónimas que pueden ser asignadas a una variable o pasadas como argumentos a una función. En .NET, las expresiones lambda se utilizan comúnmente para definir consultas LINQ en tiempo de compilación y para construir árboles de expresiones que se pueden utilizar para generar consultas SQL dinámicamente.
 
-Es el tipo de herramienta perfecta a la hora de construir consultas dinámicamente cuando por ejemplo tenemos un formulario de búsqueda con múltiples campos que opcionalmente pueden o no ser usados para hacer el filtrado de datos. Al combinarlo con el patrón _Builder_ para encapsular la lógica de creación de expresiones lambda y la configuración del tipo de comparador, nos permitirá crear expresiones lambda dinámicas muy fácilmente.
+Es el tipo de herramienta perfecta a la hora de construir consultas dinámicamente cuando por ejemplo tenemos un formulario de búsqueda con múltiples campos que opcionalmente pueden o no ser usados para hacer el filtrado de datos. Al combinarlo con el patrón _Builder_ para encapsular la lógica de creación de expresiones lambda junto con la configuración del tipo de comparación, nos permitirá crear expresiones lambda dinámicas muy fácilmente.
 
 ## ¿Qué son las expresiones lambda?
 
@@ -23,19 +23,19 @@ int[] numbers = { 1, 2, 3, 4, 5 };
 var evenNumbers = numbers.Where(n => n % 2 == 0);
 ```
 
-En este ejemplo, estamos utilizando una expresión lambda para filtrar los números pares en la matriz numbers. La expresión lambda `n => n % 2 == 0` se interpreta como "para cada elemento _n_ en la matriz _numbers_, devuelve _true_ si _n % 2_ es igual a _0_".
+En este ejemplo, estamos utilizando una expresión lambda para filtrar los números pares en la matriz _numbers_. La expresión lambda `n => n % 2 == 0` se interpreta como "para cada elemento _n_ en la matriz _numbers_, devuelve _true_ si _n % 2_ es igual a _0_".
 
 Las expresiones lambda son especialmente útiles para definir consultas LINQ en tiempo de compilación. En lugar de construir manualmente una consulta SQL, podemos escribir una expresión lambda que represente la consulta y utilizar LINQ para generar la consulta SQL automáticamente.
 
 ## ¿Qué es el patrón Builder?
 
-El patrón Builder es un patrón de diseño creacional que nos permite separar la construcción de un objeto complejo de su representación. En lugar de crear el objeto directamente, utilizamos una clase Builder que encapsula la lógica de construcción del objeto y nos permite configurar sus propiedades de manera flexible.
+El patrón _Builder_ es un patrón de diseño creacional que nos permite separar la construcción de un objeto complejo de su representación. En lugar de crear el objeto directamente, utilizamos una clase _Builder_ que encapsula la lógica de construcción del objeto y nos permite configurar sus propiedades de manera flexible.
 
-En el contexto de la creación de expresiones lambda, podemos utilizar el patrón Builder para encapsular la lógica de creación de expresiones lambda combinables y para permitir que los consumidores de la clase configuren el tipo de comparador del dato y el tipo de comparador lógico del conjunto de expresiones.
+En el contexto de la creación de expresiones lambda, podemos utilizar el patrón _Builder_ para encapsular la lógica de creación de expresiones lambda combinables y para permitir que los consumidores de la clase configuren el tipo de comparador del dato y el tipo de comparador lógico del conjunto de expresiones.
 
 ### Creando una clase Builder para expresiones lambda
 
-Para crear una clase Builder que encapsule la lógica de crear dinámicamente una expresión lambda basada en una lista de filtros parciales, primero debemos definir una interfaz que represente la funcionalidad que queremos permitir que los usuarios utilicen. En este caso, queremos permitir que los usuarios añadan propiedades de filtrado de un objeto y la generación de la expresión lambda con la combinación de todas las propiedades de filtrado combinadas. La interfaz se vería así:
+Para crear una clase _Builder_ que encapsule la lógica de crear dinámicamente una expresión lambda basada en una lista de filtros parciales, primero debemos definir una interfaz que represente la funcionalidad que queremos permitir que los usuarios utilicen. En este caso, queremos permitir que los usuarios añadan propiedades de filtrado de un objeto y la generación de la expresión lambda con la combinación de todas las propiedades de filtrado. Así sería La interfaz:
 
 ``` csharp
 public interface IDynamicLambdaBuilder<T>
@@ -48,7 +48,7 @@ public interface IDynamicLambdaBuilder<T>
 La interfaz _IDynamicLambdaBuilder<T>_ utiliza el tipo genérico _T_ para representar el tipo de objeto en el que se está construyendo la expresión lambda. La interfaz define tres métodos:
 
 - _AddFilter()_: Este método permite que los usuarios añadan filtros que se utilizará en la expresión lambda.
-- _Build()_: Este método construye la expresión lambda y devuelve un objeto Expression<Func<T, bool>>.
+- _Build()_: Este método construye la expresión lambda y devuelve un objeto _Expression<Func<T, bool>>_.
 
 Complementaria a dicha interfaz necesitaremos el enumerador que define los tipos de comparadores disponibles para el filtrado de las propiedades:
 

@@ -33,7 +33,7 @@ El patrón _Builder_ es un patrón de diseño creacional que nos permite separar
 
 En el contexto de la creación de expresiones lambda, podemos utilizar el patrón _Builder_ para encapsular la lógica de creación de expresiones lambda combinables y para permitir que los consumidores de la clase configuren el tipo de comparador del dato y el tipo de comparador lógico del conjunto de expresiones.
 
-### Creando una clase Builder para expresiones lambda
+## Creando una clase Builder para expresiones lambda
 
 Para crear una clase _Builder_ que encapsule la lógica de crear dinámicamente una expresión lambda basada en una lista de filtros parciales, primero debemos definir una interfaz que represente la funcionalidad que queremos permitir que los usuarios utilicen. En este caso, queremos permitir que los usuarios añadan propiedades de filtrado de un objeto y la generación de la expresión lambda con la combinación de todas las propiedades de filtrado. Así sería La interfaz:
 

@@ -3,6 +3,7 @@ date: 2023-5-8
 tags:
   - Git
   - SSH
+summary: Cuando nos conectamos a un repositorio Git remoto, solemos tener dos opciones de conexión, HTTPS y SSH. Con HTTPS la comunicación se realiza mediante una capa segura que cifra la comunicación ...
 permalink: /blog/:slug
 ---
 

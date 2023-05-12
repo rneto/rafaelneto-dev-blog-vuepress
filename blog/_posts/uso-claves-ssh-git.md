@@ -67,7 +67,7 @@ Tendremos como respuesta el identificador del proceso:
 Agent pid 445
 ```
 
-> Para asegurarnos de que el servicio _ssh-agent_ arranque de forma automática en Windows, debemos ejecutar el siguiente comando desde PowerShell `Get-Service ssh-agent | Set-Service -StartupType Automatic`.
+> Para asegurarnos de que el servicio _ssh-agent_ arranque de forma automática en Windows, debemos ejecutar el siguiente comando desde PowerShell como administrador `Get-Service ssh-agent | Set-Service -StartupType Automatic`.
 
 2. Añadimos nuestra clave al agente SSH:
 
@@ -77,7 +77,7 @@ ssh-add /c/Users/rafaelneto/.ssh/id_rsa
 
 Si durante la creación de la clave privada hubiéramos establecido una frase de seguridad, en este paso se nos solicitará que la introduzcamos.
 
-> _¿Tenemos _ssh-agent_ arrancado pero VSCode en Windows siempre nos solicita la frase de seguridad?_ En algunos escenarios podemos encontrarnos con que aunque tengamos el _ssh-agent_ arrancado, siempre se nos solicite la frase de seguridad al trabajar por ejemplo con VSCode en Windows. En ese caso, muy probablemente el problema resida en que Git no sabe cómo comunicarse con el servicio _ssh-agent_ de Windows y para ello debemos informar a Git de la ruta OpenSSH del sistema mediante la variable de entorno _GIT_SSH_, ejecutando el siguiente comando desde PowerShell `[Environment]::SetEnvironmentVariable("GIT_SSH", "$((Get-Command ssh).Source)", [System.EnvironmentVariableTarget]::User)` y cerrando todas los terminales e instancias de VSCode abiertos en nuestro sistema. A partir de ese momento, la próxima vez que usemos VSCode, ya no se nos solicitará la frase de seguridad.
+> _¿Tenemos _ssh-agent_ arrancado pero VSCode en Windows siempre nos solicita la frase de seguridad?_ En algunos escenarios podemos encontrarnos con que aunque tengamos el _ssh-agent_ arrancado, siempre se nos solicite la frase de seguridad al trabajar por ejemplo con VSCode en Windows. En ese caso, muy probablemente el problema resida en que Git no sabe cómo comunicarse con el servicio _ssh-agent_ de Windows y para ello debemos informar a Git de la ruta OpenSSH del sistema mediante la variable de entorno _GIT_SSH_, ejecutando el siguiente comando desde PowerShell como administrador `[Environment]::SetEnvironmentVariable("GIT_SSH", "$((Get-Command ssh).Source)", [System.EnvironmentVariableTarget]::User)` y cerrando todas los terminales e instancias de VSCode abiertos en nuestro sistema. A partir de ese momento, la próxima vez que usemos VSCode, ya no se nos solicitará la frase de seguridad.
 
 ## Configuración de claves SSH en Bitbucket
 

@@ -128,7 +128,27 @@ behaviorSubject$.pipe(
 
 En este ejemplo, el observable se suscribe al método _first()_, lo que significa que sólo se recibirá el primer valor que emita el BehaviorSubject. El flujo se completará automáticamente después de emitir el primer valor.
 
-## 5. Usando el patrón decorador para desuscribir de todos los observables del componente
+## 5. Usando el método firstValueFrom()
+
+Al igual que en el caso del método _first()_, el método _firstValueFrom()_ también se usa para obtener el primer valor emitido por un observable, sin embargo hay una diferencia importante en cómo se manejan las suscripciones y la emisión de valores. En el caso de _firstValueFrom()_, en lugar de recibir un observable como resultado, obtenemos una promesa que se resuelve tras recibirse el primer valor del observable. Esto significa que _firstValueFrom()_ espera a que se emita el primer valor y luego resuelve la promesa con ese valor. Además, _firstValueFrom()_ completa automáticamente la suscripción una vez que se obtiene el primer valor, por lo que no se procesan más valores emitidos.
+
+Dado la conversión del observable en _promesa_ tenemos la ventaja de hacer uso de _async/await_ a la hora de recuperar el valor del observable.
+
+``` ts
+import { firstValueFrom, interval } from 'rxjs';
+
+async function example() {
+  const source = interval(1000); // Emite un valor cada segundo
+  const firstValue = await firstValueFrom(source);
+  console.log(`El primer valor emitido es: ${firstValue}`);
+}
+
+example();
+```
+
+Al usar _await_ con _firstValueFrom()_, nos aseguramos de que el código espera a que se emita el primer valor antes de continuar.
+
+## 6. Usando el patrón decorador para desuscribir de todos los observables del componente
 
 La idea detrás de usar un patrón decorador para desuscribir observables en un componente de Angular es encapsular la lógica de suscripción y desuscripción de los observables en una única función que pueda ser llamada en el momento adecuado. Esto puede ayudar a reducir la complejidad del código y hacerlo más fácil de mantener.
 

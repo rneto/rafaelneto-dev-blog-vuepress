@@ -124,7 +124,27 @@ behaviorSubject$.pipe(
 
 In this example, the observable is subscribed to the _first()_ method, which means that only the first value that the BehaviorSubject emits will be received. The stream will automatically complete after emitting the first value.
 
-## 5. Using the decorator pattern to unsubscribe from all observables in an Angular component
+## 5. Using the firstValueFrom() method
+
+Similar to the _first()_ method, the _firstValueFrom()_ method is also used to obtain the first value emitted by an observable. However, there is an important difference in how subscriptions and value emission are handled. With _firstValueFrom()_, instead of receiving an observable as a result, we obtain a promise that resolves after receiving the first value from the observable. This means that _firstValueFrom()_ waits for the first value to be emitted and then resolves the promise with that value. Additionally, _firstValueFrom()_ automatically completes the subscription once the first value is obtained, so no more emitted values are processed.
+
+Since the observable is converted into a promise, we can take advantage of _async/await_ when retrieving the value from the observable.
+
+```ts
+import { firstValueFrom, interval } from 'rxjs';
+
+async function example() {
+  const source = interval(1000); // Emits a value every second
+  const firstValue = await firstValueFrom(source);
+  console.log(`The first emitted value is: ${firstValue}`);
+}
+
+example();
+```
+
+By using _await_ with _firstValueFrom()_, we can ensure that the code waits for the first value to be emitted before proceeding.
+
+## 6. Using the decorator pattern to unsubscribe from all observables in an Angular component
 
 The idea behind using a decorator pattern to unsubscribe from observables in an Angular component is to encapsulate the logic of subscribing and unsubscribing from observables in a single function that can be called at the appropriate time. This can help reduce code complexity and make it easier to maintain.
 
@@ -167,7 +187,7 @@ export class MyComponent implements OnInit {
   mySubject$ = new BehaviorSubject<string>('Initial Value');
 
   constructor(private myService: MyService) {}
-  
+
   ngOnInit() {
     this.subscription = this.myService.myBehaviorSubject.subscribe(value => {
       this.value = value;

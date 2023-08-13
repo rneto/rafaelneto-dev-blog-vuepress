@@ -4,6 +4,7 @@ tags:
   - Angular
   - AngularMaterial
   - Sass
+summary: Angular Material dispone de un sistema de generación de temas que permite la configuración de aspectos de color y tipografía de sus componentes. Dicho sistema ofrece diferentes alternativas de configuración ...
 permalink: /blog/:slug
 canonicalUrl: https://rafaelneto.dev/blog/crear-tema-angular-material/
 ---
@@ -11,6 +12,8 @@ canonicalUrl: https://rafaelneto.dev/blog/crear-tema-angular-material/
 # Crear un tema para Angular Material
 
 <social-share class="social-share--header" />
+
+Español | [English](/en/blog/create-theme-angular-material/)
 
 Angular Material dispone de un sistema de generación de temas que permite la configuración de aspectos de color y tipografía de sus componentes. Dicho sistema ofrece diferentes alternativas de configuración basadas en características de _Sass_ que veremos a continuación.
 
@@ -90,9 +93,9 @@ _styles.scss_
 
 Lo primero que debemos definir para la creación de un tema es el conjunto de las tres paletas de colores de las que estará compuesto y que son las siguientes (si obviamos la tercera -_warn_-, se usará el rojo automáticamente, por lo que podrían ser solamente dos):
 
-- **Primaria** (_primary_): es paleta para el color más común en la aplicación.
-- **Secundaria** (_accent_): es la paleta para el color usado para destacar determinadas partes de la aplicación.
-- **Advertencia** (_warn_): es la paleta usada para advertencias y errores en la aplicación.
+- **primary** (primaria): es paleta para el color más común en la aplicación.
+- **accent** (secundaria): es la paleta para el color usado para destacar determinadas partes de la aplicación.
+- **warn** (advertencia): es la paleta usada para advertencias y errores en la aplicación.
 
 ¿Cómo hacemos uso de las paletas creadas?
 
@@ -152,7 +155,7 @@ $custom-theme: mat.define-light-theme((
 ```
 _styles.scss_
 
-Además de la configuración de colores podemos realizar la configuración de la tipografía de nuestro tema. Para ello será necesario usar la función Sass _define-typography-config_ para crear una la configuración que pasaremos al _mixin_ _core_ al principio de nuestro fichero Sass:
+Además de la configuración de colores podemos realizar la configuración de la tipografía de nuestro tema. Para ello será necesario usar la función Sass `define-typography-config` para crear una la configuración que pasaremos al _mixin_ `core` al principio de nuestro fichero Sass:
 
 ``` scss
 @use '~@angular/material' as mat;

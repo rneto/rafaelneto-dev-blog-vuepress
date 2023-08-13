@@ -2,14 +2,17 @@
 date: 2020-12-19
 tags:
   - Angular
+summary: En este artículo encontrarás el planteamiento de una posible evolución de los conceptos de arquitectura de una aplicación Angular que podemos extraer de la guía de estilo de referencia oficial de Angular.
 permalink: /blog/:slug
 canonicalUrl: https://rafaelneto.dev/blog/arquitectura-buenas-practicas-angular/
 ---
 
-# Arquitectura y buenas prácticas para una aplicación basada en Angular
+# Arquitectura y buenas prácticas para una aplicación Angular
 
 <social-share class="social-share--header" />
 <last-updated custom-value="22/10/2021" />
+
+Español | [English](/en/blog/architecture-best-practices-angular/)
 
 En este artículo encontrarás el planteamiento de una posible evolución de los conceptos de arquitectura de una aplicación Angular que podemos extraer de la [guía de estilo de referencia oficial de Angular](https://angular.io/guide/styleguide). Para ello he definido una serie de pautas y buenas prácticas a la hora de planificar y estructurar nuestra aplicación con el objectivo de hacerla escalable.
 
@@ -208,11 +211,11 @@ Cuando sea necesario estructurar los componentes por niveles, debemos seguir las
 
 ## Administración de estado
 
-Un estado dado es usualmente compartido y su información afecta a múltiples componentes e incluso pantallas a la vez. Es por ello que las operaciones sobre el estado suelen ser complejas en una aplicación Angular, donde además se pueden llegar a realizar con frecuencia.
+Por regla general, el estado de la aplicación es compartido de manera transversal por toda su arquitectura y su información afecta a múltiples componentes e incluso pantallas a la vez. Es por ello que las operaciones sobre el estado suelen ser complejas en una aplicación Angular, donde además se pueden llegar a realizar con frecuencia.
 
-Una de las maneras de abordar estos problemas es aprovechar el flujo de datos unidireccional a nivel de toda la aplicación. La comunidad Angular ha adoptado ampliamente el patrón de arquitectura _[Redux](https://github.com/angular-redux/platform)_, creado originalmente para aplicaciones _React_.
+Una de las maneras de abordar estos problemas es aprovechar el flujo de datos unidireccional a nivel de toda la aplicación. La comunidad Angular ha adoptado ampliamente el patrón de arquitectura _[Redux](https://github.com/ngrx/platform)_, creado originalmente para aplicaciones _React_.
 
-La idea detrás de _Redux_ es que todo el estado de la aplicación se almacena en un único _[store](https://github.com/angular-redux/platform/tree/master/packages/store)_, el objeto que representa el estado actual de la aplicación. Un _store_ es inmutable, no puede ser modificado, cada vez que un estado necesita ser cambiado, un nuevo objeto tiene que ser creado.
+La idea detrás de _Redux_ es que todo el estado de la aplicación se almacena en un único _[store](https://ngrx.io/guide/store)_, el objeto que representa el estado actual de la aplicación. Un _store_ es inmutable, no puede ser modificado, cada vez que un estado necesita ser cambiado, un nuevo objeto tiene que ser creado.
 
 Un único punto de referencia para todo el estado de la aplicación simplifica el problema de la sincronización entre las diferentes partes de la aplicación. No tienes que buscar una información determinada en diferentes módulos o componentes, todo está disponible en el _store_.
 
@@ -223,6 +226,7 @@ Un único punto de referencia para todo el estado de la aplicación simplifica e
 Usar un alias para las carpetas y entornos de nuestra aplicación nos permitirá realizar importaciones de una manera más limpia y consistente a lo largo de la evolución de nuestra aplicación.
 
 El uso de un alias nos permitiría simplificar el modo de realizar nuestras importaciones:
+
 ``` js
 import { AuthService } from '../../../.../core/services/auth.service';
 
@@ -231,7 +235,9 @@ import { AuthService } from '../../../.../core/services/auth.service';
 import { AuthService } from '@app/core';
 ```
 
-Para ello, debemos configurar en primer lugar las propiedades _baseUrl_ y _paths_ en nuestro archivo _tsconfig.json_ de la siguiente manera (verás que estamos creado un alias para toda la aplicación y otro para los _environments_):
+**IMPORTANTE:** La siguiente técnica debe usarse con extrema precaución. Me he encontrado con errores de ejecución en alguna aplicación compleja por abusar de ella, debido al orden de las exportaciones de los artefactos en los ficheros _index.ts_ (que veremos más adelante), así como por la inclusión en los mismos de ficheros que provocaban dependencias circulares (como algunos módulos).
+
+En primer lugar debemos configurar las propiedades _baseUrl_ y _paths_ en nuestro archivo _tsconfig.json_ de la siguiente manera (verás que estamos creado un alias para toda la aplicación y otro para los _environments_):
 
 ``` js
 {

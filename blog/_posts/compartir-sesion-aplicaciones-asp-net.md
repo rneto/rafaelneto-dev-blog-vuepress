@@ -3,6 +3,7 @@ date: 2020-7-6
 tags:
   - ASPNET
   - SQLServer
+summary: Estos días he estado investigando sobre cómo compartir la sesión de un usuario entre varias aplicaciones web ASP.NET. La idea era poner en marcha rápidamente una nueva aplicación web aprovechándome del sistema de ...
 permalink: /blog/:slug
 canonicalUrl: https://rafaelneto.dev/blog/compartir-sesion-aplicaciones-asp-net/
 ---

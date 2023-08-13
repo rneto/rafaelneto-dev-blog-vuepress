@@ -6,7 +6,7 @@ tags:
   - OAuth2
   - OIDC
   - security
-summary: An authorization flow is what allows a client application such as web applications, desktop applications, mobile phones, IoT devices, and other consumers ...
+summary: An authorization flow is what allows a client application such as web applications, desktop applications, mobile phones, IoT devices, and other consumers to gain authorized access ...
 permalink: /en/blog/:slug
 ---
 

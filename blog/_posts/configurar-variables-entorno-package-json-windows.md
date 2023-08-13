@@ -3,6 +3,7 @@ date: 2021-6-17
 tags:
   - Nodejs
   - npm
+summary: Para los que somos usuarios de Windows y a la vez desarrolladores de aplicaciones con Node.js, es común que nos encontremos con problemas que los usuarios de Linux/MAC felizmente desconocen (otros tienen seguro…).
 permalink: /blog/:slug
 canonicalUrl: https://rafaelneto.dev/blog/configurar-variables-entorno-package-json-windows/
 ---

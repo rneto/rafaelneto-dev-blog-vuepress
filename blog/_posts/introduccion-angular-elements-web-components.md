@@ -4,6 +4,7 @@ tags:
   - Angular
   - AngularElements
   - WebComponents
+summary: Angular Elements resuelve la problemática de la reutilización de código Angular en contextos donde no se hace uso de Angular y es la solución perfecta para incluir o actualizar funcionalidades incrustadas en el código heredado de nuestras aplicaciones.
 permalink: /blog/:slug
 canonicalUrl: https://rafaelneto.dev/blog/introduccion-angular-elements-web-components/
 ---

@@ -6,7 +6,7 @@ tags:
   - OAuth2
   - OIDC
   - seguridad
-summary: Un flujo de autorización es lo que permite que una aplicación cliente, como aplicaciones web, aplicaciones de escritorio, teléfonos móviles, dispositivos IoT y otros consumidores, ...
+summary: Un flujo de autorización es lo que permite que una aplicación cliente, como aplicaciones web, aplicaciones de escritorio, teléfonos móviles, dispositivos IoT y otros consumidores, obtengan acceso autorizado a recursos protegidos, como APIs web y archivos entre otros.
 permalink: /blog/:slug
 ---
 

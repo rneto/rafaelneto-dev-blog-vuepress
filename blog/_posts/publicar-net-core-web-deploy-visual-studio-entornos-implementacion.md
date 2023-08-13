@@ -5,6 +5,7 @@ tags:
   - IIS
   - WebDeploy
   - VisualStudio
+summary: Los perfiles de publicación de Visual Studio son archivos de configuración donde se almacena la información de publicación de los servicios que contiene un proyecto. Con ellos podemos automatizar y simplificar la creación ...
 permalink: /blog/:slug
 canonicalUrl: https://rafaelneto.dev/blog/publicar-net-core-web-deploy-visual-studio-entornos-implementacion/
 ---

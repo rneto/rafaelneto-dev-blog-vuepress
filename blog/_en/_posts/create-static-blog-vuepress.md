@@ -4,7 +4,7 @@ tags:
   - VuePress
   - Vuejs
   - blog
-summary: VuePress is a powerful static website generator based on Vue.js. It combines the use of markdown, Vue and webpack ...
+summary: VuePress is a powerful static website generator based on Vue.js. It combines the use of markdown, Vue and webpack to generate pre-rendered static HTML for each page, which is executed as a SPA once Vue takes over after a page loads.
 permalink: /en/blog/:slug
 ---
 

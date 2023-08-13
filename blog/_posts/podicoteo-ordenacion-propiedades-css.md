@@ -2,6 +2,7 @@
 date: 2020-12-1
 tags:
   - CSS
+summary: Aquí humildemente propongo el nombre para una técnica que he visto aplicada de forma relativamente similar y extendida para la ordenación de las propiedades CSS dentro de una clase, ...
 permalink: /blog/:slug
 canonicalUrl: https://rafaelneto.dev/blog/podicoteo-ordenacion-propiedades-css/
 ---

@@ -3,6 +3,7 @@ date: 2020-5-21
 tags:
   - npm
   - VisualStudio
+summary: As Visual Studio users we are used to some of the work being automated in the development environment, but sometimes we need to run npm tasks or commands in our project such as converting TypeScript to JavaScript.
 permalink: /en/blog/:slug
 ---
 

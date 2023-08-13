@@ -3,6 +3,7 @@ date: 2020-5-21
 tags:
   - npm
   - VisualStudio
+summary: Como usuarios de Visual Studio solemos estar acostumbrados a que parte del trabajo esté automatizado en el entorno de desarrollo, pero en ocasiones necesitamos ejecutar tareas o comandos de npm en nuestro proyecto como puede ser la conversión de TypeScript a JavaScript.
 permalink: /blog/:slug
 canonicalUrl: https://rafaelneto.dev/blog/usar-tareas-comandos-npm-visual-studio/
 ---

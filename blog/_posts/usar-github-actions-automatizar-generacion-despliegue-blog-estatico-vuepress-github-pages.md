@@ -3,6 +3,7 @@ date: 2020-10-19
 tags:
   - VuePress
   - GitHubActions
+summary: Tras unos meses con mi blog creado con VuePress, he dedicido automatizar la generación y despliegue en GitHub Pages de los nuevos artículos como este.
 permalink: /blog/:slug
 canonicalUrl: https://rafaelneto.dev/blog/usar-github-actions-automatizar-generacion-despliegue-blog-estatico-vuepress-github-pages/
 ---

@@ -2,6 +2,7 @@
 date: 2020-12-23
 tags:
   - CSS
+summary: La importancia de la propiedad CSS box-sizing reside en que determina la manera en la que se calculan el ancho y alto de un elemento.
 permalink: /blog/:slug
 canonicalUrl: https://rafaelneto.dev/blog/propiedad-css-box-sizing/
 ---

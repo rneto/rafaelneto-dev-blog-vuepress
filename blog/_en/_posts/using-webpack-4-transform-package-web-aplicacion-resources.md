@@ -4,6 +4,7 @@ tags:
   - Nodejs
   - npm
   - webpack
+summary: Webpack is one of the most widely used JavaScript technologies for years to transform and package all kinds of web resources, such as JavaScript, HTML, CSS or images.
 permalink: /en/blog/:slug
 ---
 

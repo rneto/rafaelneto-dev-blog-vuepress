@@ -2,6 +2,7 @@
 date: 2020-6-5
 tags:
   - Git
+summary: Cuando por algún motivo queramos cambiar el nombre o el email que están registrados en los commits de un repositorio Git, será necesario reescribir todo el histórico del repositorio.
 permalink: /blog/:slug
 canonicalUrl: https://rafaelneto.dev/blog/cambiar-informacion-autor-git/
 ---

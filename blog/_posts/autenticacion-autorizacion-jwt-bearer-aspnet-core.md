@@ -4,7 +4,7 @@ tags:
   - ASPNETCore
   - JWT
   - seguridad
-summary: La autenticación basada en token es un esquema de autenticación HTTP en el cual la seguridad se apoya en el uso de cadenas de texto encriptadas, ...
+summary: La autenticación basada en token es un esquema de autenticación HTTP en el cual la seguridad se apoya en el uso de cadenas de texto encriptadas, normalmente generadas por el servidor y que identifican ...
 permalink: /blog/:slug
 ---
 

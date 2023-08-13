@@ -6,7 +6,7 @@ tags:
   - BehaviourSubject
   - Observable
   - PatronDeDiseño
-summary: Los observables son una herramienta poderosa en Angular para manejar flujos de datos asíncronos. Los BehaviourSubject son una variante especial de los observables ...
+summary: Los observables son una herramienta poderosa en Angular para manejar flujos de datos asíncronos. Los BehaviourSubject son una variante especial de los observables que mantienen un estado actual y emiten ese estado a cualquier nuevo suscriptor.
 permalink: /blog/:slug
 ---
 

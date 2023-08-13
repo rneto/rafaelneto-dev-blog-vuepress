@@ -6,7 +6,7 @@ tags:
   - BehaviourSubject
   - Observable
   - DesignPattern
-summary: Observables are a powerful tool in Angular to handle asynchronous data flows. BehaviorSubjects are a special variant of observables ...
+summary: Observables are a powerful tool in Angular to handle asynchronous data flows. BehaviorSubjects are a special variant of observables that maintain a current state and emit that state to any new subscribers.
 permalink: /en/blog/:slug
 ---
 

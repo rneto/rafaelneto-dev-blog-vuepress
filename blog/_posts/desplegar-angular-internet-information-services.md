@@ -3,6 +3,7 @@ date: 2021-03-06
 tags:
   - Angular
   - InternetInformationServices
+summary: Para la correcta ejecución de una aplicación Angular en Internet Information Services (en adelante IIS), debemos hacer una serie de ajustes mínimos tanto en el servidor web como en el proceso de despliegue, ...
 permalink: /blog/:slug
 canonicalUrl: https://rafaelneto.dev/blog/desplegar-angular-internet-information-services/
 ---

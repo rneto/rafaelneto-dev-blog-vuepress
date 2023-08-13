@@ -3,6 +3,7 @@ date: 2021-6-17
 tags:
   - Nodejs
   - npm
+summary: For those of us who are Windows users and at the same time developers of applications with _Node.js_, it is common that we encounter problems that Linux/MAC users are happily unaware of (others have for sure...).
 permalink: /en/blog/:slug
 canonicalUrl: https://rafaelneto.dev/blog/configurar-variables-entorno-package-json-windows/
 ---

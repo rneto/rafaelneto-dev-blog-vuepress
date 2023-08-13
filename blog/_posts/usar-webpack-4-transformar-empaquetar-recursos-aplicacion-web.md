@@ -4,6 +4,7 @@ tags:
   - Nodejs
   - npm
   - webpack
+summary: Webpack es una de las tecnologías JavaScript más usadas desde hace años para transformar y empaquetar todo tipo de recursos de la web, tales como JavaScript, HTML, CSS o imágenes.
 permalink: /blog/:slug
 canonicalUrl: https://rafaelneto.dev/blog/usar-webpack-4-transformar-empaquetar-recursos-aplicacion-web/
 ---

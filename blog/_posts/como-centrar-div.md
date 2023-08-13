@@ -3,6 +3,7 @@ date: 2023-3-15
 tags:
   - CSS
   - HTML
+summary: Cómo centrar un div en HTML y CSS es una tarea común en el diseño web. Un div puede envolver cualquier contenido que desees centrar, como texto, imágenes o vídeos, así que cuando creamos una página web, a menudo queremos ...
 permalink: /blog/:slug
 ---
 

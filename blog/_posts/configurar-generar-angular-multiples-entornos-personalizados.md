@@ -2,6 +2,7 @@
 date: 2021-9-18
 tags:
   - Angular
+summary: Cuando generamos una aplicación con Angular CLI, la plantilla inicial de los ficheros package.json, angular.json y environments.ts solo cuentan de manera predeterminada con la configuración para los entornos de desarrollo y producción, ...
 permalink: /blog/:slug
 canonicalUrl: https://rafaelneto.dev/blog/configurar-generar-angular-multiples-entornos-personalizados/
 ---

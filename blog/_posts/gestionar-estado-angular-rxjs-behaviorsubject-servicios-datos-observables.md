@@ -4,6 +4,7 @@ tags:
   - Angular
   - RxJs
   - BehaviourSubject
+summary: Existen múltiples opciones a la hora de gestionar el estado de una aplicación Angular mediante el uso de una librería de gestión de estado, sin embargo, también existe otra solución de almacenamiento centralizada, sencilla y poco costosas (por su tamaño e implementación) que es completamente válida para determinados proyectos.
 permalink: /blog/:slug
 canonicalUrl: https://rafaelneto.dev/blog/gestionar-estado-angular-rxjs-behaviorsubject-servicios-datos-observables/
 ---
@@ -12,7 +13,9 @@ canonicalUrl: https://rafaelneto.dev/blog/gestionar-estado-angular-rxjs-behavior
 
 <social-share class="social-share--header" />
 
-Existen múltiples opciones a la hora de gestionar el estado de una aplicación Angular mediante el uso de una librería de gestión de estado ([Ngrx Store](https://ngrx.io/guide/store) -recomendada- o [Redux](https://github.com/angular-redux/platform) -obsoleta- por ejemplo), sin embargo, también existe otra solución de almacenamiento centralizada, sencilla y poco costosas (por su tamaño e implementación) que es completamente válida para determinados proyectos. En esta ocasión estoy hablando de disponer de un servicio de datos inyectable y observable, basado en [RxJs](https://rxjs.dev/) [BehaviorSubject](https://rxjs.dev/api/index/class/BehaviorSubject), el cual actuará como gestor centralizado del estado de nuestra aplicación. Lo consideramos inyectable porque lo podríamos suministrar en cualquier parte de nuestro código donde se necesiten los datos, y lo consideramos observable porque los datos están fácilmente disponibles y se actualizan periódicamente.
+Español | [English](/en/blog/manage-state-angular-rxjs-behaviorsubject-observables-data-services/)
+
+Existen múltiples opciones a la hora de gestionar el estado de una aplicación Angular mediante el uso de una librería de gestión de estado ([Ngrx Store](https://ngrx.io/guide/store) -recomendada- o [Angular Redux](https://github.com/angular-redux/platform) -obsoleta- por ejemplo), sin embargo, también existe otra solución de almacenamiento centralizada, sencilla y poco costosas (por su tamaño e implementación) que es completamente válida para determinados proyectos. En esta ocasión estoy hablando de disponer de un servicio de datos inyectable y observable, basado en [RxJs](https://rxjs.dev/) [BehaviorSubject](https://rxjs.dev/api/index/class/BehaviorSubject), el cual actuará como gestor centralizado del estado de nuestra aplicación. Lo consideramos inyectable porque lo podríamos suministrar en cualquier parte de nuestro código donde se necesiten los datos, y lo consideramos observable porque los datos están fácilmente disponibles y se actualizan periódicamente.
 
 > Un **servicio de datos** es un servicio de Angular que se puede usar para proporcionar datos múltiples de manera consistente a diferentes partes de la aplicación.
 

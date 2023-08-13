@@ -2,6 +2,7 @@
 date: 2023-3-16
 tags:
   - VisualStudioCode
+summary: Uso con asiduidad Visual Studio Code tanto como editor de código fuente en proyectos web, como para la manipulación de ficheros de diferentes tipos. Creo sinceramente que ...
 permalink: /blog/15-mejores-extensiones-visual-studio-code-desarrollo-web
 canonicalUrl: https://rafaelneto.dev/blog/15-mejores-extensiones-visual-studio-code-desarrollo-web/
 ---
@@ -9,6 +10,8 @@ canonicalUrl: https://rafaelneto.dev/blog/15-mejores-extensiones-visual-studio-c
 # Las 15 mejores extensiones de Visual Studio Code (VSCode 2023) para el desarrollo web
 
 <social-share class="social-share--header" />
+
+Español | [English](/en/blog/15-best-extensions-visual-studio-code-web-development/)
 
 Uso con asiduidad [Visual Studio Code](https://code.visualstudio.com/) tanto como editor de código fuente en proyectos web, como para la manipulación de ficheros de diferentes tipos. Creo sinceramente que es una gran herramienta que deberías probar pues tiene visos de convertirse (si no lo es ya) en **el mejor editor de código fuente, especialmente para el Desarrollo Web**.
 

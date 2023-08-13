@@ -212,7 +212,7 @@ When it is necessary to structure components by levels, the following guidelines
 
 > If we manage to strike a balance between the right number of components and the single responsibility principle, the simpler the data flow will be and the easier it will be to work with.
 
-## Administración de estado
+## State management
 
 As a general rule, the state of the application is shared transversely throughout its architecture and its information affects multiple components and even screens at the same time. This is why state operations are often complex in an Angular application, where they can also be performed frequently.
 

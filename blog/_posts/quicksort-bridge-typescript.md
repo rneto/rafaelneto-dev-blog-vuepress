@@ -70,7 +70,7 @@ _divide-conquer.sorter.ts_
 
 ## Quicksort de ordenación: _extendiendo la abstracción_
 
-Ahora vamos a crear la clase de ordenación Quisort sin modificar la implementación de la clase para simplificar el ejemplo, sin embaro podríamos hacer operaciones adicionales específicas a nuestras necesidades.
+Ahora vamos a crear la clase de ordenación Quisort sin modificar la implementación de la clase para simplificar el ejemplo, sin embargo podríamos hacer operaciones adicionales específicas a nuestras necesidades.
 
 ``` ts
 import { DivideConquerSorter } from '.';

@@ -5,6 +5,7 @@ tags:
   - AngularMaterial
   - MaterialDesign
   - TailwindCSS
+summary: Si todavía no sabes qué es Tailwind CSS, Material Design o Angular Material, te recomiendo que le eches un vistazo a ...
 permalink: /blog/:slug
 canonicalUrl: https://rafaelneto.dev/blog/integrar-tailwind-css-angular-material/
 ---
@@ -12,6 +13,8 @@ canonicalUrl: https://rafaelneto.dev/blog/integrar-tailwind-css-angular-material
 # Integrar Tailwind CSS en Angular y combinarlo con Material
 
 <social-share class="social-share--header" />
+
+Español | [English](/en/blog/integrate-tailwind-css-angular-material/)
 
 Si todavía no sabes qué es Tailwind CSS, te recomiendo que le eches un vistazo a mi artículo sobre [¿Qué es Tailwind CSS?](/blog/tailwind-css/).
 
@@ -29,7 +32,7 @@ Desde la versión 11.2 de Angular **ya está disponible el soporte nativo de Tai
 
         > Tengamos en cuenta que desde la versión 7 de Angular, las versiones principales de Angular Core y CLI están alineadas, por lo que ambas tienen que ser iguales si queremos usar Angular CLI para desarrollar nuestra aplicación.
 
-   - Si simplemente queremos la versión intermedia más reciente de Angular 11, debemos ejecutar `ng update @angular/cli@11` y `ng update @angular/core@11`, o lo que sería lo mismo `ng update @angular/core@11 @angular/cli@11`.
+   - Si simplemente queremos la versión intermedia más reciente de Angular 11, debemos ejecutar `ng update @angular/cli@11` y `ng update @angular/core@11`, o lo que sería lo mismo `ng update @angular/core@11 @angular/cli@11`. Esto actualizará tanto Angular CLI como Angular Core a la última versión dentro de la serie Angular 11.x.
 
         > Recordemos que las versiones intermedias son totalmente compatibles con las versiones intermedias anteriores por lo que no deberíamos de tener problemas al pasarnos por ejemplo de la versión 11.0.0 a la 11.2.4.
 

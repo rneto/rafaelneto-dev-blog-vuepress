@@ -2,6 +2,7 @@
 date: 2021-6-12
 tags:
   - VisualStudio
+summary: Visual Studio es un gran entorno de desarrollo. He conocido todas sus versiones (desde la _Visual Studio 97_ con Visual Basic -ahí empezó todo, cómo pasan los años...-) y creo que ...
 permalink: /blog/5-mejores-extensiones-gratuitas-visual-studio
 canonicalUrl: https://rafaelneto.dev/blog/5-mejores-extensiones-gratuitas-visual-studio/
 ---
@@ -9,6 +10,8 @@ canonicalUrl: https://rafaelneto.dev/blog/5-mejores-extensiones-gratuitas-visual
 # Las 5 mejores extensiones gratuitas para Visual Studio
 
 <social-share class="social-share--header" />
+
+Español | [English](/en/blog/5-best-free-extensions-visual-studio/)
 
 [Visual Studio](https://visualstudio.microsoft.com/vs/) es un gran entorno de desarrollo. He conocido todas sus versiones (desde la _Visual Studio 97_ con Visual Basic -ahí empezó todo, cómo pasan los años...-) y creo que se ha hecho un gran trabajo por parte de Microsoft en adaptar la herramienta al contexto empresarial y tecnológico de cada momento con el objetivo de facilitarnos el trabajo a los desarrolladores (no sin forzarnos a veces con sus decisiones). He visto cómo hemos evolucionado nuestras arquitecturas, entornos de ejecución, lenguajes, interconexiones y necesidades a la vez que lo hacía Visual Studio con nosotros y ahí creo que está la clave de su éxito, al igual que está ocurriendo con Visual Studio Code que ha sabido adaptarse a nuestras necesidades actuales (por cierto, si te interesa, también te recomiendo [Las 15 mejores extensiones de Visual Studio Code para el desarrollo web](/blog/15-mejores-extensiones-visual-studio-code-desarrollo-web/)).
 

@@ -16,7 +16,11 @@ permalink: /en/blog/:slug
 
 [Español](/blog/desuscribir-observable-behaviorsubject-angular/) | English
 
-Observables are a powerful tool in Angular to handle asynchronous data flows. BehaviorSubjects are a special variant of observables that maintain a current state and emit that state to any new subscribers. This makes it very useful, for example, to share information between components in an Angular application. However, once you subscribe to a BehaviorSubject, you need to have a way to unsubscribe when you no longer need to receive updates to avoid memory leaks. Here are five ways to unsubscribe from an observable in Angular.
+Observables are a powerful tool in Angular to handle asynchronous data flows. BehaviorSubjects are a special variant of observables that maintain a current state and emit that state to any new subscribers. This makes it very useful, for example, to share information between components in an Angular application. However, once you subscribe to a BehaviorSubject, you need to have a way to unsubscribe when you no longer need to receive updates to avoid memory leaks.
+
+> If you want to learn more about the advantages of using RxJs BehaviorSubject, I recommend you take a look at this other article I created about [Managing the state of an Angular application using RxJs BehaviorSubject for observable data services](/en/blog/manage-state-angular-rxjs-behaviorsubject-observables-data-services/).
+
+Here are five ways to unsubscribe from an observable in Angular.
 
 ## 1. Using the Subscription variable
 The most common way to unsubscribe from a BehaviorSubject is to use the Subscription variable that is returned when you subscribe. You can save this variable to a property in your component and then call the _unsubscribe()_ method in the _ngOnDestroy()_ of the component to release the subscription.

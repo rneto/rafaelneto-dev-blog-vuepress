@@ -5,6 +5,7 @@ tags:
   - Nodejs
   - npm
   - webpack
+summary: Más allá de la optimización de una aplicación Angular a través por ejemplo de la carga diferida de módulos o mediante el uso de una estrategia de detección de cambios basada en OnPush, también debemos tener en cuenta ...
 permalink: /blog/:slug
 canonicalUrl: https://rafaelneto.dev/blog/optimizar-angular-analisis-paquetes-npm-webpack/
 ---
@@ -12,6 +13,8 @@ canonicalUrl: https://rafaelneto.dev/blog/optimizar-angular-analisis-paquetes-np
 # Optimizar Angular mediante el análisis de paquetes npm con webpack
 
 <social-share class="social-share--header" />
+
+Español | [English](/en/blog/optimize-angular-analyzing-npm-packages-webpack/)
 
 Más allá de la optimización de una aplicación Angular a través por ejemplo de la [carga diferida de módulos](/blog/arquitectura-buenas-practicas-angular/#carga-diferida) o mediante el uso de una estrategia de detección de cambios basada en _OnPush_, también debemos tener en cuenta el hecho de que los paquetes de terceros que incluyamos, igualmente afectarán al tiempo de carga de la aplicación, bien por su propio tamaño o inclusive por su tiempo de inicialización. Es por ello que optimizar Angular mediante el análisis de paquetes npm, también debe ser uno de nuestros objetivos antes de poner la aplicación en producción.
 
@@ -22,6 +25,7 @@ A la velocidad a la que se mueve nuestro entorno de trabajo, seguro que se nos o
 [Webpack](/blog/usar-webpack-4-transformar-empaquetar-recursos-aplicacion-web/) dispone de una característica que consiste en la generación de un mapa visual de la composición de los paquetes webpack y dado que esta es la herramienta predeterminada para el empaquetado de módulos de Angular CLI, ¿porqué no aprovecharla?
 
 ### Instalación
+
 En primer lugar lo que haremos será añadir el paquete necesario a nuestras dependencias de desarrollo:
 
 ``` bash
@@ -29,6 +33,7 @@ npm install --save-dev webpack-bundle-analyzer
 ```
 
 ### Configuración de scripts
+
 A continuación modificaremos el fichero _package.json_ de nuestra aplicación para simplificar el proceso de generación del análisis de paquetes:
 
 ``` js
@@ -42,6 +47,7 @@ A continuación modificaremos el fichero _package.json_ de nuestra aplicación p
 _package.json_
 
 ### Análisis de paquetes
+
 A partir de este momento ya tenemos automatizado el análisis y visualización de nuestro mapa de paquetes mediante el siguiente comando:
 
 ``` bash

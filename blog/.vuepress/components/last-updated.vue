@@ -5,7 +5,10 @@
       <path d="M4 20h4l10.5 -10.5a1.5 1.5 0 0 0 -4 -4l-10.5 10.5v4" />
       <line x1="13.5" y1="6.5" x2="17.5" y2="10.5" />
     </svg>
-    <!-- {{ customText || text }} -->{{ customValue || $page.lastUpdated }}
+    {{ customText || text }} &nbsp;
+    <time itemprop="dateModified" v-bind:content="customValue || $page.lastUpdated">
+      {{ customValue || $page.lastUpdated }}
+    </time>
   </div>
 </template>
 
@@ -14,7 +17,7 @@
     props: ['customText', 'customValue'],
     data() {
       return {
-        text: 'Última revisión'
+        text: 'Última modificación'
       }
     },
     mounted: function() {
@@ -24,7 +27,8 @@
       appendToHeader: function() {
         setTimeout(() => {
           let headerReference = document.querySelector('.post-meta-date');
-          let lastUpdatedReference = document.querySelector('.last-updated');
+          document.querySelector('.last-updated:not(.hidden)')?.remove();
+          let lastUpdatedReference = document.querySelector('.last-updated.hidden');
           if (headerReference && lastUpdatedReference) {
             lastUpdatedReference.classList.remove('hidden');
             headerReference.after(lastUpdatedReference);

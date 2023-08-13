@@ -5,12 +5,15 @@ tags:
 summary: En este artículo encontrarás el planteamiento de una posible evolución de los conceptos de arquitectura de una aplicación Angular que podemos extraer de la guía de estilo de referencia oficial de Angular.
 permalink: /blog/:slug
 canonicalUrl: https://rafaelneto.dev/blog/arquitectura-buenas-practicas-angular/
+meta:
+  - property: article:modified_time
+    content: 2021-10-22T00:00:00.000Z
 ---
 
 # Arquitectura y buenas prácticas para una aplicación Angular
 
 <social-share class="social-share--header" />
-<last-updated custom-value="22/10/2021" />
+<last-updated custom-value="2021-10-22" />
 
 Español | [English](/en/blog/architecture-best-practices-angular/)
 

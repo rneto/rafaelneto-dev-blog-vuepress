@@ -4,6 +4,7 @@ tags:
   - Nodejs
   - npm
   - HTTPServer
+summary: A menudo necesitamos servir localmente ficheros HTML estáticos, sin tener que instalar y configurar un servidor HTTP para un contenido tan simple.
 permalink: /blog/:slug
 canonicalUrl: https://rafaelneto.dev/blog/servir-archivos-html-estaticos-localmente-nodejs-http-server/
 ---
@@ -11,6 +12,8 @@ canonicalUrl: https://rafaelneto.dev/blog/servir-archivos-html-estaticos-localme
 # Servir archivos HTML estáticos localmente con Node.js y http-server
 
 <social-share class="social-share--header" />
+
+Español | [English](/en/blog/serve-static-html-files-locally-nodejs-http-server/)
 
 A menudo necesitamos servir localmente ficheros HTML estáticos, sin tener que instalar y configurar un servidor HTTP para un contenido tan simple.
 
@@ -51,7 +54,8 @@ Hit CTRL-C to stop the server
 Tanto si añadimos el paquete http-server como una dependencia propia dentro de nuestro proyecto/directorio o si lo añadimos globalmente, es posible hacer que nuestro navegador predeterminado se abra automáticamente con nuestra página _index.html_ una vez se arranque el servidor.
 
 Para ello debemos hacer uso del _package.json_ que debemos tener en nuestro directorio.
-> Una manera sencilla de crear un fichero _package.json_ es ejecutar el comando ``` npm init ``` en el directorio donde lo queremos crear y responder a las preguntas del cuestionario (podemos pulsar simplemente _intro_ para dejarlas todas con la respuesta por defecto).
+
+> Una manera sencilla de crear un fichero _package.json_ es ejecutar el comando ```npm init``` en el directorio donde lo queremos crear y responder a las preguntas del cuestionario (podemos pulsar simplemente _intro_ para dejarlas todas con la respuesta por defecto).
 
 Debemos añadir un nuevo script al fichero _package.json_ (en el siguiente ejemplo _start_) para arrancar el servidor y a su vez abrir el navegador con la página por defecto _index.html_ (http-server sirve de manera predeterminada ese fichero para cualquier solicitud de directorio).
 

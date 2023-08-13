@@ -2,26 +2,25 @@
 date: 2021-03-08
 tags:
   - TailwindCSS
-summary: Tailwind CSS es un framework CSS que proporciona una serie de utilidades de bajo nivel que nos permite crear diseños completamente personalizados en base a la composición de clases.
-permalink: /blog/:slug
-canonicalUrl: https://rafaelneto.dev/blog/tailwind-css/
+summary: Tailwind CSS is a CSS framework that provides a set of low-level utilities that allow us to create completely customized layouts based on class composition.
+permalink: /en/blog/:slug
 ---
 
-# ¿Qué es Tailwind CSS?
+# What is Tailwind CSS?
 
 <social-share class="social-share--header" />
 
-Español | [English](/en/blog/tailwind-css/)
+[Español](/blog/tailwind-css/) | English
 
-[Tailwind CSS](https://tailwindcss.com/) es un framework CSS que proporciona una serie de utilidades de bajo nivel que nos permite crear diseños completamente personalizados en base a la composición de clases.
+[Tailwind CSS](https://tailwindcss.com/) is a CSS framework that provides a set of low-level utilities that allow us to create completely customized layouts based on class composition.
 
-Desde su aparición a finales de 2017 su incorporación a miles de proyectos cada día es indiscutible, habiendo llegado a finales de febrero del 2021 a las casi 700.000 instalaciones diarias de su paquete en _npm_ (con el permiso de Bootstrap que llega ya a las 3.200.000 descargas diarias de su paquete en _npm_).
+Since its introduction in late 2017, the incorporation of Tailwind CSS into thousands of projects every day is undeniable. By the end of February 2021, it reached nearly 700,000 daily installations of its package on npm (with Bootstrap, for comparison, reaching 3.2 million daily downloads of its package on npm).
 
-Una de las principales ventajas que ofrece Tailwind CSS es en cuanto al sistema de diseño que plantea, ya que podríamos considerarlo un framework CSS progresivo, es decir, que podemos adoptarlo de manera completa sin más ayudas para crear un diseño atractivo o podemos adoptarlo parcialmente y de manera compatible con nuestro sistema de diseño actual, ya que no cuenta con componentes prediseñados como puede ser Bootstrap, sino que en base a sus clases de utilidades, nos ayuda a diseñar nuestros propios componentes combinando dichas clases.
+One of the main advantages offered by Tailwind CSS lies in its design system approach. It can be considered a progressive CSS framework, meaning that we can fully adopt it to create an attractive design without any additional assistance, or we can partially adopt it while remaining compatible with our existing design system. Unlike frameworks like Bootstrap, Tailwind CSS doesn't provide pre-designed components. Instead, it assists us in designing our own components by leveraging its utility classes.
 
-Otra gran ventaja de Tailwind CSS está relacionada con el tamaño de nuestros despliegues, ya que mediante el uso de preprocesadores CSS es posible reducir considerablemente el tamaño del archivo de estilos de nuestro proyecto mediante el escaneo de nuestros ficheros HTML para la eliminación de las clases Tailwind CSS no utilizadas.
+Another significant advantage of Tailwind CSS is related to deployment size. By using CSS preprocessors, it's possible to significantly reduce the size of our project's style file by scanning our HTML files and removing unused Tailwind CSS classes.
 
-Este sería un claro ejemplo de qué podemos llegar a hacer con Tailwind CSS:
+The following example demonstrates what we can achieve with Tailwind CSS:
 
 ``` html
 <div class="min-h-screen bg-gray-100 py-6 flex flex-col justify-center sm:py-12">
@@ -80,7 +79,7 @@ Este sería un claro ejemplo de qué podemos llegar a hacer con Tailwind CSS:
   </div>
 ```
 
-Y este sería el resultado:
+And this would be the result:
 
 <style>
   .responsive-embed {
@@ -126,9 +125,9 @@ Y este sería el resultado:
   <iframe src="https://htmlpreview.github.io/?https://github.com/rneto/mini-projects/blob/master/basic-tailwind-css/index.html"></iframe>
 </div>
 
-Puedes ver el código completo del anterior ejemplo al que he llamado [Basic Tailwind CSS](https://github.com/rneto/mini-projects/tree/master/basic-tailwind-css) en mi repositorio de GitHub [Mini projects](https://github.com/rneto/mini-projects).
+You can find the complete code for the previous example, which I've named [Basic Tailwind CSS](https://github.com/rneto/mini-projects/tree/master/basic-tailwind-css), in my GitHub repository [Mini projects](https://github.com/rneto/mini-projects).
 
-Y si quieres profundizar un poco más sobre Tailwind CSS con Angular e inclusive Angular Material, te sugiero visitar mi artículo sobre [cómo integrar Tailwind CSS con Angular Material en una aplicación Angular](/blog/integrar-tailwind-css-angular-material/).
+If you want to delve deeper into using Tailwind CSS with Angular, including Angular Material, I suggest visiting my article on [how to integrate Tailwind CSS with Angular Material in an Angular application](/en/blog/integrate-tailwind-css-angular-material/).
 
 ---
 <social-share class="social-share--footer" />

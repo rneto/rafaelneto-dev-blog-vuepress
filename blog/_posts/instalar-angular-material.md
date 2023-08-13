@@ -3,6 +3,7 @@ date: 2021-10-3
 tags:
   - Angular
   - AngularMaterial
+summary: La instalación de Angular Material está completamente guiada a través de Angular CLI, por lo que al ejecutar el comando `ng add @angular/material` en nuestra aplicación, podremos instalar todo lo necesario.
 permalink: /blog/:slug
 canonicalUrl: https://rafaelneto.dev/blog/instalar-angular-material/
 ---
@@ -11,11 +12,13 @@ canonicalUrl: https://rafaelneto.dev/blog/instalar-angular-material/
 
 <social-share class="social-share--header" />
 
+Español | [English](/en/blog/install-angular-material/)
+
 La instalación de [Angular Material](https://material.angular.io/) está completamente guiada a través de Angular CLI, por lo que al ejecutar el comando `ng add @angular/material` en nuestra aplicación, podremos instalar todo lo necesario.
 
 Una de las partes más importantes de la instalación es aquella en la que se nos pregunta por el tema que queremos usar en nuestra aplicación. Para ello, el instalador nos ofrece la posibilidad de seleccionar alguno de los temas predefinidos (_Indigo/Pink_, _Deep Purple/Amber_, _Pink/Blue Grey_ o _Purple/Green_) o nuestro propio tema personalizado.
 
-> Si estás interesado es saber cómo crear un tema personalizado, te recomiendo que le eches un vistazo a este otro artículo sobre [cómo crear un tema para Angular Material](/blog/crear-tema-angular-material/).
+> Si estás interesado en saber cómo crear un tema personalizado, te recomiendo que le eches un vistazo a este otro artículo sobre [cómo crear un tema para Angular Material](/blog/crear-tema-angular-material/).
 
 Además del tema, también se nos preguntará por si queremos que la tipografía de Angular Material se aplique a toda la aplicación y si queremos habilitar las animaciones para Angular Material.
 

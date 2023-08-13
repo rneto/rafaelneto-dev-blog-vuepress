@@ -3,7 +3,7 @@ date: 2023-5-10
 tags:
   - CSharp
   - PatronDeDiseño
-summary: Las expresiones lambda son una herramienta poderosa en el mundo de la programación que nos permite escribir funciones anónimas que pueden ser asignadas a una variable o pasadas como argumentos a una función ...
+summary: Las expresiones lambda son una herramienta poderosa en el mundo de la programación que nos permite escribir funciones anónimas que pueden ser asignadas a una variable o pasadas como argumentos a una función.
 permalink: /blog/:slug
 ---
 
@@ -48,7 +48,7 @@ public interface IDynamicLambdaBuilder<T>
 }
 ```
 
-La interfaz _IDynamicLambdaBuilder<T>_ utiliza el tipo genérico _T_ para representar el tipo de objeto en el que se está construyendo la expresión lambda. La interfaz define tres métodos:
+La interfaz _IDynamicLambdaBuilder\<T\>_ utiliza el tipo genérico _T_ para representar el tipo de objeto en el que se está construyendo la expresión lambda. La interfaz define tres métodos:
 
 - _AddFilter()_: Este método permite que los usuarios añadan filtros que se utilizará en la expresión lambda.
 - _Add()_: Este método permite añadir explícitamente una expresión lambda a nuestros filtros usando el operador "&&".
@@ -107,7 +107,6 @@ public class DynamicLambdaBuilder<T>
         _expressions.Add(binary);
         return this;
     }
-  
 
     public DynamicLambdaBuilder<T> And(Expression<Func<T, bool>> expression)
     {
@@ -119,7 +118,7 @@ public class DynamicLambdaBuilder<T>
     {
         _expressions.Add(Expression.Not(expression.Body));
         return this;
-    }  
+    }
 
     public Expression<Func<T, bool>> Build(LogicalOperator logicalOperator = LogicalOperator.And)
     {
@@ -159,13 +158,13 @@ public class DynamicLambdaBuilder<T>
 }
 ```
 
-En este ejemplo, la clase _DynamicLambdaBuilder<T>_ es una clase genérica que toma un parámetro de tipo _T_ que representa el tipo de las entidades de la colección que desea filtrar. La clase tiene un constructor que inicializa una expresión de parámetro para el parámetro lambda y una lista de objetos de expresión para almacenar las expresiones de filtro.
+En este ejemplo, la clase _DynamicLambdaBuilder\<T\>_ es una clase genérica que toma un parámetro de tipo _T_ que representa el tipo de las entidades de la colección que desea filtrar. La clase tiene un constructor que inicializa una expresión de parámetro para el parámetro lambda y una lista de objetos de expresión para almacenar las expresiones de filtro.
 
 El método _AddFilter_ toma un nombre de propiedad, un valor y un argumento _ComparisonType_ opcional que especifica el tipo de comparación que se usará (el valor predeterminado es _Equals_). El método crea una _MemberExpression_ para la propiedad, una _ConstantExpression_ para el valor y una _BinaryExpression_ para la comparación, según el tipo de comparación.
 
 El método _Build_ toma un argumento _LogicalOperator_ opcional que especifica el operador lógico que se usará al combinar las expresiones de filtro (el valor predeterminado es _And__). El método agrega las expresiones de filtro mediante el operador lógico especificado y crea una expresión lambda que toma un solo parámetro de tipo _T_ y devuelve un bool.
 
-Podemos usar la clase _DynamicLambdaBuilder<T>_ para crear expresiones lambda dinámicas basadas en un número variable de nombres y valores de propiedad como sigue:
+Podemos usar la clase _DynamicLambdaBuilder\<T\>_ para crear expresiones lambda dinámicas basadas en un número variable de nombres y valores de propiedad como sigue:
 
 ``` csharp
 var expresionBuilder = new DynamicLambdaBuilder<MyEntity>();
@@ -186,7 +185,7 @@ if (request.Property3 != null) {
 if (request.Property4 != null) {
     expresionBuilder.Or(m => m.PropertyName4 == request.Property4);
 }
-  
+
 // _context is a an object that represents my db context
 var searchResult = _context.MyEntities
     .Where(expresionBuilder.build())

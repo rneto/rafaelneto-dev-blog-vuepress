@@ -36,6 +36,8 @@ Este sistema incluye varios pasos básicos:
 - Generación de archivos de traducción.
 - Construcción de un proyecto idiomatizado.
 
+> Si quieres conocer las diferentes opciones existentes a la hora de idiomatizar una aplicación Angular, te recomiendo que le eches un vistazo a este otro artículo que he creado sobre las [Mejores alternativas para la internationalización (i18n) en Angular](/blog/mejores-alternativas-internacionalizacion-i18n-angular/).
+
 ## Configuración inicial
 
 El primer paso es instalar las dependencias necesarias utilizando Angular CLI:

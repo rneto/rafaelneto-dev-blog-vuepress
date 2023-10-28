@@ -15,7 +15,7 @@ permalink: /blog/:slug
 
 La internacionalización es un aspecto fundamental en el desarrollo de aplicaciones modernas y la capacidad de ofrecer nuestra aplicación en diferentes idiomas es esencial para llegar a una audiencia global. Angular, uno de los marcos de desarrollo web más populares, ofrece una [solución nativa para la internacionalización](/blog/internacionalizacion-i18n-angular/) basado en la generación de las traducciones en tiempo de compilación, pero en este artículo también quisiera explorar otras vías alternativas bastante interesantes como son la creación de un servicio desarrollado a medida para la traducción de contenidos, el uso de las librería [Transloco](https://github.com/ngneat/transloco/) o [@ngx-translate/core](https://github.com/ngx-translate/core)
 
-## El Desafío de la Internacionalización en Angular
+## El desafío de la internacionalización en Angular
 
 Antes de profundizar en las diferentes opciones, creo que es importante entender el enfoque nativo de Angular para la internacionalización y porqué es completamente distinto al resto de alternativas.
 
@@ -29,7 +29,6 @@ Estas son las opciones que vamos a explorar en el presente artículo:
 2. **[Servicio de traducción personalizado para Angular](#servicio-de-traduccion-personalizado-para-angular).**
 3. **[Transloco, una completa librería para la internacionalización en Angular](#transloco-una-completa-libreria-para-la-internacionalizacion-en-angular).**
 4. **[@ngx-translate/core, una popular librería pero abandonada en gran medida](#ngx-translate-core-una-popular-libreria-pero-abandonada-en-gran-medida).**
-
 
 ### @angular/localize, el módulo de internacionalización incorporado en Angular
 
@@ -53,7 +52,7 @@ El sistema de internacionalización (i18n) nativo de Angular es una característ
 
 4. **Configuración regional personalizada**: Podemos configurar la configuración regional (localización) a través del archivo `angular.json`, lo que nos permite definir las traducciones para diferentes idiomas y regiones.
 
-#### Dato interesante
+#### A destacar
 
 Cuando se cambia el idioma, es importante destacar que la aplicación se recarga automáticamente, sin embargo, el sistema proporciona un alto rendimiento durante este proceso gracias a su generación en tiempo de compilación. Esta característica es fundamental para garantizar que los usuarios obtengan la experiencia localizada deseada sin comprometer la velocidad y eficiencia de la aplicación.
 
@@ -288,7 +287,7 @@ Sin embargo, a medida que Angular ha evolucionado y ha introducido su propio sis
 
 Además de ello, también me he encontrado con limitaciones en cuanto a la existencia de _pipes_ y herramientas para la transformación de contenidos en las plantillas, por lo que acaba siendo imprescindible la creación clases y herramientas personalizadas para poder suplir dicha carencia.
 
-Su historia y legado en la comunidad de Angular son indiscutibles, y ha sido fundamental para brindar soporte a aplicaciones multilingües durante muchos años, así que a pesar de estas limitaciones, `ngx-translate` sigue siendo una opción sólida para proyectos más antiguos, siempre y cuando no sean válidas algunas de las propuestas que he hecho anteriormente.
+Su historia y legado en la comunidad de Angular son indiscutibles, y ha sido fundamental para brindar soporte a aplicaciones multilingües durante muchos años, así que a pesar de estas limitaciones, `ngx-translate` sigue siendo una opción sólida para proyectos más antiguos, siempre y cuando no sean válidas algunas de las demás propuestas que he planteado anteriormente.
 
 Puedes conocer más sobre la librería en la documentación que puedes encontrar en el [repositorio oficial de @ngx-translate/core en GitHub](https://github.com/ngx-translate/core).
 

@@ -12,13 +12,12 @@ Soy curioso por naturaleza, autodidacta por convicción y eterno aprendiz.
 
 Puedes encontrarme en:
   - [Mi blog, _Apuntes de un programador Full Stack_](./blog)
+  - [LinkedIn](https://www.linkedin.com/in/rrneto)
   - [GitHub](https://github.com/rneto)
   - [Twitter](https://twitter.com/rneto)
   - [Pluralsight](https://app.pluralsight.com/profile/rneto)
   - [HackerRank](https://www.hackerrank.com/rneto)
   - [StackBlitz](https://stackblitz.com/@rneto)
-  - [LinkedIn](https://www.linkedin.com/in/rrneto)
-
 
 <style lang="stylus" scoped>
 p

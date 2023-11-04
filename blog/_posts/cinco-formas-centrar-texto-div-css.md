@@ -16,7 +16,7 @@ meta:
 <social-share class="social-share--header" />
 <!-- <last-updated custom-value="2021-09-13" /> -->
 
-Español | [English](/en/blog/five-ways-center-texto-div-css/)
+Español | [English](/en/blog/five-ways-center-text-div-css/)
 
 Aquí presento una lista de cinco técnicas para centrar el texto en un div mediante CSS.
 

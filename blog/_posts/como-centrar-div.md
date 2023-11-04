@@ -11,6 +11,8 @@ permalink: /blog/:slug
 
 <social-share class="social-share--header" />
 
+Español | [English](/en/blog/how-center-div/)
+
 Cómo centrar un div en HTML y CSS es una tarea común en el diseño web. Un div puede envolver cualquier contenido que desees centrar, como texto, imágenes o vídeos, así que cuando creamos una página web, a menudo queremos que un div se coloque en el centro de la página o de otro elemento contenedor para el div. El contenedor es el elemento padre del div y se utiliza para alinear el div en el centro del mismo. El contenedor puede ser cualquier elemento HTML, pero el elemento _body_ suele ser el más comúnmente utilizado. En este artículo, exploraremos algunas formas de centrar un div usando HTML y CSS.
 
 ## 1. Utilizando CSS Flexible Box Layout (flexbox) alineando ejes

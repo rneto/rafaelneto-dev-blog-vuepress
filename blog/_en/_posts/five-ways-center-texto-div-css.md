@@ -3,26 +3,21 @@ date: 2021-09-13
 tags:
   - CSS
   - HTML
-summary: Aquí presento una lista de cinco técnicas para centrar el texto en un div mediante CSS.
-permalink: /blog/:slug
-canonicalUrl: https://rafaelneto.dev/blog/cinco-formas-centrar-texto-div-css/
-meta:
-  - property: article:modified_time
-    content: 2021-09-13T00:00:00.000Z
+summary: Here is a list of five techniques for centering text within a div using CSS.
+permalink: /en/blog/:slug
 ---
 
-# Cinco formas de centrar el texto en un div con CSS
+# Five ways to center text within a div using CSS
 
 <social-share class="social-share--header" />
-<!-- <last-updated custom-value="2021-09-13" /> -->
 
-Español | [English](/en/blog/five-ways-center-texto-div-css/)
+[Español](/blog/cinco-formas-centrar-texto-div-css/) | English
 
-Aquí presento una lista de cinco técnicas para centrar el texto en un div mediante CSS.
+Here is a list of five techniques for centering text within a div using CSS.
 
-## 1. Método _flexbox_
+## 1. _flexbox_ method
 
-Flexbox nos permite definir de una manera eficiente la alineación y posición de nuestros elementos. Para ello haremos uso de la alineación horizontal (_justify-content_) y vertical (_align-items_) propias de flexbox cuando asumimos el valor inicial de _flex-direction: row_.
+Flexbox enables us to efficiently define the alignment and positioning of our elements. To do so, we'll employ the horizontal alignment (_justify-content_) and vertical alignment (_align-items_) features of flexbox when assuming the default value of _flex-direction: row_.
 
 ``` html
 <div class="flexbox">
@@ -60,11 +55,11 @@ Flexbox nos permite definir de una manera eficiente la alineación y posición d
   flexbox
 </div>
 
-> Podemos simplificar más aún este ejemplo usando sólo ```display: grid;``` y ```place-items: center;``` en lugar de ```display: flex;```, ```align-items: center;``` y ```justify-content: center;```.
+> We can simplify this example even further by using just _display: grid;_ and _place-items: center;_ instead of _display: flex;_, _align-items: center;_, and _justify-content: center;_.
 
-## 2. Método _margin auto_
+## 2. _margin auto_ method
 
-Esta técnica se basa en usar la propiedad _margin_ del elemento que queremos alinear para así distanciarlo de los bordes de su contenedor y conseguir el efecto de centrado deseado. Si la combinamos con las características de flexbox, también podemos conseguir la alineación vertical de nuestro texto.
+This technique relies on utilizing the _margin_ property of the element you wish to center, creating the desired centering effect by adjusting its distance from the edges of the container. When combined with the features of flexbox, it also allows achieving vertical text alignment.
 
 ``` html
 <div class="margin-auto">
@@ -110,11 +105,11 @@ Esta técnica se basa en usar la propiedad _margin_ del elemento que queremos al
   </span>
 </div>
 
-## 3. Método _text align center_
+## 3. _text align center_ method
 
-Es la técnica clásica más sencilla y se basa en la alineación del texto mediante el uso de la propiedad _text-align_ del elemento padre.
+This is the simplest classic technique, centered text alignment is achieved by using the _text-align_ property of the parent element.
 
-También es posible centrar el texto verticalmente mediante el uso de la propiedad _vertical-align_ en combinación con la propiedad _line-height_ (debe establecerse con la misma altura que el contenedor del texto, por lo que suele usarse en contenedores con alto fijo).
+It's also possible to vertically center the text by using the _vertical-align_ property in combination with the _line-height_ property (which should be set to the same height as the text container and is typically used in containers with a fixed height).
 
 ``` html
 <div class="text-align-center">
@@ -154,11 +149,11 @@ También es posible centrar el texto verticalmente mediante el uso de la propied
   text align center
 </div>
 
-## 4. Método _position absolute_
+## 4. _position absolute_ method
 
-Esta técnica permite establecer la ubicación del texto en cualquier parte de su contenedor. En nuestro caso, como deseamos centrarlo, primero establecemos el eje superior izquierdo de nuestro texto en el centro de tu contenedor con las propiedades _top_ y _left_ al 50% y finalmente lo desplazamos con la propiedad _transform_ un 50% a la izquierda y hacia arriba para que acabe centrado respecto a su contenedor.
+This technique allows you to place the text anywhere within its container. In our case, as we wish to center it, we first position the top-left corner of our text in the center of the container using the _top_ and _left_ properties set to 50%. Finally, we adjust its position with the _transform_ property, shifting it 50% to the left and upwards to center it within its container.
 
-Al establecer la posición absoluta, estamos eliminando el elemento del flujo de la página, por lo que es importante tener en cuenta de que mal usada, esta técnica puede provocar la sobreposición de elementos de manera no deseada.
+By setting the position to absolute, we remove the element from the page flow. It's important to note that if not used correctly, this technique can lead to unintended element overlap.
 
 ``` html
 <div class="position-absolute">
@@ -215,9 +210,9 @@ Al establecer la posición absoluta, estamos eliminando el elemento del flujo de
   </span>
 </div>
 
-## 5. Método _table cell_
+## 5. _table cell_ method
 
-Cuando nuestro elemento contenedor no tenga un alto ni ancho fijos, sino que está adaptado al 100% de su elemento padre (suele usarse por ejemplo cuando al elemento _html_ o _body_ se establecen al 100%), podemos establecer la propiedad _display: table-cell;_ para extender el tamaño de nuestro texto hasta el tamaño de su contenedor, al cual también debemos añadir la propiedad _display: table;_. Una vez extendido nuestro elemento, ya podemos centrar el texto como en el método 3.
+When our container element doesn't have fixed height or width but adapts to 100% of its parent element (commonly used, for example, when the _html_ or _body_ elements are set to 100%), we can use the _display: table-cell;_ property to expand our text's size to match that of its container. We also need to add the _display: table;_ property to the container. Once our element is extended, we can center the text as in method 3.
 
 ``` html
 <div class="table-cell">

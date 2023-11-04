@@ -13,6 +13,8 @@ canonicalUrl: https://rafaelneto.dev/blog/instalar-multiples-versiones-nodejs-wi
 
 <social-share class="social-share--header" />
 
+Español | [English](/en/blog/installing-multiple-nodejs-versions-windows/)
+
 Una vez nos hemos sumergido en los frameworks y entornos de trabajo front end modernos, vamos a empezar a encontrarnos con que cada uno de nuestros proyectos puede haber sido creado con una versión diferente de Node.js, lo que implica que debamos empezar a tener en cuenta la versión mínima y máxima soportada de cada paquete _npm_ en cada versión de Node.js. Es el caso por ejemplo del paquete [node-sass](https://github.com/sass/node-sass), cuyas versiones mínimas y máximas compatibles con Node.js son:
 
 Node.js | Versión node-sass soportada

@@ -9,6 +9,7 @@ module.exports = {
     ['link', { rel: 'mask-icon', href: '/icons/safari-pinned-tab.svg', color: '#d66056' }],
     ['meta', { name: 'msapplication-TileImage', content: '/images/icons/icon-144x144' }],
     ['meta', { name: 'msapplication-TileColor', content: '#000000' }],
+    ['meta', { property: 'og:site_name', content: 'Rafael Neto' }],
     ['script', { async: true, src: 'https://www.googletagmanager.com/gtag/js?id=G-S8PRT356B6' }],
     ['script', {}, [ "window.dataLayer = window.dataLayer || [];\nfunction gtag(){dataLayer.push(arguments);}\ngtag('js', new Date());\ngtag('config', 'G-S8PRT356B6', { 'anonymize_ip': true });" ]]
   ],

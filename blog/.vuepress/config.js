@@ -67,7 +67,7 @@ module.exports = {
       contact: [
         {
           type: 'twitter',
-          link: 'https://mobile.twitter.com/RNeto',
+          link: 'https://x.com/RNeto',
         },
       ],
       copyright: [

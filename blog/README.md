@@ -14,7 +14,7 @@ Puedes encontrarme en:
   - [Mi blog, _Apuntes de un programador Full Stack_](./blog)
   - [LinkedIn](https://www.linkedin.com/in/rrneto)
   - [GitHub](https://github.com/rneto)
-  - [Twitter](https://twitter.com/rneto)
+  - [X](https://x.com/rneto)
   - [Pluralsight](https://app.pluralsight.com/profile/rneto)
   - [HackerRank](https://www.hackerrank.com/rneto)
   - [StackBlitz](https://stackblitz.com/@rneto)

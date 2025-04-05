@@ -50,7 +50,11 @@ p, ul, ol
   box-shadow: none !important
 
 .content-wrapper
-  padding-top: 70px !important
+  padding-top: 30px !important
+
+@media (max-width: 719px)
+  .content-wrapper
+    padding-top: 70px !important
 
 .social-share--header
   position: absolute !important
@@ -77,8 +81,8 @@ p, ul, ol
   display: none !important
 
 @media (max-width: 719px)
-    .content__default:not(.custom) > h1:first-child
-        padding-top: 5rem;
+  .content__default:not(.custom) > h1:first-child
+    padding-top: 5rem;
 
 .social-share-icon-svg
   position: relative

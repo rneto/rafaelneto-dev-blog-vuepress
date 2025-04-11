@@ -1,7 +1,7 @@
 ---
 date: 2025-4-11
 tags:
-  - .NET
+  - dotNET
 summary: En los últimos años hemos sido testigos de un fenómeno que no puede dejarnos indiferentes y que para algunos, puede llegar a ser preocupante para su ecosistema en el desarrollo de software, particularmente en el ámbito de .NET y C#.
 permalink: /blog/:slug
 ---

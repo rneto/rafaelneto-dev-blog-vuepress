@@ -10,7 +10,7 @@ permalink: /blog/:slug
 
 <social-share class="social-share--header" />
 
-En los últimos años hemos sido testigos de un fenómeno que no puede dejarnos indiferentes y que para algunos, puede llegar a ser preocupante para su ecosistema en el desarrollo de software, particularmente en el ámbito de .NET y C#. Hablo de herramientas y librerías que durante mucho tiempo han sido piezas fundamentales en el movimiento open source, pero que han empezado a migrar hacia modelos comerciales, lo que nos fuerza a reevaluar nuestras estrategias a futuro. Hablo por ejemplo del movimiento de IdentityServer hace años y más recientemente de MediatR y AutoMapper, dos herramientas esenciales para la mediación en patrón CQRS en .NET y el mapeo de objetos, que se unen a la lista según las [últimas noticias](https://github.com/AutoMapper/AutoMapper/discussions/4536).
+En los últimos años hemos sido testigos de un fenómeno que no puede dejarnos indiferentes y que para algunos, puede llegar a ser preocupante en su ecosistema en el desarrollo de software, particularmente en el ámbito de .NET y C#. Hablo de herramientas y librerías que durante mucho tiempo han sido piezas fundamentales en el movimiento open source, pero que han empezado a migrar hacia modelos comerciales, lo que nos fuerza a reevaluar nuestras estrategias a futuro. Hablo por ejemplo del movimiento de IdentityServer hace años y más recientemente de MediatR y AutoMapper, dos herramientas esenciales para la mediación en patrón CQRS en .NET y el mapeo de objetos, que se unen a la lista según las [últimas noticias](https://github.com/AutoMapper/AutoMapper/discussions/4536).
 
 #### IdentityServer: El pionero del cambio
 
@@ -20,11 +20,11 @@ El motivo que condicionó el cambio fue claro, la necesidad de financiar el desa
 
 Personalmente creo que hubiera sido el momento de que Microsoft se implicara en la creación de su propia solución de autenticación y autorización integrada en ASP.NET Core, pero hizo todo lo contrario al promover soluciones como Azure AD (Entra ID) y más viendo los pasos que ha ido dando con ASP.NET Core Identity, quedando enfocada a una autenticación muy básica y que no cubre los estándares avanzados como OpenID Connect y OAuth 2.0.
 
-De esa necesidad, una vez más la comunidad respondío llenando ese vacío con librerías como OpenIddict como alternativa a tener en cuenta. Es una de las partes que más me apasionan del mundo del desarrollo de software, que si lo necesitas, puedes crearlo.
+De esa necesidad, una vez más la comunidad respondió llenando ese vacío con librerías como OpenIddict como alternativa a tener en cuenta. Es una de las partes que más me apasionan del mundo del desarrollo de software, si lo necesitas, puedes crearlo.
 
 #### MediatR y AutoMapper: El impacto notable más reciente
 
-Y ahora llegamos a 2025, donde dos proyectos icónicos del ecosistema .NET han seguido un camino similar, MediatR y AutoMapper. MediatR, es una implementación del patrón Mediator y que se usa para simplificar la comunicación entre componentes en aplicaciones C#. Por otro lado, AutoMapper es una herramienta para mapear objetos de manera sencilla y eficiente. Ambas llevan muchos años siendo usadas en nuestros proyectos como recursos básicos fundamentales, la primera al aplicar una arquitectura CQRS en .NET y la segunda para simplificar las tareas de mapeo de objetos transpasados entre capas.
+Y ahora llegamos a 2025, donde dos proyectos icónicos del ecosistema .NET han seguido un camino similar, MediatR y AutoMapper. MediatR, es una implementación del patrón Mediator y que se usa para simplificar la comunicación entre componentes en aplicaciones C#. Por otro lado, AutoMapper es una herramienta para mapear objetos de manera sencilla y eficiente. Ambas llevan muchos años siendo usadas en nuestros proyectos como recursos básicos fundamentales, la primera al aplicar una arquitectura CQRS en .NET y la segunda para simplificar las tareas de mapeo de objetos traspasados entre capas.
 
 La transición de MediatR y AutoMapper a un modelo comercial no implica que dejen de ser accesibles por completo. Las versiones anteriores seguirán disponibles bajo licencias open source, sin embargo, las nuevas funcionalidades, actualizaciones y soporte oficial requerirán de una suscripción. De mismo modo que con IdentityServer, responde a la necesidad de financiar su desarrollo continuo.
 
@@ -32,7 +32,7 @@ Es normal que el tiempo dedicado a estas librerías de manera altruista, deriven
 
 #### Otros casos en el radar
 
-Aunque por más sonados y por implicaciones directas, me gusta destacar los casos de IdentityServer, MediatR y AutoMapper, no son los únicos. En los últimos meses, otras librerías populares en el ecosistema .NET han buscado vías de financiación como por ejemplo:
+Aunque por más sonados y por implicaciones directas, me gusta destacar IdentityServer, MediatR y AutoMapper, no son los únicos casos. En los últimos meses, otras librerías populares en el ecosistema .NET han buscado vías de financiación como por ejemplo:
 
 -  **FluentAssertions**: Una herramienta para escribir aserciones más legibles en pruebas unitarias en .NET, conocida por su API fluida, introdujo recientemente un modelo comercial para ciertas características avanzadas o un soporte premium, aunque mantiene una versión base gratuita para proyectos no comerciales.
 
@@ -62,7 +62,7 @@ Esta tendencia plantea varias consideraciones importantes para la comunidad de d
 
 3. **Contribución en proyectos existentes**: No olvidemos la importancia y responsabilidad que tenemos los desarrolladores de apoyar y contribuir con los proyectos open source. Creo que estas transiciones abrirán un debate necesario sobre cómo podemos apoyar de manera sostenible a los creadores de código open source. Debemos apoyar activamente, ya sea contribuyendo con código, documentación, soporte o donaciones con este tipo de proyectos.
 
-4. **Claridad en las licencias**: Es fundamental que comprendamos las implicaciones en nuestros desarrollos de las dependencias de las que hacemos uso y las licencias que tienen, con el objetivo de evitar problemas legales en el futuro. Pero también es cierto que debería haber más transparencia en los modelos de licencia, ya que a veces puede llegar a aer confusa.
+4. **Claridad en las licencias**: Es fundamental que comprendamos las implicaciones en nuestros desarrollos de las dependencias de las que hacemos uso y las licencias que tienen, con el objetivo de evitar problemas legales en el futuro. Pero también es cierto que debería haber más transparencia en los modelos de licencia, ya que a veces puede llegar a ser confusa.
 
 #### ¿Hacia dónde vamos?
 

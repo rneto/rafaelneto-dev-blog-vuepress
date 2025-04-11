@@ -20,7 +20,7 @@ El motivo que condicionó el cambio fue claro, la necesidad de financiar el desa
 
 Personalmente creo que hubiera sido el momento de que Microsoft se implicara en la creación de su propia solución de autenticación y autorización integrada en ASP.NET Core, pero hizo todo lo contrario al promover soluciones como Azure AD (Entra ID) y más viendo los pasos que ha ido dando con ASP.NET Core Identity, quedando enfocada a una autenticación muy básica y que no cubre los estándares avanzados como OpenID Connect y OAuth 2.0.
 
-De esa necesidad, una vez más la comunidad respondió llenando ese vacío con librerías como OpenIddict como alternativa a tener en cuenta. Es una de las partes que más me apasionan del mundo del desarrollo de software, si lo necesitas, puedes crearlo.
+De esa necesidad, una vez más la comunidad respondió llenando ese vacío con librerías como OpenIddict como alternativa a tener en cuenta. Es una de las partes que más me apasionan del desarrollo de software: si lo necesitas, puedes crearlo.
 
 #### MediatR y AutoMapper: El impacto notable más reciente
 

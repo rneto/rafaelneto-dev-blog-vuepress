@@ -54,7 +54,7 @@ Creo que hay varios factores que lo explican:
 
 #### Impacto del cambio en la comunidad .NET
 
-Esta tendencia plantea varias consideraciones importantes para la comunidad de desarrollo .NET, TypeScript y C#:
+Esta tendencia plantea varias consideraciones importantes para la comunidad de desarrollo .NET y C#:
 
 1.  **Evaluación de costes y oportunidades**: Para quienes hacemos uso de este tipo de librerías, el cambio plantea retos y oportunidades. Por un lado, el coste adicional podría llegar a ser un obstáculo, y por otro lado, el modelo comercial debería garantizar un desarrollo más robusto y soporte dedicado, algo que beneficiaría a quienes pueden pagarlo. Llega el momento de evaluar costes a la hora de planificar nuevos proyectos o actualizar los ya existentes.
 
@@ -62,11 +62,11 @@ Esta tendencia plantea varias consideraciones importantes para la comunidad de d
 
 3. **Contribución en proyectos existentes**: No olvidemos la importancia y responsabilidad que tenemos los desarrolladores de apoyar y contribuir con los proyectos open source. Creo que estas transiciones abrirán un debate necesario sobre cómo podemos apoyar de manera sostenible a los creadores de código open source. Debemos apoyar activamente, ya sea contribuyendo con código, documentación, soporte o donaciones con este tipo de proyectos.
 
-4. **Claridad en las licencias**: Es fundamental que comprendamos las implicaciones en nuestros desarrollos de las dependencias de las que hacemos uso y las licencias que tienen, con el objetivo de evitar problemas legales en el futuro. Pero también es cierto que debería haber más transparencia en los modelos de licencia open source, ya que a veces puede ser bastante confusa.
+4. **Claridad en las licencias**: Es fundamental que comprendamos las implicaciones en nuestros desarrollos de las dependencias de las que hacemos uso y las licencias que tienen, con el objetivo de evitar problemas legales en el futuro. Pero también es cierto que debería haber más transparencia en los modelos de licencia, ya que a veces puede llegar a aer confusa.
 
 #### ¿Hacia dónde vamos?
 
-El futuro del desarrollo en .NET parece dirigirse hacia un equilibrio entre lo gratuito y lo comercial. Esto nos recuerda que el desarrollo de software es un esfuerzo en constante evolución. La comunidad podría responder de diversas maneras: manteniendo forks de versiones antiguas, desarrollando nuevas alternativas open source o integrando más activamente estos modelos híbridos en nuestros proyectos. Lo cierto es que el debate sobre cómo financiar esa parte del código que usamos todos los días y sin coste está muy vivo.
+El futuro del desarrollo en .NET parece dirigirse hacia un equilibrio entre lo gratuito y lo comercial. Esto nos recuerda que el desarrollo de software es un esfuerzo en constante evolución. La comunidad podría responder de diversas maneras: manteniendo forks de versiones antiguas, desarrollando nuevas alternativas open source o integrando más activamente estos modelos híbridos en nuestros proyectos. Lo cierto es que el debate sobre cómo financiar esa parte del código que usamos todos los días y sin coste, está muy vivo.
 
 Como desarrolladores (y las empresas para las que trabajamos), debemos reflexionar. ¿Estamos dispuestos a asumnir los costes de las herramientas que nos ahorran mucho tiempo de trabajo? ¿Deberíamos implicarnos más en los proyectos open source de manera activa para hacerlos viables en el tiempo? No hay una única respuesta posible, pero el cambio es real y ya está aquí. Como desarrolladores debemos mantenernos informados, evaluar nuestras opciones cuidadosamente y seguir contribuyendo a una comunidad .NET brillante.
 

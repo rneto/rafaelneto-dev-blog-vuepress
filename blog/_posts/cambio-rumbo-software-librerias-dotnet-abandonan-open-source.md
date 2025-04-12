@@ -2,13 +2,15 @@
 date: 2025-4-11
 tags:
   - dotNET
-summary: En los últimos años hemos sido testigos de un fenómeno que no puede dejarnos indiferentes y que para algunos, puede llegar a ser preocupante para su ecosistema en el desarrollo de software, particularmente en el ámbito de .NET y C#.
+summary: En los últimos años hemos sido testigos de un fenómeno que no puede dejarnos indiferentes y que para algunos, puede llegar a ser preocupante para su ecosistema en el desarrollo de software, particularmente en el ámbito de .NET y C#...
 permalink: /blog/:slug
 ---
 
 # El cambio de rumbo en el software: Librerías de .NET que abandonan el open source
 
 <social-share class="social-share--header" />
+
+Español | [English](/en/blog/shift-software-direction-dotnet-libraries-moving-away-open-source/)
 
 En los últimos años hemos sido testigos de un fenómeno que no puede dejarnos indiferentes y que para algunos, puede llegar a ser preocupante en su ecosistema en el desarrollo de software, particularmente en el ámbito de .NET y C#. Hablo de herramientas y librerías que durante mucho tiempo han sido piezas fundamentales en el movimiento open source, pero que han empezado a migrar hacia modelos comerciales, lo que nos fuerza a reevaluar nuestras estrategias a futuro. Hablo por ejemplo del movimiento de IdentityServer hace años y más recientemente de MediatR y AutoMapper, dos herramientas esenciales para la mediación en patrón CQRS en .NET y el mapeo de objetos, que se unen a la lista según las [últimas noticias](https://github.com/AutoMapper/AutoMapper/discussions/4536).
 

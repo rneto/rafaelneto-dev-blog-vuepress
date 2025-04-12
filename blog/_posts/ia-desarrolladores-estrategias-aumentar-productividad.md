@@ -90,17 +90,17 @@ La IA no solo genera código, sino que también puede mejorarlo. Por ejemplo:
 
 > Podemos buscar vulnerabilidades: *"Revisa este script PHP y señala posibles problemas de seguridad como inyecciones SQL."*
 
-> Optimizamos: *"Sugiere mejoras de rendimiento para esta consulta SQL."*
+> Podemos optimizar código: *"Sugiere mejoras de rendimiento para esta consulta SQL."*
 
 Vamos a mantener nuestro código más limpio, hacerlo más seguro y lo vamos a actualizar con menos esfuerzo.
 
 ### 3. **Pruebas y documentación**
 
-Escribir pruebas y generación documentación de nuestros proyectos suele ser una tarea tediosa, así que ¿porqué no usar también la IA ello? Por ejemplo:
+Escribir pruebas y generar la documentación de nuestros proyectos suele ser una tarea tediosa, así que ¿porqué no usar también la IA para ello? Por ejemplo:
 
-> Podemos genera pruebas: *"Crea casos de prueba unitarios en Jest para esta función JavaScript que calcula el factorial de un número."*
+> Podemos generar pruebas: *"Crea casos de prueba unitarios en Jest para esta función JavaScript que calcula el factorial de un número."*
 
-> Documentamos: *"Añade comentarios detallados a este código Python y genera una documentación externa en formato Markdown."*
+> Podemos documentar el proyecto: *"Añade comentarios detallados a este código Python y genera una documentación externa en formato Markdown."*
 
 Una vez más ahorramos tiempo y además optimizamos el mantenimiento de nuestros proyectos.
 
@@ -112,7 +112,7 @@ La IA puede actuar como un profesor experto y personalizado, recomendándonos re
 
 > *"Dame un plan de estudio de 4 semanas para dominar los fundamentos de Docker."*
 
-Podemos complementarlo para practicar pidiendo que nos prepare ejercicions, que resulta dudas o que inclusive simule entrevistas técnicas.
+Podemos complementarlo para practicar pidiendo que nos prepare ejercicios, que resuelva dudas o que inclusive simule entrevistas técnicas.
 
 ---
 
@@ -128,13 +128,13 @@ Usemos la IA para comparar tecnologías o enfoques, así que nos ayudará a eleg
 
 Deleguemos tareas como la conversión de formatos de datos o la generación de configuraciones. Ejemplo:
 
-> "Convierte este JSON a un esquema de base de datos SQL."*
+> *"Convierte este JSON a un esquema de base de datos SQL."*
 
 **Prototipado**
 
 Creemos prototipos funcionales en minutos. Por ejemplo:
 
-> "Diseña un script básico en Python para una aplicación de chat en tiempo real usando WebSockets."*
+> *"Diseña un script básico en Python para una aplicación de chat en tiempo real usando WebSockets."*
 
 ---
 

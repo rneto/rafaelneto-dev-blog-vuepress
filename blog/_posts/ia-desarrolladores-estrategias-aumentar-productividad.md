@@ -34,7 +34,7 @@ Esta estrategia se puede aplicar si realmente no tenemos clara la información q
 
 Conseguiremos que la IA nos pregunte para mejorar la calidad de su respuesta en base a nuestras expectativas.
 
-### 3. **Pros and Cons Prompt Strategy (Estrategia de pros y contras)**
+### 3. **Pros and Cons Prompt Strategy (Estrategia de ventajas e inconvenientes)**
 
 Vamos a pedir a la IA que analice una decisión desde múltiples perspectivas. Por ejemplo:
 

@@ -38,7 +38,7 @@ Aunque por más sonados y por implicaciones directas, me gusta destacar Identity
 
 -  **ImageSharp**: Una librería de procesamiento de imágenes, evolucionó a hacia un modelo híbrido donde en algunos contextos requieren una licencia comercial, mientras que la base sigue siendo open source según su uso.
 
--  **OpenIdict**: Es una librería que proporciona una solución flexible para implementar un stack propio de autenticación y autorización basado en los estándares OAuth 2.0 y OpenID Connect en aplicaciones .NET, que a pesar de ser open source, ofrece soporte oficial premium a patrocinadores y colaboradores del proyecto.
+-  **OpenIddict**: Es una librería que proporciona una solución flexible para implementar un stack propio de autenticación y autorización basado en los estándares OAuth 2.0 y OpenID Connect en aplicaciones .NET, que a pesar de seguir siendo open source, sólo ofrece soporte oficial a sus patrocinadores en función de su aportación económica.
 
 Creo que estos casos reflejan una tendencia bastante clara de que el open source, tal como lo entendíamos, está evolucionando hacia un modelo híbrido donde el acceso gratuito coexiste con otras opciones que permiten hacer económicamente viable el mantenimiento y evolución del proyecto.
 

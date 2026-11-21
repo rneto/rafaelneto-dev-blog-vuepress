@@ -16,9 +16,11 @@ yarn build     # static build into blog/.vuepress/dist/
 
 `yarn build` is the only verification available; run it after config or component changes to catch broken frontmatter or Vue template errors in posts.
 
+VuePress 1 uses webpack 4, which fails on Node 17+ with `error:0308010C:digital envelope routines::unsupported`. Set `NODE_OPTIONS=--openssl-legacy-provider` for `yarn dev` and `yarn build` on any modern Node.
+
 ## Deployment
 
-Every push (any branch) triggers `.github/workflows/vuepress-deploy.yml`, which runs `yarn && yarn build` and pushes `blog/.vuepress/dist/` to the `master` branch of the separate `rneto/rafaelneto.dev` repo (GitHub Pages, CNAME `rafaelneto.dev`). Pushing here effectively publishes the site.
+Every push to `master` triggers `.github/workflows/vuepress-deploy.yml`. It installs with `yarn install --frozen-lockfile` on Node 24, builds with the legacy OpenSSL option, and force-pushes `blog/.vuepress/dist/` as a single commit to the `master` branch of the separate `rneto/rafaelneto.dev` repo (GitHub Pages, CNAME `rafaelneto.dev`) using the `ACCESS_TOKEN` secret. Pushing to `master` here publishes the site; other branches do not deploy.
 
 ## Content structure
 

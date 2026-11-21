@@ -1,18 +1,25 @@
 name: Build and Deploy
-on: [push]
+on:
+  push:
+    branches: [master]
 jobs:
   build-and-deploy:
     runs-on: ubuntu-latest
     steps:
-    - name: Checkout
-      uses: actions/checkout@master
-
-    - name: vuepress-deploy
-      uses: jenkey2011/vuepress-deploy@master
-      env:
-        ACCESS_TOKEN: ${{ secrets.ACCESS_TOKEN }}
-        TARGET_REPO: rneto/rafaelneto.dev
-        TARGET_BRANCH: master
-        BUILD_SCRIPT: yarn && yarn build
-        BUILD_DIR: blog/.vuepress/dist/
-        CNAME: rafaelneto.dev
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 24
+          cache: yarn
+      - run: yarn install --frozen-lockfile
+      - run: yarn build
+        env:
+          NODE_OPTIONS: --openssl-legacy-provider
+      - uses: peaceiris/actions-gh-pages@v4
+        with:
+          personal_token: ${{ secrets.ACCESS_TOKEN }}
+          external_repository: rneto/rafaelneto.dev
+          publish_branch: master
+          publish_dir: blog/.vuepress/dist
+          cname: rafaelneto.dev
+          force_orphan: true

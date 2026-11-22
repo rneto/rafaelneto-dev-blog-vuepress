@@ -4,10 +4,11 @@ tags:
   - Angular
   - i18n
 summary: Un paso básico en prácticamente todos los proyectos es configurar un sistema que nos permita idiomatizar nuestra aplicación Angular. En ese sentido, el uso del sistema de internacionalización oficial de Angular ...
+description: "Cómo configurar el sistema oficial de internacionalización (i18n) de Angular para idiomatizar nuestra aplicación."
 permalink: /blog/:slug
 ---
 
-# Internationalización (i18n) en Angular
+# Internacionalización (i18n) en Angular
 
 <social-share class="social-share--header" />
 
@@ -36,7 +37,7 @@ Este sistema incluye varios pasos básicos:
 - Generación de archivos de traducción.
 - Construcción de un proyecto idiomatizado.
 
-> Si quieres conocer las diferentes opciones existentes a la hora de idiomatizar una aplicación Angular, te recomiendo que le eches un vistazo a este otro artículo que he creado sobre las [Mejores alternativas para la internationalización (i18n) en Angular](/blog/mejores-alternativas-internacionalizacion-i18n-angular/).
+> Si quieres conocer las diferentes opciones existentes a la hora de idiomatizar una aplicación Angular, te recomiendo que le eches un vistazo a este otro artículo que he creado sobre las [Mejores alternativas para la internacionalización (i18n) en Angular](/blog/mejores-alternativas-internacionalizacion-i18n-angular/).
 
 ## Configuración inicial
 

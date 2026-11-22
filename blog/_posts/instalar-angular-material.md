@@ -4,6 +4,7 @@ tags:
   - Angular
   - AngularMaterial
 summary: La instalación de Angular Material está completamente guiada a través de Angular CLI, por lo que al ejecutar el comando `ng add @angular/material` en nuestra aplicación, podremos instalar todo lo necesario.
+description: "La instalación de Angular Material está guiada por Angular CLI: basta con ejecutar ng add @angular/material para instalar todo lo necesario."
 permalink: /blog/:slug
 canonicalUrl: https://rafaelneto.dev/blog/instalar-angular-material/
 ---

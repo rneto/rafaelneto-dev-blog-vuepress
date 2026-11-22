@@ -5,6 +5,7 @@ tags:
   - RxJs
   - BehaviourSubject
 summary: There are multiple options when it comes to manage the state of an Angular application by using a state management, however, there is also another centralized storage solution, simple and inexpensive (for its size and implementation) that is completely valid for certain projects.
+description: "A simple alternative to state management libraries in Angular: observable data services with RxJs BehaviorSubject."
 permalink: /en/blog/:slug
 ---
 

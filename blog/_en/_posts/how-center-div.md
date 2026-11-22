@@ -4,6 +4,7 @@ tags:
   - CSS
   - HTML
 summary: Centrally aligning a div in HTML and CSS is a common task in the web design. A div can encapsulate any content you wish to center, such as text, images, or videos, so when creating a web page, it's often desirable ...
+description: "How to center a div in HTML and CSS, a common task in web design, and the different techniques to center any content."
 permalink: /en/blog/:slug
 ---
 

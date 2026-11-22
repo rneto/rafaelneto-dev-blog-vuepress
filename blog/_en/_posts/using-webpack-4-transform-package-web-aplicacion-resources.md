@@ -5,6 +5,7 @@ tags:
   - npm
   - webpack
 summary: Webpack is one of the most widely used JavaScript technologies for years to transform and package all kinds of web resources, such as JavaScript, HTML, CSS or images.
+description: "How to use Webpack 4 to transform and package web application resources such as JavaScript, HTML, CSS or images."
 permalink: /en/blog/:slug
 ---
 

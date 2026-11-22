@@ -4,6 +4,7 @@ tags:
   - Angular
   - i18n
 summary: A basic step in virtually all projects is to set up a system that allows us to internationalize our Angular application. In that sense, the use of the official internationalization system of Angular ...
+description: "How to set up the official Angular internationalization (i18n) system to translate your Angular application into multiple languages."
 permalink: /en/blog/:slug
 ---
 

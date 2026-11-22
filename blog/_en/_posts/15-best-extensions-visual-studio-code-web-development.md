@@ -3,6 +3,7 @@ date: 2023-3-16
 tags:
   - VisualStudioCode
 summary: I regularly use Visual Studio Code both as a source code editor for web projects and for handling files of various types. I genuinely believe it's a great tool that you should try because ...
+description: "The 15 Visual Studio Code extensions I regularly use for web development and that I genuinely believe you should try."
 permalink: /en/blog/15-best-extensions-visual-studio-code-web-development
 ---
 

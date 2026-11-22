@@ -7,6 +7,7 @@ tags:
   - OIDC
   - seguridad
 summary: Un flujo de autorización es lo que permite que una aplicación cliente, como aplicaciones web, aplicaciones de escritorio, teléfonos móviles, dispositivos IoT y otros consumidores, obtengan acceso autorizado a recursos protegidos, como APIs web y archivos entre otros.
+description: "Los flujos de autorización de OAuth 2.0 y OpenID Connect que permiten a aplicaciones web, de escritorio, móviles o IoT acceder a recursos protegidos."
 permalink: /blog/:slug
 ---
 

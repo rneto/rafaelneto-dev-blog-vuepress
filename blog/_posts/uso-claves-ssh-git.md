@@ -4,6 +4,7 @@ tags:
   - Git
   - SSH
 summary: Cuando nos conectamos a un repositorio Git remoto, solemos tener dos opciones de conexión, HTTPS y SSH. Con HTTPS la comunicación se realiza mediante una capa segura que cifra la comunicación ...
+description: "Cómo usar claves SSH con Git en lugar de HTTPS y configurarlas en BitBucket, Sourcetree, GitHub y Visual Studio Code."
 permalink: /blog/:slug
 ---
 

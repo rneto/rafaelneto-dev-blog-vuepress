@@ -4,6 +4,7 @@ tags:
   - JavaScript
   - ES2015
 summary: Desde la especificación ECMAScript 2015, las operaciones con arrays de elementos se han visto potenciadas gracias a nuevos métodos de alto nivel como map, filter, reduce, some, every o forEach entre otros.
+description: "Cómo optimizar los bucles en JavaScript y comparar el rendimiento de métodos de arrays como map, filter, reduce o forEach."
 permalink: /blog/:slug
 canonicalUrl: https://rafaelneto.dev/blog/optimizar-bucles-javascript/
 ---
@@ -12,7 +13,7 @@ canonicalUrl: https://rafaelneto.dev/blog/optimizar-bucles-javascript/
 
 <social-share class="social-share--header" />
 
-Español | [English](/en/blog/optimizing-javaScript-loops/)
+Español | [English](/en/blog/optimizing-javascript-loops/)
 
 Desde la especificación ECMAScript 2015, las operaciones con arrays de elementos se han visto potenciadas gracias a nuevos métodos de alto nivel como _map_, _filter_, _reduce_, _some_, _every_ o _forEach_ entre otros. Con ellos ganamos en entendimiento y depuración del código, pero no siempre son la mejor opción para optimizar el tiempo de ejecución de nuestros bucles.
 

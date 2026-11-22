@@ -5,6 +5,7 @@ tags:
   - AngularMaterial
   - Sass
 summary: Angular Material provides a theming system that allows you to customize the color and typography aspects of its components. This system offers different configuration options based on _Sass_ features, which we will explore below.
+description: "How to create a theme for Angular Material and customize the color and typography of its components with its Sass-based options."
 permalink: /en/blog/:slug
 ---
 

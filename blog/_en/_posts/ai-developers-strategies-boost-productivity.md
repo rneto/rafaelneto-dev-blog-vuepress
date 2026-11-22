@@ -3,6 +3,7 @@ date: 2025-4-12
 tags:
   - AI
 summary: Artificial intelligence (AI) is already transforming the way developers work. From code generation and optimization to continuous learning, now is the time to make the most of ...
+description: "Key strategies for developers to make the most of AI: prompt techniques, code generation, quality improvement and continuous learning."
 permalink: /en/blog/:slug
 ---
 

@@ -4,8 +4,8 @@ tags:
   - Nodejs
   - npm
 summary: For those of us who are Windows users and at the same time developers of applications with _Node.js_, it is common that we encounter problems that Linux/MAC users are happily unaware of (others have for sure...).
+description: "How to use environment variables in package.json scripts on Windows, a problem Linux/MAC users are happily unaware of."
 permalink: /en/blog/:slug
-canonicalUrl: https://rafaelneto.dev/blog/configurar-variables-entorno-package-json-windows/
 ---
 
 # Configuring the use of environment variables in package.json for Windows

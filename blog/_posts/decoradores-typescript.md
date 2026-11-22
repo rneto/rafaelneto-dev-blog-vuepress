@@ -4,6 +4,7 @@ tags:
   - TypeScript
   - PatronDeDiseño
 summary: Los decoradores nos permiten alterar dinámicamente la funcionalidad o añadir nuevas responsabilidades a un objeto a nivel de clase, propiedad, método o parámetro sin por ello tener que emplear otros mecanismos como la herencia.
+description: "Los decoradores de TypeScript nos permiten alterar o añadir responsabilidades a una clase, propiedad, método o parámetro sin usar la herencia."
 permalink: /blog/:slug
 canonicalUrl: https://rafaelneto.dev/blog/decoradores-typescript/
 ---

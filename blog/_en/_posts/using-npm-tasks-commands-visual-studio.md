@@ -4,6 +4,7 @@ tags:
   - npm
   - VisualStudio
 summary: As Visual Studio users we are used to some of the work being automated in the development environment, but sometimes we need to run npm tasks or commands in our project such as converting TypeScript to JavaScript.
+description: "How to run npm tasks and commands from Visual Studio, such as converting TypeScript to JavaScript, using the Task Runner Explorer."
 permalink: /en/blog/:slug
 ---
 

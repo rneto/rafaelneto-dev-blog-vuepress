@@ -6,6 +6,7 @@ tags:
   - WebComponents
   - PatronDeDiseño
 summary: Angular Elements es una funcionalidad de Angular que nos permite crear componentes web reutilizables que pueden ser integrados en cualquier aplicación web sin depender de Angular. Veamos cómo navegar entre sus vistas con el patrón Mediator ...
+description: "Cómo navegar entre las vistas de un componente creado con Angular Elements usando el patrón Mediator, sin depender del Router de Angular."
 permalink: /blog/:slug
 ---
 

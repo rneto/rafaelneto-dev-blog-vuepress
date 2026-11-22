@@ -3,7 +3,8 @@ date: 2021-10-3
 tags:
   - Angular
   - AngularMaterial
-summary: The installation of Angular Material is fully guided throuth Angular CLI, so when we run the command `ng add @angular/material` in our application, we will be able to install everithing that is needed.
+summary: The installation of Angular Material is fully guided through Angular CLI, so when we run the command `ng add @angular/material` in our application, we will be able to install everything that is needed.
+description: "Installing Angular Material is fully guided by Angular CLI: just run ng add @angular/material to install everything that is needed."
 permalink: /en/blog/:slug
 ---
 
@@ -13,7 +14,7 @@ permalink: /en/blog/:slug
 
 [Español](/blog/instalar-angular-material/) | English
 
-The installation of [Angular Material](https://material.angular.io/) is fully guided throuth Angular CLI, so when we run the command `ng add @angular/material` in our application, we will be able to install everithing that is needed.
+The installation of [Angular Material](https://material.angular.io/) is fully guided through Angular CLI, so when we run the command `ng add @angular/material` in our application, we will be able to install everything that is needed.
 
 One of the most important parts of the installation is when we are asked about the theme we want to use in our application. For that, the installer gives us the option to select one of the predefined themes (_Indigo/Pink_, _Deep Purple/Amber_, _Pink/Blue Grey_ or _Purple/Green_) or our own custom theme.
 

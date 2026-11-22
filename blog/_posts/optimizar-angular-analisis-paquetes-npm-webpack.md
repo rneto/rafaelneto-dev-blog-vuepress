@@ -6,6 +6,7 @@ tags:
   - npm
   - webpack
 summary: Más allá de la optimización de una aplicación Angular a través por ejemplo de la carga diferida de módulos o mediante el uso de una estrategia de detección de cambios basada en OnPush, también debemos tener en cuenta ...
+description: "Además de la carga diferida o la estrategia OnPush, podemos optimizar una aplicación Angular analizando sus paquetes npm con webpack."
 permalink: /blog/:slug
 canonicalUrl: https://rafaelneto.dev/blog/optimizar-angular-analisis-paquetes-npm-webpack/
 ---

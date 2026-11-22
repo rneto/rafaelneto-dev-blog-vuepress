@@ -4,10 +4,11 @@ tags:
   - Angular
   - i18n
 summary: La internacionalización es un aspecto fundamental en el desarrollo de aplicaciones modernas y la capacidad de ofrecer nuestra aplicación en diferentes idiomas es esencial para llegar a una audiencia global. Angular, ...
+description: "Las mejores alternativas para la internacionalización (i18n) en Angular y ofrecer nuestra aplicación en diferentes idiomas."
 permalink: /blog/:slug
 ---
 
-# Mejores alternativas para la internationalización (i18n) en Angular
+# Mejores alternativas para la internacionalización (i18n) en Angular
 
 <social-share class="social-share--header" />
 

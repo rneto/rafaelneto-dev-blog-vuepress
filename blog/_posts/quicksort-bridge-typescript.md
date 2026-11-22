@@ -5,6 +5,7 @@ tags:
   - TypeScript
   - PatronDeDiseño
 summary: El algoritmo de ordenación Quicksort, consiste en tomar como referencia un elemento de la lista (al que se denomina _pivote_) y dividirla en dos nuevas sublistas, una con los elementos menores al elemento de referencia y otra ...
+description: "Implementaciones del algoritmo de ordenación QuickSort en TypeScript y cómo intercambiarlas mediante el patrón de diseño Bridge."
 permalink: /blog/:slug
 canonicalUrl: https://rafaelneto.dev/blog/quicksort-bridge-typescript/
 ---

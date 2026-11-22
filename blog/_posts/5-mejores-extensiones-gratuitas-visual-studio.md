@@ -3,6 +3,7 @@ date: 2021-6-12
 tags:
   - VisualStudio
 summary: Visual Studio es un gran entorno de desarrollo. He conocido todas sus versiones (desde la _Visual Studio 97_ con Visual Basic -ahí empezó todo, cómo pasan los años...-) y creo que ...
+description: "Las 5 mejores extensiones gratuitas para Visual Studio, un gran entorno de desarrollo que conozco desde la versión Visual Studio 97."
 permalink: /blog/5-mejores-extensiones-gratuitas-visual-studio
 canonicalUrl: https://rafaelneto.dev/blog/5-mejores-extensiones-gratuitas-visual-studio/
 ---

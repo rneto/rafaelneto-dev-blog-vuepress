@@ -6,6 +6,7 @@ tags:
   - WebComponents
   - DesignPattern
 summary: Angular Elements is an Angular feature that allows us to create reusable web components that can be integrated into any web application without depending on Angular. Let's see how to navigate between its views with the Mediator pattern ...
+description: "How to navigate between the views of an Angular Elements web component with the Mediator pattern, without depending on the Angular Router."
 permalink: /en/blog/:slug
 ---
 

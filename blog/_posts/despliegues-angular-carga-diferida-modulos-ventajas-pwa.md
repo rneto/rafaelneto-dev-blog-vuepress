@@ -4,6 +4,7 @@ tags:
   - Angular
   - PWA
 summary: Cuando generamos una aplicación Angular para su despliegue con la configuración de producción predeterminada, automáticamente nos encontramos con una serie de ficheros de fragmentos de código ...
+description: "Los ficheros de fragmentos de código de un despliegue Angular en producción, la carga diferida de módulos y las ventajas de una PWA."
 permalink: /blog/:slug
 canonicalUrl: https://rafaelneto.dev/blog/despliegues-angular-carga-diferida-modulos-ventajas-pwa/
 ---

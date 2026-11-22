@@ -7,6 +7,7 @@ tags:
   - Observable
   - DesignPattern
 summary: Observables are a powerful tool in Angular to handle asynchronous data flows. BehaviorSubjects are a special variant of observables that maintain a current state and emit that state to any new subscribers.
+description: "The different ways to unsubscribe from an RxJs BehaviorSubject observable in Angular to avoid memory leaks."
 permalink: /en/blog/:slug
 ---
 

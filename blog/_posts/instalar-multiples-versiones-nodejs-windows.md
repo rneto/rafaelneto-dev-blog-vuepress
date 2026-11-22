@@ -5,6 +5,7 @@ tags:
   - nvm
   - npm
 summary: Una vez nos hemos sumergido en los frameworks y entornos de trabajo front end modernos, vamos a empezar a encontrarnos con que cada uno de nuestros proyectos puede haber sido creado con una versión diferente de Node.js, ...
+description: "Cómo instalar y alternar entre múltiples versiones de Node.js en Windows con nvm cuando cada proyecto usa una versión diferente."
 permalink: /blog/:slug
 canonicalUrl: https://rafaelneto.dev/blog/instalar-multiples-versiones-nodejs-windows/
 ---

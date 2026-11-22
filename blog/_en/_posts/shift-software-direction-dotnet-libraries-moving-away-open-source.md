@@ -3,6 +3,7 @@ date: 2025-4-11
 tags:
   - dotNET
 summary: In recent years, we have witnessed a phenomenon that cannot leave us indifferent and, for some, might even be concerning for the software development ecosystem, particularly in the .NET and C# space...
+description: "Popular .NET and C# libraries are moving away from open source, a phenomenon that cannot leave the software development ecosystem indifferent."
 permalink: /en/blog/:slug
 ---
 

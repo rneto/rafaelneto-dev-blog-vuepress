@@ -4,6 +4,7 @@ tags:
   - CSharp
   - PatronDeDiseño
 summary: Las expresiones lambda son una herramienta poderosa en el mundo de la programación que nos permite escribir funciones anónimas que pueden ser asignadas a una variable o pasadas como argumentos a una función.
+description: "Cómo crear expresiones lambda dinámicamente en C# mediante el patrón Builder para construir consultas con filtros opcionales."
 permalink: /blog/:slug
 ---
 

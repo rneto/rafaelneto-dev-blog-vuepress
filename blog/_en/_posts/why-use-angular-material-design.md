@@ -5,6 +5,7 @@ tags:
   - MaterialDesign
   - AngularMaterial
 summary: If you're asking yourself the question, Why use Angular and Material Design? I'd like to share some of the advantages of building a Single Page Application (SPA) using Angular as the client-side JavaScript framework and Angular Material as the UI-focused framework.
+description: "The advantages of building a Single Page Application (SPA) with Angular as the JavaScript framework and Angular Material for the user interface."
 permalink: /en/blog/:slug
 ---
 

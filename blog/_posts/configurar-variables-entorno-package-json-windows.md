@@ -4,6 +4,7 @@ tags:
   - Nodejs
   - npm
 summary: Para los que somos usuarios de Windows y a la vez desarrolladores de aplicaciones con Node.js, es común que nos encontremos con problemas que los usuarios de Linux/MAC felizmente desconocen (otros tienen seguro…).
+description: "Cómo usar variables de entorno en los scripts de package.json en Windows, un problema que los usuarios de Linux/MAC felizmente desconocen."
 permalink: /blog/:slug
 canonicalUrl: https://rafaelneto.dev/blog/configurar-variables-entorno-package-json-windows/
 ---

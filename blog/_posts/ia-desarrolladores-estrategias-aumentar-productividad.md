@@ -3,6 +3,7 @@ date: 2025-4-12
 tags:
   - IA
 summary: La inteligencia artificial (IA) ya está transformando la forma en que los desarrolladores trabajamos. Desde la generación y optimización de código hasta el aprendizaje continuo. Es el momento de ...
+description: "Estrategias clave para que los desarrolladores aprovechemos la IA: técnicas de prompts, generación de código, calidad y aprendizaje continuo."
 permalink: /blog/:slug
 ---
 

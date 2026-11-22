@@ -5,6 +5,7 @@ tags:
   - nvm
   - npm
 summary: Once we have delved into the realms of contemporary front-end frameworks and development environments, we begin to encounter the scenario where each of our projects may have been crafted using distinct Node.js versions ...
+description: "How to install and switch between multiple Node.js versions on Windows with nvm when each project uses a different version."
 permalink: /en/blog/:slug
 ---
 

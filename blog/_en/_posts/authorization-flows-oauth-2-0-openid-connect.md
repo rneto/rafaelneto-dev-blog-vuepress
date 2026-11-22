@@ -7,6 +7,7 @@ tags:
   - OIDC
   - security
 summary: An authorization flow is what allows a client application such as web applications, desktop applications, mobile phones, IoT devices, and other consumers to gain authorized access ...
+description: "The OAuth 2.0 and OpenID Connect authorization flows that let web, desktop, mobile and IoT clients access protected resources."
 permalink: /en/blog/:slug
 ---
 

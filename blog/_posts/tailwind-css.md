@@ -3,6 +3,7 @@ date: 2021-03-08
 tags:
   - TailwindCSS
 summary: Tailwind CSS es un framework CSS que proporciona una serie de utilidades de bajo nivel que nos permite crear diseños completamente personalizados en base a la composición de clases.
+description: "Tailwind CSS es un framework CSS de utilidades de bajo nivel para crear diseños completamente personalizados mediante la composición de clases."
 permalink: /blog/:slug
 canonicalUrl: https://rafaelneto.dev/blog/tailwind-css/
 ---

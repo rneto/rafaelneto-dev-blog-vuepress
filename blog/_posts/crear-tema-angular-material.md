@@ -5,6 +5,7 @@ tags:
   - AngularMaterial
   - Sass
 summary: Angular Material dispone de un sistema de generación de temas que permite la configuración de aspectos de color y tipografía de sus componentes. Dicho sistema ofrece diferentes alternativas de configuración ...
+description: "Cómo crear un tema para Angular Material y configurar el color y la tipografía de sus componentes con las alternativas que ofrece Sass."
 permalink: /blog/:slug
 canonicalUrl: https://rafaelneto.dev/blog/crear-tema-angular-material/
 ---

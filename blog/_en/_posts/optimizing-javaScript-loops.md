@@ -4,8 +4,8 @@ tags:
   - JavaScript
   - ES2015
 summary: Since the ECMAScript 2015 specification, operations with arrays of elements have been enhanced thanks to new high-level methods such as map, filter, reduce, some, every or forEach among others. With them we gain ...
+description: "How to optimize JavaScript loops and compare the performance of array methods such as map, filter, reduce or forEach."
 permalink: /en/blog/:slug
-canonicalUrl: https://rafaelneto.dev/blog/optimizar-bucles-javascript/
 ---
 
 # Optimizing JavaScript loops

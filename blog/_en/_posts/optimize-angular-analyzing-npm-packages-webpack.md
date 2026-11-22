@@ -6,6 +6,7 @@ tags:
   - npm
   - webpack
 summary: Beyond the optimization of an Angular application through for example the deferred loading of modules or by using a change detection strategy based on OnPush, we must also take into account ...
+description: "Beyond lazy loading and OnPush change detection, optimize your Angular application by analyzing its npm packages with webpack."
 permalink: /en/blog/:slug
 ---
 
@@ -17,11 +18,11 @@ permalink: /en/blog/:slug
 
 Beyond the optimization of an Angular application through for example the [deferred loading of modules](/en/blog/architecture-best-practices-angular/#lazy-loading) or by using a change detection strategy based on _OnPush_, we must also take into account the fact that the third-party packages that we include, will also affect the loading time of the application, either by their own size or even by their initialization time. That is why optimizing Angular by analyzing npm packages should also be one of our goals before putting the application into production.
 
-At the speed at which our work environment moves, we are sure that we can think of packages that we have stopped using (in my case for example I have replaced _ng-zorro_ by [Tailwind CSS with Angular Material](/en/blog/integrate-tailwind-css-angular-material/)) and that may in some cases have remained as an imported dependency in the code without us realizing it. There are also packages that covered needs that the language already supports (such as using _lodash_ instead of [high-level JavaScript methods like map,_filter,_reduce,_some, every o_forEach](/en/blog/optimizing-javaScript-loops/)), but whose dependency was not removed during the refactoring iterations. And let's not forget those third-party package dependencies that serve to cover simple functionalities that we could implement ourselves with little effort if we knew how much such a package increases the size of our application.
+At the speed at which our work environment moves, we are sure that we can think of packages that we have stopped using (in my case for example I have replaced _ng-zorro_ by [Tailwind CSS with Angular Material](/en/blog/integrate-tailwind-css-angular-material/)) and that may in some cases have remained as an imported dependency in the code without us realizing it. There are also packages that covered needs that the language already supports (such as using _lodash_ instead of [high-level JavaScript methods like map,_filter,_reduce,_some, every o_forEach](/en/blog/optimizing-javascript-loops/)), but whose dependency was not removed during the refactoring iterations. And let's not forget those third-party package dependencies that serve to cover simple functionalities that we could implement ourselves with little effort if we knew how much such a package increases the size of our application.
 
 ## How to analyze the packages of our Angular application?
 
-[Webpack](/en/blog/using-webpack-4-transform-package-web-application-resources/) has a feature that consists in generating a visual map of the webpack package composition and since this is the default tool for Angular CLI module packaging, why not take advantage of it?
+[Webpack](/en/blog/using-webpack-4-transform-package-web-aplicacion-resources/) has a feature that consists in generating a visual map of the webpack package composition and since this is the default tool for Angular CLI module packaging, why not take advantage of it?
 
 ### Installation
 

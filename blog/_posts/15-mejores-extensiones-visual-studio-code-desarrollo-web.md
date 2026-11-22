@@ -3,6 +3,7 @@ date: 2023-3-16
 tags:
   - VisualStudioCode
 summary: Uso con asiduidad Visual Studio Code tanto como editor de código fuente en proyectos web, como para la manipulación de ficheros de diferentes tipos. Creo sinceramente que ...
+description: "Las 15 extensiones de Visual Studio Code que uso con asiduidad en el desarrollo web y que creo sinceramente que deberías probar."
 permalink: /blog/15-mejores-extensiones-visual-studio-code-desarrollo-web
 canonicalUrl: https://rafaelneto.dev/blog/15-mejores-extensiones-visual-studio-code-desarrollo-web/
 ---

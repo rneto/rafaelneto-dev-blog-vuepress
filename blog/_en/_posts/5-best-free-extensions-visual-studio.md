@@ -3,6 +3,7 @@ date: 2021-6-12
 tags:
   - VisualStudio
 summary: Visual Studio is a great development environment. I have known all its versions (starting from Visual Studio 97 with Visual Basic - that's where it all began, how time flies...) and I believe ...
+description: "The 5 best free extensions for Visual Studio, a great development environment I have known since Visual Studio 97."
 permalink: /en/blog/5-best-free-extensions-visual-studio
 ---
 

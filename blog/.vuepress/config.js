@@ -6,8 +6,7 @@ module.exports = {
     ['meta', { name: 'apple-mobile-web-app-capable', content: 'yes' }],
     ['meta', { name: 'apple-mobile-web-app-status-bar-style', content: 'black' }],
     ['link', { rel: 'apple-touch-icon', href: '/images/icons/icon-152x152.png' }],
-    ['link', { rel: 'mask-icon', href: '/icons/safari-pinned-tab.svg', color: '#d66056' }],
-    ['meta', { name: 'msapplication-TileImage', content: '/images/icons/icon-144x144' }],
+    ['meta', { name: 'msapplication-TileImage', content: '/images/icons/icon-144x144.png' }],
     ['meta', { name: 'msapplication-TileColor', content: '#000000' }],
     ['meta', { property: 'og:site_name', content: 'Rafael Neto' }],
     ['script', { async: true, src: 'https://www.googletagmanager.com/gtag/js?id=G-S8PRT356B6' }],
@@ -115,6 +114,14 @@ module.exports = {
     }
   },
   plugins: [
+    // Must run before 'seo' and 'sitemap': it sets lastUpdated from the frontmatter dates
+    [
+      require('./plugins/seo-links')
+    ],
+    // llms.txt, llms-full.txt, Markdown copies of the posts and the English RSS feed
+    [
+      require('./plugins/ai-content')
+    ],
     [
       '@NO-vuepress/pwa',
       {
@@ -147,9 +154,9 @@ module.exports = {
       'sitemap',
       {
         hostname: 'https://rafaelneto.dev',
-        dateFormatter: val => {
-          return new Date().toISOString()
-        }
+        changefreq: 'weekly',
+        // lastUpdated comes from the post frontmatter dates (see plugins/seo-links.js)
+        dateFormatter: lastUpdated => new Date(lastUpdated).toISOString()
       }
     ],
     [
@@ -165,6 +172,10 @@ module.exports = {
       'feed',
       {
         canonical_base: 'https://rafaelneto.dev',
+        // Only Spanish posts, newest first (the default keeps file order).
+        // Runs before permalinks are built, so match the source folder.
+        is_feed_page: page => Boolean(page.frontmatter && page.frontmatter.date) && (page.regularPath || '').startsWith('/_posts/'),
+        sort: entries => entries.sort((a, b) => new Date(b.frontmatter.date) - new Date(a.frontmatter.date)),
         feeds: {
           rss2: {
             enable: true,
@@ -179,7 +190,23 @@ module.exports = {
       }
     ],
     [
-      'seo'
+      'seo',
+      {
+        url: (_, $site, path) => 'https://rafaelneto.dev' + path,
+        type: (_, $site, path) => /^\/(en\/)?blog\/(?!page\/)[^/]+\/$/.test(path) ? 'article' : 'website',
+        image: $page => 'https://rafaelneto.dev' + ($page.frontmatter.image || '/images/logo.png'),
+        twitterCard: $page => $page.frontmatter.image ? 'summary_large_image' : 'summary',
+        author: () => 'Rafael Neto',
+        // Posts with an explicit article:modified_time meta already render it
+        modifiedAt: $page => (($page.frontmatter.meta || []).some(meta => meta.property === 'article:modified_time')
+          ? undefined
+          : $page.lastUpdated),
+        customMeta: (add, { url }) => {
+          add('og:locale', url.startsWith('https://rafaelneto.dev/en/') ? 'en_US' : 'es_ES')
+          add('twitter:site', '@rneto')
+          add('twitter:creator', '@rneto')
+        }
+      }
     ],
     [
       '@NO-vssue/vuepress-plugin-vssue',

@@ -41,8 +41,9 @@ date: 2025-4-12          # YYYY-M-D, no zero padding
 tags:
   - Angular
 summary: One- or two-sentence teaser, often the opening paragraph truncated with "..."
+description: "Search snippet, 120-155 chars"   # quoted; used for meta/OG/Twitter/JSON-LD when the summary is over ~160 chars
 permalink: /blog/:slug   # /en/blog/:slug for English posts
-canonicalUrl: https://rafaelneto.dev/blog/<spanish-slug>/   # optional
+canonicalUrl: https://rafaelneto.dev/blog/<own-slug>/   # optional, must be the page's own URL
 meta:                    # optional, used on updated posts
   - property: article:modified_time
     content: 2021-10-22T00:00:00.000Z
@@ -61,10 +62,16 @@ Body layout, mirrored in both languages:
 
 When adding or editing a post that exists in both languages, update both files and keep the cross-links, dates, and tags in sync. Spanish is the primary language; English posts are translations.
 
+The language switcher line is also what pairs translations for SEO: `plugins/seo-links.js` reads it to emit `hreflang` alternates, so keep its link exact. Slugs are lowercased in the built site and GitHub Pages is case-sensitive, so internal links must use the lowercase slug. Comment the switcher out (`<!-- ... -->`) while a translation does not exist yet. Never point an English post's `canonicalUrl` at the Spanish version; that de-indexes the English page.
+
 ## Site configuration
 
 - `blog/.vuepress/config.js` holds everything: head tags (GA4 gtag is injected directly here), locales, nav, footer, and plugins.
 - Plugins are disabled by renaming them with a `NO` prefix (e.g. `'@NO-vuepress/pwa'`, `'@NO-vssue/...'`) or a theme key (e.g. `NOcomment`). Comments (Vssue), PWA, the legacy UA analytics plugin, and last-updated are currently off this way.
+- `blog/.vuepress/plugins/seo-links.js` is a local plugin, registered first in `plugins`. It sets `lastUpdated` from frontmatter dates (used by the `seo` and `sitemap` plugins), excludes `/page/N/` pagination from the sitemap, and after the build injects a self canonical link (when the frontmatter has none), `hreflang` alternates, and JSON-LD `BlogPosting` data into the generated HTML.
+- `blog/.vuepress/plugins/ai-content.js` writes AI-oriented files after the build: a clean Markdown copy of every post at its URL with `.md` instead of the trailing slash, `/llms.txt` (index per https://llmstxt.org/), `/llms-full.txt` (full text of all posts), and `/en/rss.xml` (English feed). Both plugins share helpers and the author profile (`PERSON`, used in JSON-LD) in `plugins/shared.js`.
+- After deploying, the workflow runs `.github/scripts/indexnow.js`, which submits URLs modified in the last 7 days (per the sitemap) to IndexNow (Bing, Yandex...). Its key is public by design and is served from `blog/.vuepress/public/<key>.txt`; the two must match. `node .github/scripts/indexnow.js 4000` after a local build submits every URL.
+- The `seo` plugin options give absolute `og:url`, `og:type=article` for posts, the logo as fallback share image, and `og:locale`. The `feed` plugin only includes Spanish posts, newest first.
 - `blog/.vuepress/enhanceApp.js` relabels the social-share Twitter button as "Share on X" at runtime.
 - `blog/.vuepress/components/` holds globally registered Vue components usable in Markdown (`last-updated.vue` is the only real one; the others are VuePress scaffolding).
 - Styles are Stylus: `styles/index.styl` (custom overrides of the blog theme), `styles/palette.styl` (theme variables).

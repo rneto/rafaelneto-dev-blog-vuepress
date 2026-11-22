@@ -1,0 +1,8 @@
+# Search engines and AI crawlers (GPTBot, OAI-SearchBot, ClaudeBot, PerplexityBot,
+# Google-Extended, Applebot-Extended, CCBot, ...) are all welcome to index this blog.
+User-agent: *
+Allow: /
+
+# AI-friendly index of the site: https://rafaelneto.dev/llms.txt
+# Full text of every post: https://rafaelneto.dev/llms-full.txt
+Sitemap: https://rafaelneto.dev/sitemap.xml

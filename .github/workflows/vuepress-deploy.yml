@@ -23,3 +23,8 @@ jobs:
           publish_dir: blog/.vuepress/dist
           cname: rafaelneto.dev
           force_orphan: true
+      - name: Notify IndexNow of changed URLs
+        continue-on-error: true
+        run: |
+          sleep 90 # let GitHub Pages publish the new files, including the key file
+          node .github/scripts/indexnow.js

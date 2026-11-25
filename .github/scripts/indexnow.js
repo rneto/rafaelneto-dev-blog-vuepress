@@ -5,7 +5,7 @@ const fs = require('fs')
 
 const HOST = 'rafaelneto.dev'
 const KEY = '1c1b2eeb7ae65fa52a6bb61fb60f9929' // public by design, served at https://rafaelneto.dev/1c1b2eeb7ae65fa52a6bb61fb60f9929.txt
-const ALWAYS = ['/', '/blog/', '/en/blog/', '/llms.txt', '/llms-full.txt']
+const ALWAYS = ['/', '/en/', '/blog/', '/en/blog/', '/llms.txt', '/llms-full.txt']
 
 const days = Number(process.argv[2] || 7)
 const since = Date.now() - days * 24 * 60 * 60 * 1000

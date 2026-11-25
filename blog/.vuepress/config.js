@@ -2,14 +2,14 @@ const { shareImage, shareImageAlt } = require('./plugins/shared')
 
 module.exports = {
   head: [
-    ['link', { rel: 'icon', href: '/images/logo.png' }],
+    ['link', { rel: 'icon', type: 'image/png', sizes: '32x32', href: '/images/favicon-32.png' }],
     ['link', { rel: 'manifest', href: '/manifest.json' }],
     ['meta', { name: 'theme-color', content: '#d66056' }],
     ['meta', { name: 'apple-mobile-web-app-capable', content: 'yes' }],
     ['meta', { name: 'apple-mobile-web-app-status-bar-style', content: 'black' }],
     ['link', { rel: 'apple-touch-icon', href: '/images/icons/icon-152x152.png' }],
     ['meta', { name: 'msapplication-TileImage', content: '/images/icons/icon-144x144.png' }],
-    ['meta', { name: 'msapplication-TileColor', content: '#000000' }],
+    ['meta', { name: 'msapplication-TileColor', content: '#d66056' }],
     ['meta', { property: 'og:site_name', content: 'Rafael Neto' }],
     ['script', { async: true, src: 'https://www.googletagmanager.com/gtag/js?id=G-S8PRT356B6' }],
     ['script', {}, [ "window.dataLayer = window.dataLayer || [];\nfunction gtag(){dataLayer.push(arguments);}\ngtag('js', new Date());\ngtag('config', 'G-S8PRT356B6', { 'anonymize_ip': true });" ]]

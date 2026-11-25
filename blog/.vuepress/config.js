@@ -17,7 +17,7 @@ module.exports = {
   title: 'Rafael Neto',
   description: 'Apuntes de un programador Full Stack, JavaScript, HTML, CSS, .NET',
   base: '/',
-  theme: '@vuepress/theme-blog',
+  // No `theme` here: VuePress uses the local theme in .vuepress/theme, which extends @vuepress/theme-blog.
   themeConfig: {
     /**
      * Ref: https://vuepress-theme-blog.billyyyyy3320.com/#modifyblogpluginoptions

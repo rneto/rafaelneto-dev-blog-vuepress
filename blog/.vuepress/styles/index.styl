@@ -130,3 +130,34 @@ blockquote
 .go-to-top
   display: block !important
   right: 2rem !important
+
+// Code blocks inherit the 1.2rem body text size; a smaller size avoids horizontal scrolling
+div[class*="language-"] pre,
+div[class*="language-"] pre code
+  font-size: 15px !important
+  line-height: 1.6 !important
+
+// On phones the theme makes code blocks full-width with a -1.5rem margin, but the page padding
+// here is 15px, so they overflowed the screen and the page scrolled sideways
+@media (max-width: 419px)
+  .content__default div[class*="language-"]
+    margin-left: -15px !important
+    margin-right: -15px !important
+
+// Dates and tags under each post title (lists and post header): larger and darker than the theme's 12px light grey
+.ui-post-meta,
+.post-meta > div
+  font-size: 14px !important
+  line-height: 1.4 !important
+
+.ui-post-date,
+.ui-post-tag,
+.ui-post-tag a
+  color: rgba(0, 0, 0, 0.7) !important
+  font-weight: 400 !important
+
+// Long tag lists wrap instead of overflowing narrow screens
+.ui-post-tag
+  flex-wrap: wrap
+  row-gap: 6px
+

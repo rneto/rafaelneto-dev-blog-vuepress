@@ -6,6 +6,9 @@
 
 // @import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,600;1,300&display=swap');
 
+// Text links in light mode (see "Text links in light mode" below for why it is not $accentColor)
+$linkColor = #b03f37
+
 body
   font-size 18px
 
@@ -73,6 +76,25 @@ blockquote
 
 .header-wrapper .header-right-wrap .nav .nav-item a
   font-size: 16px
+
+// "RN" monogram before the site name in the header (theme/components/Header.vue, MobileHeader.vue);
+// decorative (empty alt), the name next to it is the link text
+.home-link,
+.mobile-home-link
+  display: inline-flex !important
+  align-items: center
+
+.site-avatar
+  width: 36px
+  height: 36px
+  margin-right: 0.6rem
+  border-radius: 50%
+  flex-shrink: 0
+
+.mobile-home-link .site-avatar
+  width: 30px
+  height: 30px
+  margin-right: 0.5rem
 
 .hidden
   display: none !important
@@ -161,3 +183,210 @@ div[class*="language-"] pre code
   flex-wrap: wrap
   row-gap: 6px
 
+// Text links in light mode: the brand accent (#d66056) is only 3.5:1 on the background, below the
+// 4.5:1 WCAG AA minimum for text, so text uses a darker shade. The accent stays for non-text
+// elements (progress bar, active page, back-to-top arrow). The `html` prefix beats the theme's
+// own `a` rules without beating the header menu's black links; dark mode below overrides it.
+// ($linkColor is defined at the top of this file.)
+
+html a,
+html p a code,
+html .nav-link.router-link-active:not(.home-link):not(.mobile-home-link),
+html .nav-link:not(.home-link):not(.mobile-home-link):hover,
+html .vuepress-toc .vuepress-toc-item.active a,
+html .vuepress-toc .vuepress-toc-item:hover a,
+html .pagination > li > a,
+html .pagination > li > span,
+html .ui-post-tag a:hover,
+html .feed:hover,
+html .theme-toggle:hover,
+html .search-box .suggestion.focused a,
+html .header-wrapper .header-right-wrap .search-box .suggestions a.focused
+  color: $linkColor
+
+html .blog-tag:hover
+  color: $linkColor !important
+  border-color: $linkColor
+
+// Dark mode. The theme only has a light palette (Stylus variables fixed at build time), so these
+// rules override its colors. It applies when the visitor chose dark with the header switch
+// (html[data-theme="dark"], see components/ThemeToggle.vue), or when their system is dark and
+// they did not choose light.
+$darkBg = #16181d
+$darkSurface = #22252c
+$darkBorder = #343842
+$darkText = #d4d6db
+$darkHeading = #f0f1f3
+$darkMuted = rgba(255, 255, 255, 0.62)
+$darkAccent = #e8786e
+
+dark-mode()
+  &
+    color-scheme: dark
+
+  &,
+  body,
+  #header,
+  .mobile-header-bar,
+  .mobile-menu-wrapper,
+  .vuepress-blog-theme-content
+    background-color: $darkBg !important
+
+  body,
+  p, li, td, th, em, time,
+  .content__default,
+  .vuepress-toc-item a,
+  .reading-time
+    color: $darkText !important
+
+  h1, h2, h3, h4, h5, h6, strong,
+  .ui-post-title a,
+  .header-wrapper .title a,
+  .header-wrapper .header-right-wrap .nav .nav-item a,
+  #mobile-header .mobile-header-title .mobile-home-link,
+  .nav-link,
+  .blog-tag
+    color: $darkHeading !important
+
+  a,
+  a em,
+  a strong,
+  .header-anchor,
+  .nav-link.router-link-active,
+  .vuepress-toc-item.active a,
+  .vuepress-toc-item a:hover,
+  .ui-post-title a:hover,
+  .header-wrapper .header-right-wrap .nav .nav-item a:hover
+    color: $darkAccent !important
+
+  .ui-post-summary,
+  .ui-post-date,
+  .ui-post-tag,
+  .ui-post-tag a,
+  .post-meta > div,
+  .latest-posts__meta
+    color: $darkMuted !important
+
+  .vuepress-toc-item
+    border-left-color: $darkBorder !important
+
+  .vuepress-toc-item.active
+    border-left-color: $darkAccent !important
+
+  blockquote
+    background-color: $darkSurface !important
+
+    p, em, a
+      color: #f2b3ad !important
+
+  // Inline code; code blocks are already dark
+  p code, li code, td code
+    background-color: rgba(255, 255, 255, 0.08) !important
+    color: #e6c07b !important
+
+  hr
+    border-color: $darkBorder !important
+
+  table
+    tr
+      background-color: $darkBg !important
+      border-color: $darkBorder !important
+
+      &:nth-child(2n)
+        background-color: $darkSurface !important
+
+    th, td
+      border-color: $darkBorder !important
+
+  .custom-block.tip,
+  .custom-block.warning,
+  .custom-block.danger
+    background-color: $darkSurface !important
+
+  // Tags under the post title: a chip with an arrow drawn with borders
+  .post-tag a
+    background-color: $darkSurface !important
+
+    span
+      color: $darkMuted !important
+
+    &:before
+      background-color: $darkBg !important
+
+    &:after
+      background-color: $darkBg !important
+      border-left-color: $darkSurface !important
+
+    &:hover
+      background-color: $accentColor !important
+
+      &:after
+        border-left-color: $accentColor !important
+
+      span
+        color: #fff !important
+
+  .blog-tag
+    border-color: $darkBorder !important
+
+  .search-box input,
+  .search-box .suggestions
+    background-color: $darkSurface !important
+    color: $darkText !important
+    border-color: $darkBorder !important
+
+  .search-box .suggestion a
+    color: $darkText !important
+
+  .search-box .suggestion.focused
+    background-color: $darkBorder !important
+
+  .pagination > li > a,
+  .pagination > li > span
+    background-color: $darkSurface !important
+    border-color: $darkBorder !important
+
+  .pagination > .active > a,
+  .pagination > .active > span
+    background-color: $accentColor !important
+    border-color: $accentColor !important
+    color: #fff !important
+
+  .pagination > .disabled > a,
+  .pagination > .disabled > span
+    color: $darkBorder !important
+
+  .footer
+    background-color: #0d0e11 !important
+
+@media (prefers-color-scheme: dark)
+  html:not([data-theme="light"])
+    dark-mode()
+
+html[data-theme="dark"]
+  dark-mode()
+
+.theme-toggle
+  display: inline-flex
+  align-items: center
+  justify-content: center
+  width: 36px
+  height: 36px
+  margin-left: 0.4rem
+  padding: 0
+  border: 0
+  border-radius: 50%
+  background: transparent
+  color: inherit
+  cursor: pointer
+
+  &:hover
+    color: $accentColor
+
+  svg
+    width: 20px
+    height: 20px
+
+#mobile-header .theme-toggle
+  margin-left: auto
+  margin-right: 0.8rem

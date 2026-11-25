@@ -30,8 +30,9 @@ const PERSON = {
 }
 
 const POST_PATH = /^\/(en\/)?blog\/(?!page\/)[^/]+\/$/
-const ENGLISH_LINK = /\[English\]\((\/en\/blog\/[^)\s]+)\)/
-const SPANISH_LINK = /\[Español\]\((\/blog\/[^)\s]+)\)/
+// Language switcher links: `Español | [English](/en/...)` on Spanish pages, `[Español](/...) | English` on English ones
+const ENGLISH_LINK = /\[English\]\((\/en\/[^)\s]*)\)/
+const SPANISH_LINK = /\[Español\]\((\/(?!en\/)[^)\s]*)\)/
 
 const isEnglish = pagePath => pagePath.startsWith('/en/')
 const isPost = page => Boolean(page.frontmatter && page.frontmatter.date) && POST_PATH.test(page.path || '')
@@ -61,12 +62,20 @@ const summaryOf = page => page.frontmatter.description || page.frontmatter.summa
 // Longer text for AI indexes and Markdown copies: the post-list `summary` first.
 const longSummaryOf = page => page.frontmatter.summary || page.frontmatter.description || ''
 
-// Real path of the translated post, or undefined when the switcher is missing,
+// Lowercased target of the page's language switcher, or undefined when it is missing or commented out.
+function switcherLink (page) {
+  const content = (page._content || '').replace(/<!--[\s\S]*?-->/g, '')
+  // In extendPageData the permalink is not built yet, so also look at the source folder (_en/)
+  const english = isEnglish(page.path || '') || (page.regularPath || '').startsWith('/_en/')
+  const match = english ? content.match(SPANISH_LINK) : content.match(ENGLISH_LINK)
+  return match ? match[1].toLowerCase() : undefined
+}
+
+// Real path of the translated page, or undefined when the switcher is missing,
 // commented out, or points to a page that does not exist.
 function counterpartPath (page, pathsByLowerCase) {
-  const content = (page._content || '').replace(/<!--[\s\S]*?-->/g, '')
-  const match = isEnglish(page.path) ? content.match(SPANISH_LINK) : content.match(ENGLISH_LINK)
-  return match ? pathsByLowerCase.get(match[1].toLowerCase()) : undefined
+  const link = switcherLink(page)
+  return link ? pathsByLowerCase.get(link) : undefined
 }
 
 const markdownPath = pagePath => pagePath.replace(/\/$/, '.md')
@@ -114,6 +123,7 @@ module.exports = {
   modifiedIso,
   summaryOf,
   longSummaryOf,
+  switcherLink,
   counterpartPath,
   markdownPath,
   htmlFile,

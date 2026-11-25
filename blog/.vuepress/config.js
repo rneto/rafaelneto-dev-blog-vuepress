@@ -11,6 +11,8 @@ module.exports = {
     ['meta', { name: 'msapplication-TileImage', content: '/images/icons/icon-144x144.png' }],
     ['meta', { name: 'msapplication-TileColor', content: '#d66056' }],
     ['meta', { property: 'og:site_name', content: 'Rafael Neto' }],
+    // Light/dark choice saved by the header switch (theme/components/ThemeToggle.vue), applied before the page paints
+    ['script', {}, "try{var t=localStorage.getItem('theme');if(t==='dark'||t==='light')document.documentElement.setAttribute('data-theme',t)}catch(e){}"],
     ['script', { async: true, src: 'https://www.googletagmanager.com/gtag/js?id=G-S8PRT356B6' }],
     ['script', {}, [ "window.dataLayer = window.dataLayer || [];\nfunction gtag(){dataLayer.push(arguments);}\ngtag('js', new Date());\ngtag('config', 'G-S8PRT356B6', { 'anonymize_ip': true });" ]]
   ],
@@ -47,11 +49,9 @@ module.exports = {
     /**
      * Ref: https://vuepress-theme-blog.billyyyyy3320.com/config/#nav
      */
+    // Menu of Spanish pages; English pages use localeNav['/en/']. The header adds a first link to
+    // the other language (see theme/components/localeNav.js).
     nav: [
-      {
-        text: 'English',
-        link: '/en/blog/',
-      },
       {
         text: 'Blog',
         link: '/blog/',
@@ -61,6 +61,18 @@ module.exports = {
         link: '/tag/',
       },
     ],
+    localeNav: {
+      '/en/': [
+        {
+          text: 'Blog',
+          link: '/en/blog/',
+        },
+        {
+          text: 'Tags',
+          link: '/tag/',
+        },
+      ],
+    },
     /**
      * Ref: https://vuepress-theme-blog.billyyyyy3320.com/config/#footer
      */

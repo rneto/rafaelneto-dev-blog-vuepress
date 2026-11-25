@@ -76,17 +76,26 @@ module.exports = {
     /**
      * Ref: https://vuepress-theme-blog.billyyyyy3320.com/config/#footer
      */
+    // Rendered by theme/components/Footer.vue, which adds the RSS feed of the page's language and
+    // links the copyright to the about page in that language
     footer: {
       contact: [
         {
-          type: 'twitter',
+          type: 'x',
           link: 'https://x.com/RNeto',
+        },
+        {
+          type: 'linkedin',
+          link: 'https://www.linkedin.com/in/rrneto',
+        },
+        {
+          type: 'github',
+          link: 'https://github.com/rneto',
         },
       ],
       copyright: [
         {
-          text: "Rafael Neto © 2025",
-          link: "/index.html"
+          text: `Rafael Neto © ${new Date().getFullYear()}`
         }
       ]
     },

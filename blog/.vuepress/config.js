@@ -1,3 +1,5 @@
+const { shareImage, shareImageAlt } = require('./plugins/shared')
+
 module.exports = {
   head: [
     ['link', { rel: 'icon', href: '/images/logo.png' }],
@@ -122,6 +124,10 @@ module.exports = {
     [
       require('./plugins/ai-content')
     ],
+    // Social card image for every post and for the rest of the site (see shareImage in plugins/shared.js)
+    [
+      require('./plugins/og-images')
+    ],
     [
       '@NO-vuepress/pwa',
       {
@@ -194,15 +200,26 @@ module.exports = {
       {
         url: (_, $site, path) => 'https://rafaelneto.dev' + path,
         type: (_, $site, path) => /^\/(en\/)?blog\/(?!page\/)[^/]+\/$/.test(path) ? 'article' : 'website',
-        image: $page => 'https://rafaelneto.dev' + ($page.frontmatter.image || '/images/logo.png'),
-        twitterCard: $page => $page.frontmatter.image ? 'summary_large_image' : 'summary',
+        // The post's own image, or the card plugins/og-images.js draws for the post or for the site
+        // ($page.path is not final yet here: the plugin passes the permalink as `path`)
+        image: ($page, $site, path) => shareImage({ path, frontmatter: $page.frontmatter }),
+        twitterCard: () => 'summary_large_image',
         author: () => 'Rafael Neto',
         // Posts with an explicit article:modified_time meta already render it
         modifiedAt: $page => (($page.frontmatter.meta || []).some(meta => meta.property === 'article:modified_time')
           ? undefined
           : $page.lastUpdated),
-        customMeta: (add, { url }) => {
-          add('og:locale', url.startsWith('https://rafaelneto.dev/en/') ? 'en_US' : 'es_ES')
+        customMeta: (add, { url, $page }) => {
+          const path = url.replace('https://rafaelneto.dev', '')
+          const alt = shareImageAlt({ path, title: $page.title, frontmatter: $page.frontmatter })
+          add('og:locale', path.startsWith('/en/') ? 'en_US' : 'es_ES')
+          add('og:image:alt', alt)
+          add('twitter:image:alt', alt)
+          // Generated cards are 1200x630; a post's own image may be any size
+          if (!$page.frontmatter.image) {
+            add('og:image:width', '1200')
+            add('og:image:height', '630')
+          }
           add('twitter:site', '@rneto')
           add('twitter:creator', '@rneto')
         }

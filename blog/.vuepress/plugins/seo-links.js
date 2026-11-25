@@ -14,9 +14,9 @@
 const fs = require('fs')
 const matter = require('gray-matter')
 const {
-  HOSTNAME, DEFAULT_IMAGE, PERSON,
+  HOSTNAME, PERSON,
   isEnglish, isPost, modifiedIso, publishedIso, summaryOf,
-  counterpartPath, markdownPath, htmlFile, pathIndex
+  counterpartPath, markdownPath, htmlFile, pathIndex, shareImage
 } = require('./shared')
 
 const PAGINATION_PATH = /\/page\/\d+\/$/
@@ -61,7 +61,7 @@ function blogPosting (page) {
     dateModified: modifiedIso(page),
     author: { '@id': PERSON['@id'], '@type': 'Person', name: PERSON.name, url: PERSON.url },
     publisher: { '@id': PERSON['@id'] },
-    image: frontmatter.image ? `${HOSTNAME}${frontmatter.image}` : DEFAULT_IMAGE,
+    image: shareImage(page),
     keywords: (frontmatter.tags || []).join(', '),
     url,
     mainEntityOfPage: url,

@@ -91,6 +91,31 @@ blockquote
   border-radius: 50%
   flex-shrink: 0
 
+// Photo next to the greeting on the about pages (blog/README.md, blog/_en/README.md)
+.about-hero
+  display: flex
+  align-items: center
+  gap: 1.4rem
+  margin: 1rem 0 1.2rem
+
+  h1
+    margin: 0 !important
+    padding-top: 0 !important
+
+  &__photo
+    width: 120px
+    height: 120px
+    border-radius: 50%
+    flex-shrink: 0
+
+@media (max-width: 480px)
+  .about-hero
+    gap: 1rem
+
+    &__photo
+      width: 84px
+      height: 84px
+
 .mobile-home-link .site-avatar
   width: 30px
   height: 30px

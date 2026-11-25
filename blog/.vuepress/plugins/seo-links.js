@@ -20,7 +20,7 @@ const {
 } = require('./shared')
 
 const PAGINATION_PATH = /\/page\/\d+\/$/
-const INDEX_PAGES = ['/', '/blog/', '/en/blog/']
+const INDEX_PAGES = ['/', '/en/', '/blog/', '/en/blog/']
 
 function alternateLinks (page, pathsByLowerCase) {
   let spanish
@@ -28,7 +28,7 @@ function alternateLinks (page, pathsByLowerCase) {
   if (page.path === '/blog/' || page.path === '/en/blog/') {
     spanish = '/blog/'
     english = '/en/blog/'
-  } else if (isPost(page)) {
+  } else if (isPost(page) || page.path === '/' || page.path === '/en/') {
     const other = counterpartPath(page, pathsByLowerCase)
     if (!other) return []
     spanish = isEnglish(page.path) ? other : page.path

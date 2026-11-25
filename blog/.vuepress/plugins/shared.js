@@ -11,14 +11,16 @@ const SITE_CARDS = {
   en: { path: '/images/og/site-en.png', tagline: 'Notes from a Full Stack developer' }
 }
 
-// Public profile, taken from the "Sobre mí" page (blog/README.md).
+// Public profile, taken from the "Sobre mí" page (blog/README.md). The image is Rafael's profile
+// photo, the same one as on LinkedIn and the about pages.
 const PERSON = {
   '@type': 'Person',
   '@id': `${HOSTNAME}/#person`,
   name: 'Rafael Neto',
   url: `${HOSTNAME}/`,
+  image: `${HOSTNAME}/images/rafael-neto.jpg`,
   jobTitle: 'Full Stack Developer',
-  knowsAbout: ['Software architecture', '.NET', 'TypeScript', 'JavaScript', 'Angular', 'HTML', 'CSS'],
+  knowsAbout: ['Software architecture', '.NET', 'Angular', 'TypeScript', 'JavaScript', 'HTML', 'CSS', 'AI-assisted software development', 'Automation'],
   sameAs: [
     'https://www.linkedin.com/in/rrneto',
     'https://github.com/rneto',

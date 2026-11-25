@@ -4,6 +4,12 @@
  * https://v1.vuepress.vuejs.org/guide/basic-config.html#app-level-enhancements
  */
 
+// Site font, served from the site itself (no Google Fonts request): Inter as a variable font, one
+// file per alphabet covering every weight; browsers only download the alphabets a page uses (Latin
+// here). The italic file is only downloaded by pages with italic text. Used in styles/index.styl.
+import '@fontsource-variable/inter/index.css'
+import '@fontsource-variable/inter/wght-italic.css'
+
 function decode (path) {
   try {
     return decodeURIComponent(path)

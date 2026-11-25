@@ -9,7 +9,8 @@
 export default {
   computed: {
     isEnglishPage() {
-      return (this.$page.path || '').startsWith('/en/')
+      // Missing pages (layouts/NotFound.vue) have no $page.path: use the requested URL
+      return (this.$page.path || this.$route.path || '').startsWith('/en/')
     },
 
     homePath() {

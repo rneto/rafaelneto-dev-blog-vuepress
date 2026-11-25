@@ -52,6 +52,61 @@ blockquote
 .content-wrapper
   padding-top: 30px !important
 
+// The footer stays at the bottom of the window on short pages (a tag with one post, the 404 page).
+// The theme's min-height formula assumes its own fixed header and padding, which are overridden here.
+#vuepress-theme-blog__global-layout
+  display: flex
+  flex-direction: column
+  min-height: 100vh
+
+  > .content-wrapper
+    flex: 1 0 auto
+    width: 100%
+    box-sizing: border-box
+    min-height: 0 !important
+
+  > .footer
+    flex-shrink: 0
+
+// Page not found (theme/layouts/NotFound.vue)
+.not-found
+  max-width: 740px
+  margin: 0 auto
+  padding: 1rem 0 2rem
+
+  h1
+    margin-top: 0
+
+  &__actions
+    display: flex
+    flex-wrap: wrap
+    gap: 0.6rem
+    margin: 1.5rem 0 2rem
+
+  &__button
+    display: inline-flex
+    align-items: center
+    min-height: 44px
+    padding: 0 1.2rem
+    border: 1px solid $linkColor
+    border-radius: 999px
+    background-color: $linkColor
+    color: #fff !important
+    font-size: 15px
+    text-decoration: none !important
+
+    &:hover,
+    &:focus-visible
+      filter: brightness(1.1)
+
+  &__button--secondary
+    background-color: transparent
+    color: $linkColor !important
+
+  &__other
+    margin-top: 2rem
+    font-size: 15px
+
 @media (max-width: 719px)
   .content-wrapper
     padding-top: 70px !important
@@ -435,6 +490,15 @@ dark-mode()
     &:focus-visible
       color: $darkAccent !important
       border-color: $darkAccent
+
+  .not-found__button
+    background-color: $darkAccent
+    border-color: $darkAccent
+    color: $darkBg !important
+
+  .not-found__button--secondary
+    background-color: transparent
+    color: $darkAccent !important
 
   .post-nav
     border-top-color: $darkBorder

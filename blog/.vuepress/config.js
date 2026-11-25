@@ -159,16 +159,6 @@ module.exports = {
       }
     ],
     [
-      'social-share',
-      {
-        networks: ['twitter'],
-        twitterUser: 'rneto',
-        fallbackImage: '/images/logo.png',
-        isPlain: false,
-        noGlobalSocialShare: true,
-      },
-    ],
-    [
       'sitemap',
       {
         hostname: 'https://rafaelneto.dev',

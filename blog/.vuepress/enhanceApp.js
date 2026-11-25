@@ -11,20 +11,4 @@ export default ({
   siteData, // site metadata
 }) => {
   // ...apply enhancements to the app
-  if (typeof window !== "undefined") {
-    const waitForAllTwitterButtons = () => {
-      const buttons = document.querySelectorAll(
-        '.social-share-btn[data-link="#share-twitter"]'
-      );
-      if (buttons.length > 0) {
-        buttons.forEach((btn) => {
-          btn.title = "Share on X";
-        });
-      } else {
-        requestAnimationFrame(waitForAllTwitterButtons);
-      }
-    };
-
-    waitForAllTwitterButtons();
-  }
-};
+}

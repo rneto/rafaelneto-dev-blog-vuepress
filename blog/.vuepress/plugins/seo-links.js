@@ -25,9 +25,15 @@ const INDEX_PAGES = ['/', '/en/', '/blog/', '/en/blog/']
 function alternateLinks (page, pathsByLowerCase) {
   let spanish
   let english
+  const tag = page.path.match(/^\/(en\/)?tag\/([^/]+\/)?$/)
   if (page.path === '/blog/' || page.path === '/en/blog/') {
     spanish = '/blog/'
     english = '/en/blog/'
+  } else if (tag) {
+    // Tag index or tag page, paired with the same tag in the other language when it exists
+    spanish = `/tag/${tag[2] || ''}`
+    english = `/en/tag/${tag[2] || ''}`
+    if (!pathsByLowerCase.has(spanish.toLowerCase()) || !pathsByLowerCase.has(english.toLowerCase())) return []
   } else if (isPost(page) || page.path === '/' || page.path === '/en/') {
     const other = counterpartPath(page, pathsByLowerCase)
     if (!other) return []

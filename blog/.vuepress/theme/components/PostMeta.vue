@@ -30,11 +30,13 @@
 // The parent theme's post header, plus the reading time and a readable date per language.
 import PostMeta from '@parent-theme/components/PostMeta.vue'
 import ReadingTime from './ReadingTime.vue'
+// The parent imports its PostTag by relative path, so the override has to be registered here
+import PostTag from './PostTag.vue'
 import { formatDate, isoDate } from './formatDate'
 
 export default {
   extends: PostMeta,
-  components: { ReadingTime },
+  components: { ReadingTime, PostTag },
   computed: {
     resolvedDate() {
       return formatDate(this.date, (this.$page.path || '').startsWith('/en/'))

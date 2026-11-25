@@ -6,6 +6,7 @@
  * https://v1.vuepress.vuejs.org/theme/inheritance.html):
  * - components/PostMeta.vue: post header (date, reading time, tags).
  * - components/PostList.vue: post lists (blog, tags, pagination), used by layouts/Layout.vue.
+ * - components/PostTag.vue: tag chips under the post title, linking to the tag page of its language.
  */
 const { switcherLink } = require('../plugins/shared')
 
@@ -27,6 +28,13 @@ module.exports = {
   extendPageData ($page) {
     if ($page.frontmatter && $page.frontmatter.date) {
       $page.readingTime = readingTime($page._strippedContent)
+    }
+    // Tags per language: the blog plugin builds /tag/ from `esTags` and /en/tag/ from `enTags`
+    // (`frontmatters` in config.js), so each tag page lists posts of one language only
+    const { tags } = $page.frontmatter
+    if (tags && $page.frontmatter.date) {
+      const english = ($page.regularPath || '').startsWith('/_en/')
+      $page.frontmatter[english ? 'enTags' : 'esTags'] = [].concat(tags)
     }
     // Target of the language switcher line, for the header's language link (components/localeNav.js)
     const translation = switcherLink($page)

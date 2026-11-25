@@ -27,6 +27,12 @@ module.exports = {
     modifyBlogPluginOptions(blogPluginOptions) {
       return blogPluginOptions
     },
+    // One tag index per language: /tag/ (Spanish posts) and /en/tag/ (English posts). theme/index.js
+    // copies each post's `tags` to `esTags` or `enTags`.
+    frontmatters: [
+      { id: 'tag', keys: ['esTags'], path: '/tag/', title: 'Tag' },
+      { id: 'enTag', keys: ['enTags'], path: '/en/tag/', title: 'Tag' },
+    ],
     /**
      * Ref: https://vuepress-theme-blog.billyyyyy3320.com/config/#directories
      */
@@ -69,7 +75,7 @@ module.exports = {
         },
         {
           text: 'Tags',
-          link: '/tag/',
+          link: '/en/tag/',
         },
       ],
     },

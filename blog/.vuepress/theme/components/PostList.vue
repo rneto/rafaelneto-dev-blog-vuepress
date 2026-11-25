@@ -67,7 +67,7 @@
             <router-link
               v-for="tag in resolvePostTags(page.frontmatter.tags)"
               :key="tag"
-              :to="'/tag/' + tag"
+              :to="tagPath(tag, page.path)"
             >
               {{ tag }}
             </router-link>
@@ -88,12 +88,14 @@
 import BaseListLayout from '@parent-theme/global-components/BaseListLayout.vue'
 import ReadingTime from './ReadingTime.vue'
 import { formatDate, isoDate } from './formatDate'
+import { tagPath } from './tagPath'
 
 export default {
   extends: BaseListLayout,
   components: { ReadingTime },
   methods: {
     isoDate,
+    tagPath,
     resolvePostDate(date, path) {
       return formatDate(date, (path || '').startsWith('/en/'))
     },
